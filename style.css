@@ -1639,3 +1639,61 @@ body.guide-page-body { /* ガイドページ専用のbodyスタイル (任意) *
     }
 }
 /* スマホでは1列になるのは既存の .resource-grid-main のレスポンシブ設定で対応 */
+
+/* style.css */
+
+/* --- (既存のスタイルは変更なしの部分は省略) --- */
+
+/* --- 7. 詳細ガイドページ共通スタイル (追記・調整) --- */
+/* (既存の .page-layout-with-sidenav, .page-sidenav, .page-main-content,
+   .content-section.styled-section, .wb-list, .tips-list.styled-list,
+   .step-list, .text-link-button などは活用・微調整) */
+
+/* --- 7.x.x techniques_building.html 特有のスタイル --- */
+.technique-example { /* 各建築テクニックの解説と練習方法をまとめるブロック */
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding: 25px;
+    background-color: #f9fafb; /* 少し背景色をつける */
+    border: 1px solid #e7eaf3;
+    border-radius: 8px;
+}
+
+.technique-example h3 { /* テクニック名 (3.1. 壁に凹凸...など) */
+    font-size: 1.5em; /* content-section h3 より少し小さく */
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #bdc3c7;
+}
+.technique-example h4 { /* 「練習方法：」などの小見出し */
+    font-size: 1.2em;
+    color: #007bff; /* 強調色 */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.tips-list-item { /* 練習方法のポイントなどを目立たせる */
+    display: block; /* pタグをブロック要素として扱う */
+    background-color: #e6f7ff;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-left: 4px solid #007bff;
+    font-size: 0.95em;
+}
+.tips-list-item strong {
+    color: #0056b3;
+}
+
+/* Minecraft家具アイデアなどのリストスタイル */
+/* 既存の .wb-list.wb-list-check などを適宜活用 */
+
+
+/* --- (既存のレスポンシブスタイルも確認・調整) --- */
+@media (max-width: 992px) {
+    /* (既存のレスポンシブスタイル) */
+    .technique-example { padding: 20px; }
+    .technique-example h3 { font-size: 1.4em; }
+    .technique-example h4 { font-size: 1.1em; }
+}
