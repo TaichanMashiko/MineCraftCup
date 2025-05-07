@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトスケジュール - 第7回 Minecraftカップ プロジェクトハブ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* このページ固有のスタイル（必要であれば） */
+        .timeline {
+            list-style-type: none;
+            padding-left: 0;
+            position: relative; /* 縦線の基準 */
+        }
+        .timeline::before { /* 縦線 */
+            content: '';
+            position: absolute;
+            left: 20px; /* アイコンの位置に合わせる */
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #007bff; /* メインカラー */
+            border-radius: 2px;
+        }
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 60px; /* アイコンと線のスペース */
+        }
+        .timeline-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 44px; /* アイコンのサイズ */
+            height: 44px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            box-shadow: 0 0 0 4px #f4f6f8, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05);
+            z-index: 1; /* 線より手前に */
+        }
+        .timeline-content {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .timeline-content h3 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+        .timeline-date {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .important-deadline {
+            color: #dc3545; /* 赤系の強調色 */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1>🗓️ プロジェクトスケジュール</h1>
+            <p>～計画的に進めて、最高の作品を完成させよう！～</p>
+        </div>
+    </header>
+
+    <nav class="main-navigation">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">🏠 ホーム</a></li>
+                <li><a href="startup-guide-detailed.html">🚀 スタートガイド</a></li>
+                <li><a href="task-management-guide.html">✅ タスク管理</a></li>
+                <li><a href="faq.html">❓ Q&A</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+
+            <section id="overview">
+                <h2>全体スケジュール概要</h2>
+                <p>このプロジェクトは、いくつかのフェーズ（期間）に分かれて進みます。各フェーズの目標と期間をしっかり確認し、計画的に作業を進めましょう。特に<strong class="important-deadline">締切日</strong>は厳守です！</p>
+                <p><strong>全体の目標： <span class="important-deadline">作品完成 & 応募準備完了 → 2025年7月末</span></strong></p>
+                <p>（実際の大会応募締切は別途確認してください: <a href="application-process.html">応募方法と締切確認ページ</a>）</p>
+            </section>
+
+            <section id="timeline-section">
+                <h2>フェーズ別スケジュール</h2>
+                <ul class="timeline">
+                    <li class="timeline-item">
+                        <div class="timeline-icon">1</div>
+                        <div class="timeline-content">
+                            <h3>フェーズ1: 準備と計画</h3>
+                            <span class="timeline-date">期間: 2025年5月上旬 ～ 5月下旬</span>
+                            <p><strong>主な目標:</strong></p>
+                            <ul>
+                                <li>チーム編成と役割分担の確定</li>
+                                <li>大会テーマの完全理解</li>
+                                <li>取り組む災害テーマと「まち」の基本コンセプト決定</li>
+                                <li>初期の情報収集と調査開始</li>
+                                <li>プロジェクト全体の進め方とツールの確認</li>
+                            </ul>
+                            <p><strong>成果物 (イメージ):</strong> チーム役割表、テーマ理解メモ、コンセプトシート(仮)、初期調査レポート、タスク管理開始</p>
+                        </div>
+                    </li>
+
+                    <li class="timeline-item">
+                        <div class="timeline-icon">2</div>
+                        <div class="timeline-content">
+                            <h3>フェーズ2: 詳細設計と技術習得</h3>
+                            <span class="timeline-date">期間: 2025年6月上旬 ～ 6月下旬</span>
+                            <p><strong>主な目標:</strong></p>
+                            <ul>
+                                <li>「まち」の詳細設計図作成 (手描き、Minecraft内での簡易モデルなど)</li>
+                                <li>実装する機能（コマンド、レッドストーン等）の仕様決定</li>
+                                <li>必要なMinecraft技術の学習と試作（プロトタイピング）</li>
+                                <li>建築デザインの方向性決定</li>
+                            </ul>
+                            <p><strong>成果物 (イメージ):</strong> 設計図、機能一覧と仕様書、技術習得メモ、プロトタイプワールド</p>
+                        </div>
+                    </li>
+
+                    <li class="timeline-item">
+                        <div class="timeline-icon">3</div>
+                        <div class="timeline-content">
+                            <h3>フェーズ3: Minecraftでの本格制作</h3>
+                            <span class="timeline-date">期間: 2025年7月上旬 ～ 7月中旬 (夏休み前集中期間！)</span>
+                            <p><strong>主な目標:</strong></p>
+                            <ul>
+                                <li>設計に基づいたワールドの本格的な建築作業</li>
+                                <li>コマンド、レッドストーン、MakeCodeによる機能実装</li>
+                                <li>チーム内での定期的な進捗共有と連携作業</li>
+                            </ul>
+                            <p><strong>成果物 (イメージ):</strong> Minecraftワールドの主要部分完成、主要機能の実装完了</p>
+                            <p class="important-deadline"><strong>この期間が勝負！集中して取り組みましょう！</strong></p>
+                        </div>
+                    </li>
+
+                    <li class="timeline-item">
+                        <div class="timeline-icon">4</div>
+                        <div class="timeline-content">
+                            <h3>フェーズ4: 最終調整と提出準備</h3>
+                            <span class="timeline-date">期間: 2025年7月下旬</span>
+                            <p><strong>主な目標:</strong></p>
+                            <ul>
+                                <li>ワールドの細部調整、バグ修正、仕上げ作業</li>
+                                <li>提出物（ワールドデータ、紹介画像、説明文、動画など）の作成と完成
+                                    (<a href="submission-guide.html">提出物一覧と作成ガイド</a>参照)
+                                </li>
+                                <li>応募に必要な情報の確認と準備</li>
+                            </ul>
+                            <p><strong>成果物 (イメージ):</strong> 完成したMinecraftワールド、全ての提出物一式</p>
+                            <p class="important-deadline"><strong>目標締切: 7月末までに全ての準備を完了！</strong></p>
+                        </div>
+                    </li>
+
+                    <li class="timeline-item">
+                        <div class="timeline-icon">!</div> {/* 締切などの重要なポイント */}
+                        <div class="timeline-content">
+                            <h3><span class="important-deadline">大会応募締切</span></h3>
+                            <span class="timeline-date"><span class="important-deadline">2025年9月4日 (木) 18:59 (要確認)</span></span>
+                            <p>これは大会全体の応募締切です。私たちのチームは7月末完成を目指しますが、最終的な応募手続きはこの日までに必ず完了させる必要があります。</p>
+                            <p>詳細は<a href="application-process.html">応募方法と締切確認ページ</a> および大会公式サイトで必ず確認してください。</p>
+                        </div>
+                    </li>
+                    {/* 必要に応じて、予選、地区大会、全国大会などの日程も追加 */}
+                </ul>
+            </section>
+
+            <section id="tips-for-schedule">
+                <h2>スケジュール管理のヒント</h2>
+                <ul>
+                    <li><strong>定期的なミーティング:</strong> 週に1回など、定期的にチームで集まり、進捗状況や課題を共有しましょう。</li>
+                    <li><strong>タスクの細分化:</strong> 大きなタスクは、より小さく具体的な作業に分けて管理しましょう。(<a href="task-management-guide.html">タスク管理ツールの使い方</a>参照)</li>
+                    <li><strong>バッファを持つ:</strong> 予期せぬ問題や遅れに対応できるように、各フェーズの締切には少し余裕を持たせると安心です。</li>
+                    <li><strong>進捗の可視化:</strong> タスク管理ツールやホワイトボードなどを活用して、誰が何をしていて、全体の進捗がどうなっているかを見えるようにしましょう。</li>
+                    <li><strong>困ったら早めに相談:</strong> 一人で抱え込まず、チームメンバーや先生に早めに相談することが大切です。</li>
+                </ul>
+            </section>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="index.html" class="button-link">🏠 プロジェクトハブのトップへ戻る</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 水戸葵陵高校 Minecraftカッププロジェクトチーム</p>
+        </div>
+    </footer>
+
+    <!-- JavaScriptファイルへのリンク (このページで特に必要なければ無くてもOK) -->
+    <!-- <script src="main.js"></script> -->
+</body>
+</html>
