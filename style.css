@@ -349,3 +349,175 @@ strong, b {
     .hero-banner h2 { font-size: 1.6rem; }
     .resource-card-main h3 { font-size: 1.2rem; }
 }
+/* style.css */
+
+/* --- (0. ～ 6. までの既存スタイルは変更なし) --- */
+
+
+/* --- 7. 詳細ガイドページ共通スタイル (guide_main.html など) --- */
+.page-layout-with-sidenav { display: flex; gap: 30px; }
+.page-sidenav {
+    flex: 0 0 240px; /* サイドナビの幅を少し広めに */
+    background-color: #f8f9fa; padding: 25px;
+    border-radius: 8px; border: 1px solid #e9ecef; align-self: flex-start;
+    position: sticky; top: 90px; /* ナビゲーションの高さ + 少しの余白 */
+    max-height: calc(100vh - 110px); overflow-y: auto;
+}
+.page-sidenav h3 { font-size: 1.3em; color: #343a40; margin-top: 0; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #ced4da; }
+.page-sidenav ul { list-style-type: none; padding-left: 0; }
+.page-sidenav ul li a {
+    display: block; padding: 9px 12px; /* パディング調整 */
+    color: #495057; text-decoration: none;
+    border-radius: 4px; transition: background-color 0.2s ease, color 0.2s ease; font-size: 0.95em;
+}
+.page-sidenav ul li a:hover, .page-sidenav ul li a:focus, .page-sidenav ul li a.active {
+    background-color: #007bff; color: white; font-weight: 500;
+}
+.page-main-content { flex-grow: 1; min-width: 0; }
+
+/* コンテンツセクションのスタイル (`.content-section`) */
+.content-section {
+    margin-bottom: 45px; padding: 30px; background-color: #ffffff;
+    border: 1px solid #e0e0e0; border-radius: 10px; box-shadow: 0 3px 7px rgba(0,0,0,0.06);
+}
+.content-section > h2 { /* 直下のh2 */
+    font-size: 2em; color: #34495e; margin-bottom: 25px;
+    padding-bottom: 15px; border-bottom: 3px solid #3498db;
+}
+.content-section h3 { /* セクション内のh3 */
+    font-size: 1.6em; color: #2c3e50; margin-top: 30px; margin-bottom: 15px;
+}
+.content-section h4 { /* セクション内のh4 */
+    font-size: 1.3em; /* 少し大きく */
+    color: #007bff; /* 強調色 */
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+/* キーワードハイライト */
+.keyword-highlight {
+    background-color: #fff3cd;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 1px solid #ffeeba;
+}
+/* 引用ボックス */
+.quote-box {
+    border-left: 5px solid #007bff;
+    padding: 20px;
+    margin: 25px 0;
+    background-color: #eaf6ff; /* 少し色味をつける */
+    border-radius: 0 8px 8px 0;
+}
+.quote-box p { margin-bottom: 0.5em; }
+.quote-box p:last-child { margin-bottom: 0; }
+
+/* アイデアリスト、チップスリストなどの汎用リストスタイル */
+.idea-list, .tips-list, .meeting-agenda-list, .success-tips-list {
+    list-style-type: "✔ "; /* チェックマーク (環境依存するので注意、SVGや画像が良い場合も) */
+    padding-left: 5px; /* マーカーとテキストの間隔調整 */
+}
+.idea-list li, .tips-list li, .meeting-agenda-list li, .success-tips-list li {
+    padding-left: 10px; /* テキストのインデント */
+    margin-bottom: 8px;
+}
+.important-highlight { /* 重要目標の強調 */
+    display: inline-block;
+    background-color: #ffeeba;
+    color: #856404;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    border: 1px solid #ffd32a;
+}
+.phase-list { /* プロジェクトフェーズの番号付きリスト */
+    padding-left: 25px;
+}
+.phase-list li {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.phase-list li::marker {
+    font-weight: bold;
+    color: #3498db;
+}
+
+/* 役割説明カード (`.role-explanation-container`, `.role-card`) */
+.role-explanation-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* カードの最小幅調整 */
+    gap: 25px;
+    margin: 25px 0;
+}
+.role-card {
+    background-color: #f9f9f9; /* カード背景 */
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e7e7e7;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+}
+.role-card h4 { /* 役割名 */
+    font-size: 1.4em;
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+/* アイコンはHTMLに直接記述するため、CSSでの::beforeは不要 */
+.role-card p { font-size: 0.95em; margin-bottom: 10px; }
+.role-card p strong { display: block; margin-bottom: 5px; color: #495057; }
+.role-card ul { list-style-type: disc; padding-left: 20px; font-size: 0.9em; margin-bottom: 15px; }
+.role-card ul li { margin-bottom: 5px; }
+.teamwork-point { /* 役割分担のポイント */
+    font-style: italic;
+    color: #555;
+    background-color: #eef;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+
+/* テキスト内リンクボタン (汎用化) */
+.text-link-button {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 4px 10px; /* 少し調整 */
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: 500;
+    border: 1px solid #ced4da;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.text-link-button:hover {
+    background-color: #d1d8e0;
+    color: #212529;
+    text-decoration: none;
+}
+.link-list li { /* STEP3以降のリスト */
+    list-style-type: "➡️ ";
+    padding-left: 8px;
+}
+
+
+/* --- (8. 共通ボタン & お知らせ開閉 は変更なし) --- */
+/* --- (9. サイト共通フッター は変更なし) --- */
+/* --- (10. レスポンシブデザイン は調整が必要な場合あり) --- */
+/* 特に .page-layout-with-sidenav のレスポンシブを再確認 */
+@media (max-width: 992px) {
+    /* (既存のレスポンシブスタイル) */
+    .page-layout-with-sidenav { flex-direction: column; }
+    .page-sidenav {
+        flex: 0 0 auto; width: 100%; margin-bottom: 30px; position: static;
+        max-height: none; overflow-y: visible;
+    }
+    .page-sidenav ul { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .page-sidenav ul li a { padding: 8px 15px; border: 1px solid #ced4da; }
+
+    .role-explanation-container { grid-template-columns: 1fr; } /* スマホでは役割カード1列 */
+}
+/* 他のレスポンシブスタイルも必要に応じて調整 */
