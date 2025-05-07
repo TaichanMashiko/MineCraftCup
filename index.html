@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第7回 Minecraftカップ プロジェクトハブ - 水戸葵陵高校</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- (ヘッダー、ナビゲーション、メインコンテンツの他のセクションは変更なし) -->
+    <header>
+        <h1>🏆 第7回 Minecraftカップ プロジェクトハブ 🏆</h1>
+        <p>～水戸葵陵高校 - レジリエンスを備えたまちづくりへの挑戦～</p>
+    </header>
+
+    <nav>
+        <h2>メインナビゲーション</h2>
+        <ul>
+            <li><a href="startup-guide-detailed.html">🚀 スタートガイド</a></li>
+            <li><a href="project-schedule.html">🗓️ スケジュール</a></li>
+            <li><a href="task-management-guide.html">✅ タスク管理</a></li>
+            <li><a href="faq.html">❓ Q&A</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="hero">
+            <h2>🌟 まずはここから！ 🌟</h2>
+            <p>プロジェクトを初めて進める人は、まず「<strong><a href="startup-guide-detailed.html">🚀 スタートアップガイド (詳細版)</a></strong>」を読んで、全体の流れや最初のステップを確認しましょう！</p>
+            <p><strong>現在の最重要目標：作品完成【7月末】</strong>を目指して頑張りましょう！</p>
+        </section>
+
+        <section id="project-summary">
+            <h2>📝 プロジェクト概要</h2>
+            <p>このプロジェクトでは、Minecraftカップのテーマ「未曾有の災害から人類の命をまもれ！～レジリエンスを備えたまちづくり～」に基づき、災害に強く、人々が安心して暮らせる未来のまちをMinecraftで創造します。</p>
+            <p>水戸葵陵高校のチーム一丸となって、調査・企画・設計・制作・発表準備を進めていきます。このウェブサイトは、プロジェクトに必要な情報や資料を集約するハブ（中心地）です。</p>
+            <p><strong>大会公式サイト：</strong> <a href="[Minecraftカップ公式サイトのURLをここに]" target="_blank" rel="noopener noreferrer">第7回Minecraftカップ 公式サイト</a></p>
+        </section>
+
+        <section id="quick-links">
+            <h2>🔗 クイックリンク集</h2>
+            <p>よく使うページや、重要な情報へのリンクです。</p>
+            {/* (クイックリンクの内容は省略) */}
+            <div>
+                <h3>始める前に読む</h3>
+                <ul>
+                    <li><a href="startup-guide-detailed.html">🚀 スタートアップガイド (詳細版)</a></li>
+                    <li><a href="theme-explanation.html">📖 大会テーマ解説</a></li>
+                </ul>
+            </div>
+            {/* ... 他のクイックリンクカテゴリ ... */}
+            <div>
+                <h3>その他</h3>
+                <ul>
+                    <li><a href="faq.html">❓ Q&A / よくある質問</a></li>
+                    <li><a href="leader-guide.html">👑 リーダーのためのプロジェクト管理術</a></li>
+                    <li><a href="sitemap.html">🗺️ 全てのページ一覧 (サイトマップ)</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="latest-updates">
+            {/* ↓ここから変更・追加↓ */}
+            <h2>
+                <button type="button" id="toggle-updates-button" aria-expanded="true" aria-controls="updates-content-area">
+                    📢 最新情報・お知らせ (クリックで開閉)
+                </button>
+            </h2>
+            <div id="updates-content-area" class="collapsible-content">
+            {/* ↑ここまで変更・追加↑ */}
+                <ul>
+                    <li>2025/MM/DD: 最初のチームミーティングを実施しました！次のアクションは〇〇です。</li>
+                    <li>2025/MM/DD: 次回ミーティングは△月△日です。アジェンダは□□。</li>
+                    <!-- ここに新しいお知らせを追記していく -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 水戸葵陵高校 Minecraftカッププロジェクトチーム</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
