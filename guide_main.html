@@ -5,19 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>大会テーマとプロジェクトの進め方 - 第7回 Minecraftカップ プロジェクトハブ</title>
     <link rel="stylesheet" href="style.css">
-    {/* Google Fonts (共通style.cssで読み込まれている前提だが、念のため記述) */}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="guide-page-body"> {/* ページ専用のbodyクラス */}
+<body class="guide-page-body">
 
     <header class="site-header">
-        {/* (内容は変更なし) */}
+        <div class="container">
+            <h1>📖 大会テーマとプロジェクトの進め方</h1>
+            <p>～「レジリエンス」を理解し、未来のまちを創造しよう～</p>
+        </div>
     </header>
 
     <nav class="main-navigation">
-        {/* (内容は変更なし) */}
+        <div class="container">
+            <h2>メインナビゲーション</h2>
+            <ul>
+                <li><a href="index.html">🏠 ホーム</a></li>
+                <li><a href="startup-guide-detailed.html">🚀 スタートアップガイド</a></li>
+                <li><a href="project-schedule.html">🗓️ スケジュール</a></li>
+                <li><a href="guide_techniques.html">🛠️ 制作テクニック集</a></li>
+                <li><a href="guide_submission.html">🏆 提出と応募について</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main class="main-content">
@@ -40,7 +51,7 @@
 
             <article class="page-main-content">
 
-                <section id="theme-introduction" class="content-section styled-section"> {/* styled-section クラス追加 */}
+                <section id="theme-introduction" class="content-section styled-section">
                     <h2>はじめに - このガイドでわかること</h2>
                     <p>このガイドでは、Minecraftカップのテーマを深く理解し、チームで協力して素晴らしい作品を創り上げるためのステップを解説します！プロジェクトを成功に導くためのヒントや考え方を一緒に学んでいきましょう。</p>
                 </section>
@@ -50,7 +61,7 @@
                     <p>私たちの世界は、地震、津波、気候変動など、様々な課題に直面しています。「当たり前の日常」がいつまでも続くとは限りません。今回のテーマは、こうした困難に対応できる未来のまちを考えることです。</p>
 
                     <h3>「レジリエンス (Resilience)」ってなんだろう？</h3>
-                    <div class="quote-box styled-quote"> {/* styled-quote クラス追加 */}
+                    <div class="quote-box styled-quote">
                         <p><strong>レジリエンスとは、どんな困難があっても立ち直り、また前に進む力のこと。</strong><br>
                         大変な出来事があっても、人々が支え合い、安心して暮らせる社会をつくる。<br>
                         まちが壊れても、より強く、安全な形でつくり直す力。</p>
@@ -59,7 +70,7 @@
                     <p>つまり、ただ頑丈なだけでなく、ダメージを受けても「しなやかに回復し、さらに良く成長する」力や仕組みのことです。竹のように、強い風に吹かれても折れずにしなり、元に戻る強さをイメージしてみてください。</p>
 
                     <h4>レジリエンスを備えたまちのイメージ</h4>
-                    <ul class="wb-list wb-list-check"> {/* wb-list と wb-list-check クラス適用 */}
+                    <ul class="wb-list wb-list-check">
                         <li>災害被害を最小限に抑える工夫がある。</li>
                         <li>速やかに生活や経済を再開できる仕組みがある。</li>
                         <li>災害の教訓を活かし、より安全で持続可能なまちへ進化する。</li>
@@ -72,7 +83,7 @@
                 <section id="project-steps" class="content-section styled-section">
                     <h2>プロジェクトの進め方 (ステップ・バイ・ステップ)</h2>
                     <p>プロジェクトは、大きく分けて以下のフェーズで進んでいきます。各フェーズの目標を意識して、計画的に取り組みましょう。 (<a href="project-schedule.html" class="text-link-button">全体スケジュール</a>も確認！)</p>
-                    <ol class="wb-step-list"> {/* wb-step-list クラス適用 */}
+                    <ol class="wb-step-list">
                         <li>
                             <div class="step-title-container"><span class="step-number">1</span><strong>準備と計画フェーズ</strong></div>
                             <p>テーマ理解、チーム作り、コンセプト決定、初期調査。</p>
@@ -99,18 +110,17 @@
                     <h3>A. 役割分担を決めよう！ ～それぞれの得意を活かす～</h3>
                     <p>チームで大きな目標に向かうには、「誰が何をするか」を明確にする「役割分担」が大切です。以下は主な役割の例です。みんなで話し合って、自分たちのチームに合った役割分担を決めましょう。兼任もOKです！</p>
                     <div class="role-explanation-container">
-                        {/* 各 .role-card の内容は前回と同じなので省略 */}
-                        <div class="role-card"><h4>👑 リーダー (プロジェクトマネージャー)</h4><p>...</p></div>
-                        <div class="role-card"><h4>✍️ 書記・記録係 (ドキュメントキーパー)</h4><p>...</p></div>
-                        <div class="role-card"><h4>🌍 調査・企画担当 (リサーチャー / プランナー)</h4><p>...</p></div>
-                        <div class="role-card"><h4>🏗️ 建築・デザイン担当 (ビルダー / デザイナー)</h4><p>...</p></div>
-                        <div class="role-card"><h4>⚙️ コマンド・RS・MakeCode担当 (テクニカルクリエイター)</h4><p>...</p></div>
-                        <div class="role-card"><h4>🗣️ 広報・発表担当 (プレゼンター / 広報)</h4><p>...</p></div>
+                        <div class="role-card"><h4>👑 リーダー (プロジェクトマネージャー)</h4><p><strong>主な仕事:</strong> チームのまとめ役、計画・スケジュール管理、ミーティング進行、メンバーサポート。</p><p><strong>こんな人向け:</strong> コミュニケーションが得意、計画的、周りを励ませる。</p><p><strong>ヒント:</strong> みんなの力を引き出そう！</p></div>
+                        <div class="role-card"><h4>✍️ 書記・記録係 (ドキュメントキーパー)</h4><p><strong>主な仕事:</strong> 議事録作成、情報・資料整理、サイト更新サポート、提出書類作成サポート。</p><p><strong>こんな人向け:</strong> 文章をまとめるのが得意、几帳面で、正確に作業するのが好き。</p><p><strong>ヒント:</strong> 誰が見ても分かりやすい記録を！</p></div>
+                        <div class="role-card"><h4>🌍 調査・企画担当 (リサーチャー / プランナー)</h4><p><strong>主な仕事:</strong> テーマ・災害調査、事例収集、まちのコンセプト・ストーリー考案、作品の独自性企画。</p><p><strong>こんな人向け:</strong> 調べ物が好き、分析やアイデア出しが得意、発表力がある。</p><p><strong>ヒント:</strong> 幅広い情報源から信頼できる情報を！</p></div>
+                        <div class="role-card"><h4>🏗️ 建築・デザイン担当 (ビルダー / デザイナー)</h4><p><strong>主な仕事:</strong> Minecraftでの建築・景観デザイン、コンセプトの視覚的表現、設計図作成、他担当との連携。</p><p><strong>こんな人向け:</strong> Minecraft建築が好き/得意、デザインや物作りが好き、細部へのこだわり。</p><p><strong>ヒント:</strong> 現実や他作品も参考にオリジナリティを！</p></div>
+                        <div class="role-card"><h4>⚙️ コマンド・RS・MakeCode担当 (テクニカルクリエイター)</h4><p><strong>主な仕事:</strong> コマンド/RS/MakeCodeでの機能実装、自動化システム作成、技術的問題解決、建築担当との連携。</p><p><strong>こんな人向け:</strong> 論理的思考が得意、プログラミングに興味がある、実験や試行錯誤が好き。</p><p><strong>ヒント:</strong> 簡単なものから挑戦！ネットに情報多数！</p></div>
+                        <div class="role-card"><h4>🗣️ 広報・発表担当 (プレゼンター / 広報)</h4><p><strong>主な仕事:</strong> 作品の魅力伝達、紹介動画構成・ナレーション・編集サポート、発表原稿作成・練習。</p><p><strong>こんな人向け:</strong> 人前で話すのが得意/挑戦したい、文章構成が好き、動画編集やデザインに興味がある。</p><p><strong>ヒント:</strong> 心を動かす伝え方を工夫しよう！</p></div>
                     </div>
                     <p class="teamwork-point"><strong>話し合いのポイント:</strong> 「やってみたいこと」「得意なこと」を尊重し、柔軟に協力し合おう！全ての役割が重要です。</p>
 
                     <h3>B. 最初のチームミーティングで決めよう！</h3>
-                    <ul class="wb-list wb-list-dot"> {/* wb-list と wb-list-dot クラス適用 */}
+                    <ul class="wb-list wb-list-dot">
                         <li>チームの目標（再確認）</li>
                         <li>コミュニケーション方法（連絡手段、頻度など）</li>
                         <li>ミーティングの頻度と時間</li>
@@ -120,14 +130,11 @@
                     <p>話し合った内容は、書記・記録係がメモを取り、みんなで共有しましょう。</p>
                 </section>
 
-                {/* STEP 2, 3, 4, チームワーク, 困ったときは のセクションも同様に .styled-section を追加し、
-                    中のリストに .wb-list や .tips-list (新しいクラス) などを適宜適用 */}
-
                 <section id="step2-planning" class="content-section styled-section">
                     <h2>STEP 2: アイデアをカタチにする準備！ (企画・調査・設計)</h2>
                     <p>具体的な作品のイメージを固めていくフェーズです。</p>
                     <h4>情報収集のヒント</h4>
-                    <ul class="tips-list styled-list"> {/* styled-list クラス追加 */}
+                    <ul class="tips-list styled-list">
                         <li>何を調べる？: 災害事例、レジリエンス技術、先進的なまちづくり事例など。</li>
                         <li>どこで調べる？: 本、インターネット（信頼できるサイト）、ニュース、専門家の意見。</li>
                         <li>ポイント: 情報の信頼性を確認し、多角的な視点から情報を集める。</li>
@@ -168,7 +175,7 @@
 
                 <section id="teamwork-success" class="content-section styled-section">
                     <h2>🤝 チームで成功するためのヒント</h2>
-                    <ul class="wb-list wb-list-star"> {/* wb-list と wb-list-star クラス適用 */}
+                    <ul class="wb-list wb-list-star">
                         <li><strong>コミュニケーションを密に:</strong> 積極的に話し合い、意見を尊重し、困ったらすぐに相談する。</li>
                         <li><strong>計画性と柔軟性:</strong> スケジュールを守りつつ、予期せぬ事態には柔軟に対応する。</li>
                         <li><strong>記録と共有:</strong> 話し合ったこと、決まったこと、調べたことなどを記録し、チームで共有する。</li>
@@ -178,7 +185,7 @@
 
                 <section id="help-support" class="content-section styled-section">
                     <h2>❓ 困ったときは</h2>
-                    <ul class="wb-list wb-list-arrow"> {/* wb-list と wb-list-arrow クラス適用 */}
+                    <ul class="wb-list wb-list-arrow">
                         <li>まずはこのガイドや、サイト内の他の関連ページを確認してみましょう。</li>
                         <li>チーム内で解決できないことは、遠慮なく先生に相談してください。</li>
                         <li>行き詰まったときは、少し休憩して気分転換するのも大切です。</li>
@@ -194,9 +201,11 @@
     </main>
 
     <footer class="site-footer">
-        {/* (内容は変更なし) */}
+        <div class="container">
+            <p>© 2025 水戸葵陵高校 Minecraftカッププロジェクトチーム</p>
+        </div>
     </footer>
 
-    <script src="main.js"></script> {/* サイドナビのアクティブ表示などに活用可能 */}
+    <script src="main.js"></script>
 </body>
 </html>
