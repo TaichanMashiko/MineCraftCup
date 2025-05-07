@@ -1,56 +1,270 @@
-/* style.css (前回提示した詳細バージョンに追記・修正) */
+/* style.css - 詳細バージョン (共通リソース改善対応) */
 
-/* --- (前回のCSS内容は省略) --- */
-/* ここに前回提示したCSSの「0. 基本リセット」から「6. フッター」までを記述 */
+/* --- 0. 基本リセット & グローバル設定 --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-/* --- 7. index.html のチームナビゲーションと共通リソース用のスタイル (新規・修正) --- */
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333333;
+    background-color: #f4f6f8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- 1. タイポグラフィ & リンク --- */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.75em;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #212529;
+}
+
+h1 { font-size: 2.4em; }
+h2 { font-size: 1.8em; } /* main > section > h2 は別途指定 */
+h3 { font-size: 1.5em; } /* main > section > h3 は別途指定 */
+h4 { font-size: 1.2em; }
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+strong, b {
+    font-weight: 600;
+}
+
+ul, ol {
+    padding-left: 20px;
+    margin-bottom: 1em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* --- 2. レイアウト & コンテナ --- */
+.container {
+    width: 90%;
+    max-width: 1100px; /* 少し広めにする */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* --- 3. ヘッダー (`.site-header`) --- */
+.site-header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 50px 0 40px;
+    text-align: center;
+    border-bottom: 5px solid #3498db;
+}
+
+.site-header h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.3em;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.site-header .subtitle { /* HTML側で <p class="subtitle"> を使用 */
+    font-size: 1.2em;
+    color: #bdc3c7;
+    margin-bottom: 0;
+}
+
+/* --- 4. ナビゲーション (`.main-navigation`) --- */
+.main-navigation {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.main-navigation h2 {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.main-navigation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.main-navigation ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.main-navigation ul li a {
+    font-weight: 500;
+    color: #555555;
+    padding: 10px 5px;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+}
+.main-navigation ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.main-navigation ul li a:hover::after,
+.main-navigation ul li a:focus::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.main-navigation ul li a:hover,
+.main-navigation ul li a:focus {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* --- 5. メインコンテンツ (`.main-content`) --- */
+.main-content {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    flex-grow: 1;
+}
+
+.main-content section {
+    margin-bottom: 45px;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+}
+
+/* セクション共通の見出しスタイル */
+.main-content section > h2 { /* 直下のh2のみに適用 */
+    font-size: 2em;
+    color: #34495e;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #3498db;
+}
+
+/* ヒーローセクション (`.hero-section`) */
+.hero-section { /* HTML側で <section class="hero-section"> を使用 */
+    background-color: #eaf6ff;
+    border-left: 6px solid #3498db;
+    color: #2c3e50;
+}
+.hero-section h2 { /* .hero-section 内の h2 */
+    color: #2980b9;
+    border-bottom: none;
+}
+.hero-section strong, .hero-section strong a {
+    color: #e74c3c;
+    font-weight: bold;
+}
+.hero-section a {
+    font-weight: bold;
+}
+.deadline-reminder { /* HTML側で <p class="deadline-reminder"> を使用 */
+    font-weight: bold;
+    color: #c82333;
+    margin-top: 10px;
+}
+
+
+/* チームナビゲーション (`#team-navigation`) */
 #team-navigation {
     text-align: center;
-    margin-bottom: 50px; /* 他のセクションとの間隔を少し広めに */
+    margin-bottom: 50px;
 }
-#team-navigation h2 {
+#team-navigation > h2 { /* セクションタイトル */
+    margin-bottom: 15px; /* 説明文との間隔 */
+}
+#team-navigation > p { /* 説明文 */
     margin-bottom: 25px;
+    font-size: 1.1em;
+    color: #555;
 }
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* カードの最小幅調整 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    margin-top: 20px;
 }
 
 .team-link-card {
-    display: flex; /* アイコンとテキストを横並びにする準備 */
-    flex-direction: column; /* アイコンを上、テキストを下に */
-    align-items: center; /* 中央揃え */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #ffffff;
-    padding: 30px 20px; /* パディング調整 */
-    border: 1px solid #d1d8e0; /* 少し濃いめのボーダー */
-    border-radius: 10px; /* 角丸を少し大きく */
+    padding: 30px 20px;
+    border: 1px solid #d1d8e0;
+    border-radius: 10px;
     text-decoration: none;
-    color: #495057; /* テキスト色 */
+    color: #495057;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 3px 6px rgba(0,0,0,0.08);
-    text-align: center; /* カード内のテキストも中央揃え */
+    text-align: center;
 }
 
 .team-link-card:hover,
 .team-link-card:focus {
     transform: translateY(-6px);
-    box-shadow: 0 6px 20px rgba(44, 62, 80, 0.15); /* ホバー時の影を強く */
+    box-shadow: 0 6px 20px rgba(44, 62, 80, 0.15);
     color: #007bff;
     text-decoration: none;
 }
-.team-link-card:focus { /* フォーカススタイルを明確に */
+.team-link-card:focus {
     outline: 2px solid #007bff;
     outline-offset: 3px;
 }
 
-
-.team-icon { /* チーム識別用のアイコン（A, B, C...） */
+.team-icon {
     width: 60px;
     height: 60px;
-    background-color: #007bff; /* プライマリカラー */
+    background-color: #007bff;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -61,83 +275,270 @@
     margin-bottom: 15px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-/* 各チームでアイコンの色を変える場合は、個別のクラスを追加して指定 */
-/* 例: .team-a-icon { background-color: #ffc107; } */
 
-
-.team-link-card h3 {
+.team-link-card h3 { /* カード内のチーム名 */
+    font-size: 1.6em; /* main > section > h3 とは別に指定 */
+    color: #2c3e50;
     margin-top: 0;
     margin-bottom: 8px;
-    color: #2c3e50; /* チーム名のヘッダー色 */
-    font-size: 1.6em;
 }
 
 .team-link-card p {
-    font-size: 0.9em; /* 説明文のサイズ */
+    font-size: 0.9em;
     color: #555e68;
     line-height: 1.5;
     margin-bottom: 0;
 }
 
-/* 共通リソースセクションのグリッドレイアウト */
-#common-resources h2 {
-    text-align: center; /* セクションタイトルも中央に */
+/* 全チーム共通リソース (`#common-resources`) */
+#common-resources > h2 { /* セクションタイトル */
+    text-align: center;
+    margin-bottom: 15px;
 }
-.resource-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* レスポンシブなグリッド */
-    gap: 25px;
-    margin-top: 20px;
+#common-resources > p { /* 説明文 */
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.1em;
+    color: #555;
 }
 
-.resource-category {
-    padding: 20px;
-    background-color: #f8f9fa; /* 少し背景色をつける */
+.resource-layout {
+    display: flex;
+    gap: 30px;
+}
+
+.resource-categories-nav {
+    flex: 0 0 240px; /* 少し幅を広げる */
+    background-color: #f8f9fa;
+    padding: 25px;
     border-radius: 8px;
     border: 1px solid #e9ecef;
+    align-self: flex-start;
+    position: sticky;
+    top: 80px; /* ナビゲーションの高さ + 少しの余白 */
 }
 
-.resource-category h3 {
-    font-size: 1.3em;
+.resource-categories-nav h3 { /* カテゴリナビの見出し */
+    font-size: 1.4em; /* main > section > h3 とは別に指定 */
     color: #343a40;
     margin-top: 0;
-    margin-bottom: 15px;
-    padding-bottom: 8px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #ced4da;
 }
 
-.resource-category ul {
+.resource-categories-nav ul {
     list-style-type: none;
     padding-left: 0;
 }
 
-.resource-category ul li {
+.resource-categories-nav ul li a {
+    display: block;
+    padding: 10px 12px;
+    color: #495057;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-weight: 500;
+}
+
+.resource-categories-nav ul li a:hover,
+.resource-categories-nav ul li a:focus,
+.resource-categories-nav ul li a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.resource-cards-container {
+    flex-grow: 1;
+}
+
+.resource-category-group {
+    margin-bottom: 45px;
+}
+
+.resource-category-group > h3 { /* カード群のカテゴリタイトル */
+    font-size: 1.8em; /* main > section > h2 と同等か少し小さめ */
+    color: #34495e;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #3498db;
+}
+
+.resource-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* カードの最小幅調整 */
+    gap: 25px;
+}
+
+.resource-card {
+    display: flex; /* Flexboxで高さを揃えやすくする */
+    flex-direction: column; /* 内容を縦に並べる */
+    background-color: #ffffff;
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+}
+
+.resource-card:hover,
+.resource-card:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    color: #007bff;
+    text-decoration: none;
+}
+.resource-card:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+.resource-card h4 { /* カード内のタイトル */
+    font-size: 1.3em; /* main > section > h4 とは別に指定 */
+    color: #0056b3;
+    margin-top: 0;
     margin-bottom: 10px;
 }
 
-.resource-category ul li a::before {
-    content: "📄 "; /* 書類風の絵文字 (任意) */
-    margin-right: 6px;
-    opacity: 0.7;
+.resource-card p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+    flex-grow: 1; /* 説明文がカードの高さを埋めるように */
 }
 
 
-/* --- 8. レスポンシブデザイン (前回の内容に加えて、グリッドの調整など) --- */
-/* (前回のレスポンシブCSSはそのまま活用) */
+/* 全チームへのお知らせ (`#shared-space`) */
+#shared-space { /* 以前は #latest-updates だったが、HTMLに合わせて変更 */
+    /* 必要であればスタイル調整 */
+}
+#shared-space h2 button {
+    background: none; border: none; font-size: inherit; font-weight: inherit;
+    color: inherit; padding: 0; cursor: pointer; text-align: left;
+    width: 100%; display: flex; align-items: center;
+}
+#shared-space h2 button::after {
+    content: '▼'; font-size: 0.7em; margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+#shared-space h2 button[aria-expanded="false"]::after {
+    transform: rotate(-90deg);
+}
+
+.collapsible-content {
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.4s ease-in-out;
+    max-height: 1000px;
+    opacity: 1;
+}
+.collapsible-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#shared-space ul { /* お知らせリストのスタイル */
+    list-style-type: none;
+    padding-left: 0;
+}
+#shared-space ul li {
+    padding: 12px 0;
+    border-bottom: 1px dashed #eeeeee;
+}
+#shared-space ul li:last-child {
+    border-bottom: none;
+}
+
+
+/* --- 6. フッター (`.site-footer`) --- */
+.site-footer {
+    background-color: #2c3e50;
+    color: #95a5a6;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.95em;
+    margin-top: auto;
+}
+.site-footer p {
+    margin-bottom: 0;
+}
+
+/* --- 8. レスポンシブデザイン --- */
+@media (max-width: 992px) {
+    .container {
+        width: 95%;
+    }
+    .site-header h1 { font-size: 2.4em; }
+    .main-content section > h2 { font-size: 1.8em; } /* セクションタイトル */
+    .resource-category-group > h3 { font-size: 1.6em; } /* カード群カテゴリタイトル */
+    .team-link-card h3 { font-size: 1.4em; } /* カード内チーム名 */
+    .resource-card h4 { font-size: 1.2em; } /* カード内リソース名 */
+
+
+    .resource-layout {
+        flex-direction: column;
+    }
+    .resource-categories-nav {
+        flex: 0 0 auto;
+        width: 100%;
+        margin-bottom: 30px;
+        position: static;
+    }
+    .resource-categories-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px; /* カテゴリ間の隙間を少し狭く */
+        justify-content: center; /* 中央揃え */
+    }
+    .resource-categories-nav ul li a {
+        padding: 8px 15px; /* パディング調整 */
+        border: 1px solid #ced4da; /* ボタン風に */
+    }
+}
+
 @media (max-width: 768px) {
-    /* (前回のスマホ用スタイルはそのまま) */
-    .team-grid, .resource-grid {
-        grid-template-columns: 1fr; /* スマホでは1カラムに */
+    body { font-size: 15px; }
+    .site-header { padding: 30px 0 20px; }
+    .site-header h1 { font-size: 2em; }
+    .site-header .subtitle { font-size: 1em; }
+
+    .main-navigation ul li {
+        display: block;
+        margin: 12px 0;
+        text-align: center;
     }
-    .team-link-card {
-        padding: 20px 15px;
+    .main-navigation ul li a::after { display: none; }
+    .main-navigation ul li a:hover,
+    .main-navigation ul li a:focus { text-decoration: underline; }
+
+    .main-content { padding-top: 20px; padding-bottom: 30px; }
+    .main-content section { padding: 20px; margin-bottom: 30px; }
+    .main-content section > h2 { font-size: 1.7em; margin-bottom: 20px; padding-bottom: 10px; }
+    .resource-category-group > h3 { font-size: 1.5em; margin-bottom: 15px; padding-bottom: 8px;}
+    .team-link-card h3 { font-size: 1.3em; }
+    .resource-card h4 { font-size: 1.1em; }
+
+
+    .team-grid, .resource-card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px; /* スマホでのカード間隔 */
     }
-    .team-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.8em;
+    .team-link-card { padding: 25px 20px; } /* スマホ用パディング */
+    .team-icon { width: 50px; height: 50px; font-size: 1.8em; }
+
+    .resource-categories-nav ul li a {
+        flex-grow: 1; /* カテゴリボタンが均等に広がるように */
+        text-align: center;
     }
-    .team-link-card h3 {
-        font-size: 1.4em;
-    }
+}
+
+@media (max-width: 576px) {
+    .site-header h1 { font-size: 1.8em; }
+    .main-content section > h2 { font-size: 1.5em; }
+    .resource-category-group > h3 { font-size: 1.3em;}
 }
