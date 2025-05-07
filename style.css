@@ -1346,3 +1346,70 @@ body.guide-page-body { /* ガイドページ専用のbodyスタイル (任意) *
     .timeline-card { margin-left: 35px; } /* スマホでのカードの左マージン */
     .timeline-card::before { display: none; } /* スマホでは吹き出し矢印を非表示 */
 }
+
+/* style.css */
+
+/* --- (既存の0. ～ 6. までのスタイルは変更なし) --- */
+/* --- (既存の7. 詳細ガイドページ共通スタイルの大部分は流用) --- */
+
+/* --- 7. 詳細ガイドページ共通スタイル (startup-guide-detailed.html 用の調整・追記) --- */
+
+/* (既存の .page-layout-with-sidenav, .page-sidenav, .page-main-content,
+   .content-section.styled-section, .keyword-highlight, .quote-box,
+   .wb-list, .tips-list, .important-highlight, .phase-list,
+   .text-link-button などはそのまま活用、または微調整) */
+
+/* startup-guide-detailed.html 特有のスタイル */
+.role-summary-box { /* 役割のサマリーを表示するボックス */
+    background-color: #f0f8ff; /* 明るい青系の背景 */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid #d1e7fd;
+}
+.role-summary-box h4 {
+    font-size: 1.2em;
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.role-summary-box .wb-list-dot li { /* 役割リストのマーカー調整 */
+    font-size: 1em;
+}
+
+.todo-list { /* TODOリストのスタイル (guide_main.htmlで定義済みのものを流用・調整) */
+    list-style-type: none;
+    padding-left: 0;
+}
+.todo-list > li {
+    background-color: #f9f9f9;
+    padding: 15px 20px; /* パディング調整 */
+    margin-bottom: 15px;
+    border-radius: 6px; /* 角丸調整 */
+    border-left: 5px solid #28a745; /* 緑系のアクセント */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.todo-list > li > strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.15em; /* 少し大きく */
+    color: #155724; /* 緑系の濃い色 */
+}
+.todo-list ul { /* TODO内のサブリスト */
+    padding-left: 18px;
+    font-size: 0.95em;
+    list-style-type: "↪ "; /* サブ項目を示すマーカー */
+}
+.todo-list ul li {
+    margin-bottom: 4px;
+    padding-left: 5px;
+}
+
+
+/* --- (既存の8. 9. 10. 11. のスタイルは変更なし、または適宜調整) --- */
+/* レスポンシブ調整 */
+@media (max-width: 992px) {
+    /* (既存のレスポンシブスタイルに、このページ特有の調整があれば追加) */
+    .role-summary-box { padding: 15px; }
+    .todo-list > li { padding: 12px 15px; }
+}
