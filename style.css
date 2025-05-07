@@ -1,0 +1,339 @@
+/* style.css - 詳細バージョン */
+
+/* --- 0. 基本リセット & グローバル設定 --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* paddingとborderを要素の幅・高さに含める */
+}
+
+html {
+    -webkit-text-size-adjust: 100%; /* iOSでの文字サイズ自動調整を防ぐ */
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* スマホでのタップ時のハイライトを消す */
+    scroll-behavior: smooth; /* スムーズスクロール (ページ内リンク用) */
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; /* より一般的なフォントファミリー */
+    font-size: 16px; /* 基本のフォントサイズ */
+    line-height: 1.7; /* 行間 */
+    color: #333333; /* 基本の文字色 */
+    background-color: #f4f6f8; /* 少し落ち着いた背景色 */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased; /* フォントのアンチエイリアス (Mac) */
+    -moz-osx-font-smoothing: grayscale;  /* フォントのアンチエイリアス (Firefox) */
+}
+
+/* --- 1. タイポグラフィ & リンク --- */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.75em; /* 見出し下の余白 */
+    font-weight: 600; /* 少し太めのフォントウェイト */
+    line-height: 1.3;
+    color: #212529; /* やや濃い見出し色 */
+}
+
+h1 { font-size: 2.4em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.2em; }
+
+p {
+    margin-bottom: 1em; /* 段落下の余白 */
+}
+
+a {
+    color: #007bff; /* プライマリカラー */
+    text-decoration: none;
+    transition: color 0.2s ease-in-out; /* ホバー時の色変化を滑らかに */
+}
+
+a:hover,
+a:focus {
+    color: #0056b3; /* ホバー/フォーカス時の色 */
+    text-decoration: underline;
+}
+
+a:focus { /* キーボード操作ユーザー向け */
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+strong, b {
+    font-weight: 600;
+}
+
+ul, ol {
+    padding-left: 20px; /* リストのインデント */
+    margin-bottom: 1em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* --- 2. レイアウト & コンテナ --- */
+.container {
+    width: 90%;
+    max-width: 1024px; /* 少し広めの最大幅 */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* --- 3. ヘッダー (`<header>`) --- */
+.site-header { /* HTML側で <header class="site-header"> と変更 */
+    background-color: #2c3e50; /* 落ち着いたダークブルー */
+    color: #ecf0f1; /* 明るいグレー系の文字色 */
+    padding: 50px 0 40px;
+    text-align: center;
+    border-bottom: 5px solid #3498db; /* アクセントボーダー */
+}
+
+.site-header h1 {
+    font-size: 2.8em; /* 少し大きめに */
+    margin-bottom: 0.3em;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* 軽いテキストシャドウ */
+}
+
+.site-header p {
+    font-size: 1.2em;
+    color: #bdc3c7; /* ヘッダー内のサブテキスト色 */
+    margin-bottom: 0;
+}
+
+/* --- 4. ナビゲーション (`<nav>`) --- */
+.main-navigation { /* HTML側で <nav class="main-navigation"> と変更 */
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky; /* スクロールしても追従するナビゲーション (任意) */
+    top: 0;
+    z-index: 1000; /* 他の要素より手前に */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.main-navigation h2 { /* スクリーンリーダー用 */
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.main-navigation ul {
+    list-style-type: none;
+    padding: 0; /* ulのデフォルトパディングを削除 */
+}
+
+.main-navigation ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.main-navigation ul li a {
+    font-weight: 500;
+    color: #555555;
+    padding: 10px 5px;
+    display: inline-block;
+    position: relative; /* 下線アニメーションのため */
+    text-decoration: none;
+}
+.main-navigation ul li a::after { /* ホバー時の下線アニメーション */
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.main-navigation ul li a:hover::after,
+.main-navigation ul li a:focus::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.main-navigation ul li a:hover,
+.main-navigation ul li a:focus {
+    color: #007bff;
+    text-decoration: none; /* デフォルトの下線を消す */
+}
+
+
+/* --- 5. メインコンテンツ (`<main>`) --- */
+.main-content { /* HTML側で <main class="main-content"> と変更 */
+    padding-top: 40px;
+    padding-bottom: 50px;
+    flex-grow: 1;
+}
+
+.main-content section {
+    margin-bottom: 45px;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+}
+
+.main-content section h2 {
+    font-size: 2em; /* セクションタイトルを少し大きく */
+    color: #34495e; /* セクションタイトルの色 */
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #3498db; /* プライマリカラー系のアクセント */
+}
+.main-content section h3 {
+    font-size: 1.6em;
+    color: #7f8c8d; /* サブ見出しの色 */
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* ヒーローセクション / 重要情報 (`#hero`) */
+#hero {
+    background-color: #eaf6ff; /* より明るい水色 */
+    border-left: 6px solid #3498db;
+    color: #2c3e50;
+}
+#hero h2 {
+    color: #2980b9; /* ヒーローセクションの見出し色 */
+    border-bottom: none;
+}
+#hero strong, #hero strong a {
+    color: #e74c3c; /* 強調文字をより鮮やかな赤に */
+    font-weight: bold;
+}
+#hero a {
+    font-weight: bold;
+}
+
+/* クイックリンク集 (`#quick-links`) */
+#quick-links ul {
+    list-style-type: none; /* マーカーをカスタムする場合 */
+    padding-left: 0;
+}
+#quick-links ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px; /* アイコン用のスペース */
+}
+#quick-links ul li::before { /* 簡単なリストマーカーアイコン */
+    content: "➔"; /* または FontAwesome などのアイコンフォント */
+    position: absolute;
+    left: 0;
+    color: #007bff;
+}
+#quick-links div + div {
+    margin-top: 25px;
+}
+
+/* 最新情報・お知らせ (`#latest-updates`) */
+#latest-updates ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+#latest-updates ul li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eeeeee; /* 区切り線 */
+}
+#latest-updates ul li:last-child {
+    border-bottom: none;
+}
+
+/* --- 5.1. お知らせ開閉ボタン (JS連携) --- */
+#latest-updates h2 button { /* <button id="toggle-updates-button"> */
+    background: none; border: none; font-size: inherit; font-weight: inherit;
+    color: inherit; padding: 0; cursor: pointer; text-align: left;
+    width: 100%; display: flex; align-items: center;
+}
+#latest-updates h2 button::after {
+    content: '▼'; font-size: 0.7em; margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+#latest-updates h2 button[aria-expanded="false"]::after {
+    transform: rotate(-90deg);
+}
+
+.collapsible-content { /* <div id="updates-content-area" class="collapsible-content"> */
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.4s ease-in-out; /* イージング変更 */
+    max-height: 1000px; /* 十分な高さ */
+    opacity: 1;
+}
+.collapsible-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0; /* 閉じた時の余白調整 */
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+/* --- 6. フッター (`<footer>`) --- */
+.site-footer { /* HTML側で <footer class="site-footer"> と変更 */
+    background-color: #2c3e50;
+    color: #95a5a6; /* フッターの文字色を少し明るく */
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.95em;
+    margin-top: auto;
+}
+.site-footer p {
+    margin-bottom: 0; /* フッター内のpタグのデフォルトマージンを消す */
+}
+
+/* --- 7. ユーティリティクラス (任意) --- */
+.text-center { text-align: center; }
+.text-bold { font-weight: bold; }
+.mt-1 { margin-top: 1em; }
+.mb-1 { margin-bottom: 1em; }
+/* ...など、よく使うスタイルをクラス化しておくと便利 */
+
+
+/* --- 8. レスポンシブデザイン --- */
+@media (max-width: 992px) { /* タブレットなど */
+    .site-header h1 { font-size: 2.4em; }
+    .main-content section h2 { font-size: 1.8em; }
+    .main-content section h3 { font-size: 1.4em; }
+}
+
+@media (max-width: 768px) { /* スマートフォン */
+    body { font-size: 15px; }
+    .site-header { padding: 30px 0 20px; }
+    .site-header h1 { font-size: 2em; }
+    .site-header p { font-size: 1em; }
+
+    .main-navigation ul li {
+        display: block; /* スマホでは縦並び */
+        margin: 12px 0;
+        text-align: center;
+    }
+    .main-navigation ul li a::after { /* スマホでは下線アニメーションをシンプルに */
+        display: none;
+    }
+    .main-navigation ul li a:hover,
+    .main-navigation ul li a:focus {
+        text-decoration: underline; /* スマホでは通常の下線 */
+    }
+
+
+    .main-content { padding-top: 20px; padding-bottom: 30px; }
+    .main-content section { padding: 20px; margin-bottom: 30px; }
+    .main-content section h2 { font-size: 1.6em; margin-bottom: 15px; padding-bottom: 8px; }
+    .main-content section h3 { font-size: 1.3em; margin-bottom: 10px; }
+
+    #quick-links ul li::before { display: none; } /* スマホではアイコン省略も検討 */
+    #quick-links ul li { padding-left: 0; }
+}
+
+@media (max-width: 576px) { /* さらに小さい画面 */
+    .site-header h1 { font-size: 1.8em; }
+    .main-content section h2 { font-size: 1.4em; }
+}
