@@ -936,3 +936,128 @@ body.guide-page-body { /* ガイドページ専用のbodyスタイル (任意) *
     .wb-step-list li::before { left: 15px; }
 
 }
+/* style.css */
+
+/* --- (既存の0. ～ 6. までのスタイルは変更なし) --- */
+/* --- (既存の7. 詳細ガイドページ共通スタイル の .page-layout-with-sidenav, .page-sidenav, .page-main-content, .content-section などは活用) --- */
+
+/* --- 7. 詳細ガイドページ共通スタイル (追記・調整) --- */
+
+/* (既存の .page-layout-with-sidenav, .page-sidenav, .page-main-content はそのまま) */
+
+/* .content-section 内の見出しスタイルの再確認・微調整 */
+.content-section.styled-section > h2 { /* このページのセクションタイトル */
+    font-size: 1.9em; /* 少し調整 */
+    /* 他のスタイルは既存のものを活用 */
+}
+.content-section.styled-section h3 { /* 「1. チーム情報」などのサブセクションタイトル */
+    font-size: 1.5em;
+    color: #34495e;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #bdc3c7; /* 少し控えめな下線 */
+}
+/* .content-section h4 は既存のスタイルでOKそう */
+
+
+/* コンセプトシート専用スタイル */
+.sheet-link-button-container {
+    text-align: center;
+    margin: 35px 0 40px; /* 上下のマージン調整 */
+}
+.sheet-link-button { /* スプレッドシートへのリンクボタン */
+    display: inline-block;
+    background-color: #1DB954; /* Spotifyの緑に近い色 (Google Sheetsの色に合わせても良い) */
+    color: white !important;
+    padding: 16px 35px; /* 少し大きめ */
+    font-size: 1.25em;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none !important;
+    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: none;
+}
+.sheet-link-button:hover {
+    background-color: #1aa34a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.item-explanation { /* 各項目の説明ブロック */
+    margin-bottom: 30px; /* 各説明ブロック間のマージン */
+    padding: 20px 25px;
+    background-color: #f9fafb; /* 少し背景色 */
+    border-left: 6px solid #007bff; /* 左のアクセントボーダー */
+    border-radius: 0 8px 8px 0; /* 右側だけ角丸 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.item-explanation h4 { /* 項目名 */
+    margin-top: 0;
+    color: #0056b3;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+.item-explanation p {
+    font-size: 1em; /* 説明文のフォントサイズ */
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+.item-explanation p:last-child {
+    margin-bottom: 0;
+}
+.example-text { /* 記入例のテキスト */
+    font-style: italic;
+    color: #555e68; /* 少し薄めの色 */
+    font-size: 0.95em;
+    display: block; /* 改行して表示 */
+    margin-top: 5px;
+    padding-left: 15px;
+    border-left: 3px solid #ced4da;
+}
+
+.section-highlight { /* セクション名を囲むスタイル */
+    display: inline-block;
+    background-color: #e0f2fe; /* 明るい青系 */
+    padding: 5px 12px; /* パディング調整 */
+    border-radius: 20px; /* 楕円風 */
+    font-weight: 700; /* 太字 */
+    color: #0284c7; /* 少し濃い青 */
+    border: 1px solid #7dd3fc;
+    font-size: 0.8em; /* 少し小さめ */
+    text-transform: uppercase; /* 大文字（任意） */
+    letter-spacing: 0.5px;
+}
+
+
+/* 既存の .wb-list スタイルを流用しつつ、このページ用に調整 */
+.wb-list.wb-list-check li::before { content: "✅"; color: #28a745; } /* チェックマークの色変更 */
+.tips-list.styled-list li {
+    list-style-type: none; /* マーカーを::beforeで制御するため */
+    padding-left: 35px; /* アイコン用のスペース */
+    margin-bottom: 12px;
+    background-color: #fff9e6; /* ヒントリストの背景色 */
+    padding: 12px 15px 12px 40px;
+    border-radius: 6px;
+    position: relative;
+    border: 1px solid #ffecb3;
+}
+.tips-list.styled-list li::before {
+    content: "💡";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3em;
+    color: #ffa000;
+}
+
+/* --- (既存の8. 9. 10. のスタイルは変更なし) --- */
+/* レスポンシブ調整 */
+@media (max-width: 992px) {
+    /* (既存のレスポンシブスタイル) */
+    .sheet-link-button { padding: 12px 25px; font-size: 1.1em; }
+    .item-explanation { padding: 15px 20px; }
+    .item-explanation h4 { font-size: 1.2em; }
+}
