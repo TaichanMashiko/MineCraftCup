@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="guide-page-body"> {/* 他のガイドページと共通のbodyクラスを想定 */}
+<body class="guide-page-body">
 
     <header class="site-header">
         <div class="container">
@@ -20,7 +20,7 @@
 
     <nav class="main-navigation">
         <div class="container">
-            <h2>メインナビゲーション</h2>
+            <h2>メインナビゲーション</h2> <!-- スクリーンリーダー用 -->
             <ul>
                 <li><a href="index.html">🏠 ホーム</a></li>
                 <li><a href="guide_main.html">🧭 テーマと進め方</a></li>
@@ -33,7 +33,7 @@
     <main class="main-content">
         <div class="container">
 
-            <section id="techniques-intro" class="content-section styled-section text-center-section"> {/* 中央揃え用のクラス追加 */}
+            <section id="techniques-intro" class="content-section styled-section text-center-section">
                 <h2>テクニックを学んで、創造の翼を広げよう！</h2>
                 <p>このページでは、Minecraftでの作品制作に役立つ様々なテクニックをカテゴリ別に紹介しています。<br>
                 興味のある分野を選んで、作品をより豊かに、より機能的にするためのヒントを見つけましょう。</p>
@@ -42,7 +42,7 @@
 
             <section id="technique-categories" class="content-section styled-section">
                 <h2>テクニックカテゴリ一覧</h2>
-                <div class="resource-grid-main technique-grid"> {/* index.htmlのカードグリッドを流用・調整 */}
+                <div class="resource-grid-main technique-grid">
                     <a href="techniques_building.html" class="resource-card-main tech-card">
                         <div class="card-icon">🏗️</div>
                         <h3>建築テクニック</h3>
@@ -75,7 +75,7 @@
                     <li><strong>ワールド設定の確認:</strong> ゲームモードは「クリエイティブ」に、コマンドブロックを使いたい場合は「チートの実行」をオンにしましょう。座標表示もオンにしておくと便利です。</li>
                     <li><strong>こまめなバックアップ:</strong> 大切な作品が消えてしまわないように、定期的にワールドのコピーをエクスポートして保存しましょう。特に大きな変更を加える前には必ず！</li>
                     <li><strong>共同作業のルール (もしチームで一つのワールドを編集する場合):</strong>
-                        <ul>
+                        <ul class="nested-list">
                             <li>誰がどのエリアを担当するか、事前に話し合って決めましょう。</li>
                             <li>同じ時間に同じ場所を編集すると、競合が起きる可能性があります。作業時間をずらすか、コミュニケーションを取りながら進めましょう。</li>
                             <li>大きな変更を加える場合は、他のメンバーに一言伝えてから行うとスムーズです。</li>
@@ -91,11 +91,11 @@
                 <ul class="link-list">
                     <li><a href="https://minecraft.fandom.com/ja/wiki/Minecraft_Wiki" target="_blank" rel="noopener noreferrer">Minecraft Wiki (日本語版)</a> - ブロックやコマンドの詳細情報が満載。</li>
                     <li><a href="https://education.minecraft.net/ja-jp/resources/explore-lessons" target="_blank" rel="noopener noreferrer">Minecraft Education レッスン検索</a> - 公式の教育コンテンツやチュートリアル。</li>
-                    <li>（ここにおすすめのYouTubeチャンネル名や特定の解説サイト名をいくつか具体的にリストアップ）</li>
+                    <li><!-- ここにおすすめのYouTubeチャンネル名や特定の解説サイト名をいくつか具体的にリストアップ --></li>
                     <li>（例: 「〇〇さんの建築講座チャンネル」 - 分かりやすい建築テクニックを紹介）</li>
                     <li>（例: 「マイクラコマンド研究所」 - 初心者向けコマンド解説が豊富）</li>
                 </ul>
-                <p>※外部サイトを利用する際は、情報が正確か、安全なサイトかを確認してから利用しましょう。</p>
+                <p class="caution-text">※外部サイトを利用する際は、情報が正確か、安全なサイトかを確認してから利用しましょう。</p>
             </section>
 
             <div style="text-align: center; margin-top: 40px; padding-bottom: 20px;">
