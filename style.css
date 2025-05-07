@@ -1,4 +1,4 @@
-/* style.css - リソースハブ 全力版 */
+/* style.css - リソースハブ 再掲・整理版 */
 
 /* --- 0. 基本リセット & グローバル設定 --- */
 *,
@@ -11,16 +11,16 @@ html {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     scroll-behavior: smooth;
-    font-size: 100%; /* 1rem = 16px (ブラウザデフォルト) */
+    font-size: 100%;
 }
 
 body {
     margin: 0;
-    font-family: 'Roboto', 'Noto Sans JP', sans-serif; /* メインにRoboto、日本語にNoto Sans JP */
+    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
     font-weight: 400;
-    line-height: 1.75; /* 少し広めの行間 */
-    color: #343a40; /* やや濃いめのグレー */
-    background-color: #f8f9fa; /* 清潔感のある背景色 */
+    line-height: 1.75;
+    color: #343a40;
+    background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -31,13 +31,13 @@ body {
 /* --- 1. タイポグラフィ & リンク --- */
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
-    margin-bottom: 0.6em; /* 見出し下の余白を少し詰める */
-    font-weight: 700; /* 太めの見出し */
+    margin-bottom: 0.6em;
+    font-weight: 700;
     line-height: 1.3;
     color: #212529;
 }
 
-h1 { font-size: 2.5rem; } /* rem単位に変更 */
+h1 { font-size: 2.5rem; }
 h2 { font-size: 1.8rem; }
 h3 { font-size: 1.3rem; }
 
@@ -46,7 +46,7 @@ p {
 }
 
 a {
-    color: #0077cc; /* 少し落ち着いたリンク色 */
+    color: #0077cc;
     text-decoration: none;
     transition: color 0.2s ease, opacity 0.2s ease;
 }
@@ -54,38 +54,37 @@ a {
 a:hover,
 a:focus {
     color: #0055aa;
-    text-decoration: none; /* ホバー時も下線はなし (カードデザインによる) */
+    text-decoration: none;
     opacity: 0.8;
 }
 
-a:focus-visible { /* より新しいフォーカススタイル */
+a:focus-visible {
     outline: 3px solid #0077cc;
     outline-offset: 3px;
-    border-radius: 2px; /* フォーカスリングに角丸 */
+    border-radius: 2px;
 }
 
-
 strong, b {
-    font-weight: 700; /* boldは700が一般的 */
+    font-weight: 700;
 }
 
 /* --- 2. レイアウト & コンテナ --- */
-.page-wrapper { /* ページ全体のラッパー */
+.page-wrapper {
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* フッターを最下部に押しやる */
+    flex-grow: 1;
 }
 
 .container {
     width: 90%;
-    max-width: 1000px; /* コンテンツの最大幅を少し調整 */
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 25px; /* 左右のパディングを少し広めに */
+    padding-left: 25px;
     padding-right: 25px;
 }
 
-.sp-only { /* スマートフォンでのみ表示 (改行用など) */
+.sp-only {
     display: none;
 }
 
@@ -100,8 +99,8 @@ strong, b {
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* ロゴとサブタイトルを両端に (画面幅が広い場合) */
-    flex-wrap: wrap; /* 画面幅が狭い場合は折り返す */
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .logo-area {
@@ -109,25 +108,23 @@ strong, b {
     align-items: center;
 }
 
-.logo-image {
-    height: 40px; /* ロゴの高さを指定 (調整してください) */
+.logo-image { /* ロゴを使用する場合のスタイル */
+    height: 40px;
     margin-right: 15px;
-    /* ロゴがない場合はこのスタイルは不要 */
 }
 
 .site-header-minimal h1 {
-    font-size: 1.6rem; /* ヘッダーのH1は少し小さめ、ナビゲーション的役割 */
+    font-size: 1.6rem;
     margin-bottom: 0;
     color: #333;
 }
 
 .project-subtitle {
     font-size: 0.9rem;
-    color: #6c757d; /* サブタイトルの色 */
+    color: #6c757d;
     margin-bottom: 0;
-    text-align: right; /* 右寄せ */
+    text-align: right;
 }
-
 
 /* --- 4. メインコンテンツ (`.main-content-focused`) --- */
 .main-content-focused {
@@ -158,7 +155,7 @@ strong, b {
     font-size: 1.1rem;
     opacity: 0.9;
     margin-bottom: 20px;
-    max-width: 700px; /* テキスト幅を制限して読みやすく */
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -176,7 +173,7 @@ strong, b {
 .resource-navigation {
     margin-bottom: 50px;
 }
-.resource-navigation > h2 { /* セクションタイトル */
+.resource-navigation > h2 {
     text-align: center;
     font-size: 2rem;
     color: #343a40;
@@ -184,7 +181,7 @@ strong, b {
     position: relative;
     padding-bottom: 15px;
 }
-.resource-navigation > h2::after { /* タイトルの下線装飾 */
+.resource-navigation > h2::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -196,10 +193,9 @@ strong, b {
     border-radius: 2px;
 }
 
-
 .resource-grid-main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* レスポンシブなカード配置 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
@@ -217,36 +213,36 @@ strong, b {
 }
 
 .resource-card-main:hover,
-.resource-card-main:focus-within { /* カード全体にフォーカスが当たった場合も */
+.resource-card-main:focus-within {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 12px 30px rgba(0, 123, 255, 0.15);
-    text-decoration: none;
+    text-decoration: none; /* text-decorationがaタグのhoverで変わらないように */
+    color: #343a40; /* colorもaタグのhoverで変わらないように */
 }
-.resource-card-main:focus-visible { /* カード自体へのフォーカススタイル */
+.resource-card-main:focus-visible {
      outline: 3px solid #007bff;
-     outline-offset: 0px; /* カードの境界に合わせる */
+     outline-offset: 0px;
 }
-
 
 .card-icon {
-    font-size: 2.5rem; /* 絵文字アイコンのサイズ */
+    font-size: 2.5rem;
     margin-bottom: 15px;
     line-height: 1;
     color: #007bff;
 }
 
-.resource-card-main h3 {
+.resource-card-main h3 { /* カード内のタイトル */
     font-size: 1.4rem;
     color: #2c3e50;
     margin-bottom: 10px;
-    line-height: 1.3; /* 2行になった場合も考慮 */
+    line-height: 1.3;
 }
 
 .resource-card-main p {
     font-size: 0.95rem;
     color: #5a6268;
     margin-bottom: 0;
-    flex-grow: 1; /* 説明文がカードの高さを埋める */
+    flex-grow: 1;
 }
 
 /* 外部リンクセクション */
@@ -255,11 +251,14 @@ strong, b {
     padding: 30px 0;
     background-color: #ffffff;
     border-radius: 8px;
-    margin-top: 40px;
+    margin-top: 40px; /* 前のセクションとの間隔 */
+    border: 1px solid #e0e2e5;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03); /* 少し控えめな影 */
 }
 .external-links-section h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    color: #343a40;
 }
 .external-links-section ul {
     list-style: none;
@@ -273,7 +272,6 @@ strong, b {
     font-size: 1.1rem;
 }
 
-
 /* --- 5. フッター (`.site-footer-minimal`) --- */
 .site-footer-minimal {
     background-color: #343a40;
@@ -281,7 +279,7 @@ strong, b {
     text-align: center;
     padding: 25px 0;
     font-size: 0.9rem;
-    margin-top: auto; /* メインコンテンツが短くてもフッターを最下部に */
+    margin-top: auto;
 }
 .site-footer-minimal p {
     margin-bottom: 0;
@@ -289,11 +287,11 @@ strong, b {
 
 /* --- 6. レスポンシブデザイン --- */
 @media (max-width: 768px) {
-    html { font-size: 93.75%; } /* 1rem = 15px */
+    html { font-size: 93.75%; }
     .container { width: 92%; padding-left: 15px; padding-right: 15px;}
 
     .header-content {
-        flex-direction: column; /* ヘッダー内を縦並び */
+        flex-direction: column;
         align-items: center;
     }
     .site-header-minimal h1 {
@@ -306,10 +304,10 @@ strong, b {
     }
     .project-subtitle {
         font-size: 0.85rem;
-        text-align: center; /* サブタイトルも中央に */
+        text-align: center;
         margin-top: 5px;
     }
-    .sp-only { display: block; } /* スマホで改行表示 */
+    .sp-only { display: block; }
 
 
     .hero-banner { padding: 40px 25px; margin-bottom: 40px; }
@@ -317,7 +315,7 @@ strong, b {
     .hero-banner p { font-size: 1rem; }
 
     .resource-navigation > h2 { font-size: 1.6rem; margin-bottom: 30px; }
-    .resource-grid-main { grid-template-columns: 1fr; gap: 25px; } /* スマホでは1カラム */
+    .resource-grid-main { grid-template-columns: 1fr; gap: 25px; }
     .resource-card-main { padding: 25px; }
     .resource-card-main h3 { font-size: 1.3rem; }
 
@@ -326,7 +324,7 @@ strong, b {
 }
 
 @media (max-width: 480px) {
-    html { font-size: 87.5%; } /* 1rem = 14px */
+    html { font-size: 87.5%; }
     .site-header-minimal h1 { font-size: 1.3rem; }
     .hero-banner h2 { font-size: 1.6rem; }
     .resource-card-main h3 { font-size: 1.2rem; }
