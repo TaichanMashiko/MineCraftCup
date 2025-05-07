@@ -9,56 +9,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* このページ固有のスタイル */
-        .sheet-link-button-container {
-            text-align: center;
-            margin: 30px 0;
-        }
+        /* このページ固有のスタイル (前回定義したものを流用・調整) */
+        .sheet-link-button-container { text-align: center; margin: 30px 0; }
         .sheet-link-button {
-            display: inline-block;
-            background-color: #28a745; /* Googleスプレッドシートの緑をイメージ */
-            color: white !important;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            font-weight: bold;
-            border-radius: 8px;
-            text-decoration: none !important;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block; background-color: #28a745; color: white !important;
+            padding: 15px 30px; font-size: 1.2em; font-weight: bold; border-radius: 8px;
+            text-decoration: none !important; transition: background-color 0.3s ease, transform 0.2s ease;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
-        .sheet-link-button:hover {
-            background-color: #218838;
-            transform: translateY(-2px);
-        }
+        .sheet-link-button:hover { background-color: #218838; transform: translateY(-2px); }
         .item-explanation {
-            margin-bottom: 25px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-left: 5px solid #007bff;
-            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px; padding: 20px; background-color: #f9f9f9;
+            border-left: 5px solid #007bff; border-radius: 0 8px 8px 0;
         }
-        .item-explanation h4 {
-            margin-top: 0;
-            color: #0056b3;
-            font-size: 1.3em;
-        }
-        .item-explanation p:last-child {
-            margin-bottom: 0;
-        }
-        .example-text {
-            font-style: italic;
-            color: #555;
-            font-size: 0.95em;
-        }
-        .section-highlight { /* セクション名を少し目立たせる */
-            display: inline-block;
-            background-color: #e9f7fd;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-            color: #007bff;
-            border: 1px solid #bee5eb;
-        }
+        .item-explanation h4 { margin-top: 0; color: #0056b3; font-size: 1.3em; }
+        .item-explanation p:last-child { margin-bottom: 0; }
+        .example-text { font-style: italic; color: #555; font-size: 0.95em; display: block; margin-top: 5px; padding-left: 15px; border-left: 3px solid #ced4da;}
     </style>
 </head>
 <body class="guide-page-body">
@@ -87,17 +53,21 @@
         <div class="container page-layout-with-sidenav">
 
             <aside class="page-sidenav">
-                <h3>目次</h3>
+                <h3>コンセプトシート項目</h3>
                 <ul>
-                    <li><a href="#introduction" class="sidenav-link">はじめに：なぜ必要？</a></li>
-                    <li><a href="#how-to-use" class="sidenav-link">コンセプトシートの使い方</a></li>
-                    <li><a href="#section1-team-info" class="sidenav-link">1. チーム情報</a></li>
-                    <li><a href="#section2-concept" class="sidenav-link">2. 作品コンセプト</a></li>
-                    <li><a href="#section3-overview" class="sidenav-link">3. まちの概要</a></li>
-                    <li><a href="#section4-story" class="sidenav-link">4. ストーリー性 (任意)</a></li>
-                    <li><a href="#section5-tech" class="sidenav-link">5. 技術的要素</a></li>
-                    <li><a href="#section6-references" class="sidenav-link">6. 参考資料</a></li>
-                    <li><a href="#section7-others" class="sidenav-link">7. その他</a></li>
+                    <li><a href="#introduction" class="sidenav-link">はじめに</a></li>
+                    <li><a href="#how-to-use" class="sidenav-link">シートの使い方</a></li>
+                    <li><a href="#item-team-name" class="sidenav-link">チーム名</a></li>
+                    <li><a href="#item-team-members" class="sidenav-link">チームメンバー</a></li>
+                    <li><a href="#item-work-title" class="sidenav-link">作品タイトル (仮)</a></li>
+                    <li><a href="#item-catchphrase" class="sidenav-link">キャッチフレーズ</a></li>
+                    <li><a href="#item-target-disaster" class="sidenav-link">ターゲットとする災害</a></li>
+                    <li><a href="#item-main-theme" class="sidenav-link">作品の主なテーマ</a></li>
+                    <li><a href="#item-resilient-features" class="sidenav-link">レジリエントなまちの特徴</a></li>
+                    <li><a href="#item-setting" class="sidenav-link">まちの舞台設定</a></li>
+                    <li><a href="#item-facilities" class="sidenav-link">主な施設・エリア</a></li>
+                    <li><a href="#item-mechanisms" class="sidenav-link">レジリエンスの仕組み</a></li>
+                    <li><a href="#item-story" class="sidenav-link">物語・シナリオ</a></li>
                     <li><a href="#tips-for-filling" class="sidenav-link">記入のヒント</a></li>
                 </ul>
             </aside>
@@ -106,14 +76,7 @@
 
                 <section id="introduction" class="content-section styled-section">
                     <h2>はじめに：コンセプトシートってなぜ必要？</h2>
-                    <p>「コンセプトシート」は、皆さんのチームが創り上げるMinecraftの「まち」の設計図であり、アイデアを具体的に整理するための大切なツールです。このシートに考えをまとめることで、以下のメリットがあります。</p>
-                    <ul class="wb-list wb-list-check">
-                        <li>チームメンバー全員が、作品の目的や方向性を共有できる。</li>
-                        <li>アイデアが整理され、より具体的で実現可能な計画になる。</li>
-                        <li>制作途中で迷ったときの道しるべになる。</li>
-                        <li>先生や他の人に作品の意図を伝えやすくなる。</li>
-                    </ul>
-                    <p>素晴らしい作品作りの第一歩として、チームで協力してこのシートを完成させましょう！</p>
+                    <p>「コンセプトシート」は、皆さんのチームが創り上げるMinecraftの「まち」の設計図であり、アイデアを具体的に整理するための大切なツールです。このシートに考えをまとめることで、チーム全員が作品の目的や方向性を共有でき、制作がスムーズに進みます。</p>
                 </section>
 
                 <section id="how-to-use" class="content-section styled-section">
@@ -126,118 +89,35 @@
                     </div>
                     <p><strong>記入ルールとお願い：</strong></p>
                     <ul class="tips-list styled-list">
-                        <li>必ず自分のチームのタブに入力してください。他のチームのタブを編集しないように注意しましょう。</li>
-                        <li>「説明・記入例」の列をよく読んで、何を書くべきか理解してから記入しましょう。</li>
-                        <li>「記入欄」に、チームで話し合った内容を具体的に記述してください。</li>
-                        <li>スプレッドシートなので、行が足りなくなったら自由に追加して構いません。</li>
-                        <li>定期的に内容を見直し、プロジェクトの進捗に合わせて更新していきましょう。</li>
+                        <li>必ず自分のチームのタブに入力してください。</li>
+                        <li>「説明・記入例」をよく読んで、何を書くべきか理解してから記入しましょう。</li>
+                        <li>スプレッドシートの行が足りなくなったら自由に追加して構いません。</li>
+                        <li>定期的に内容を見直し、更新していきましょう。</li>
                     </ul>
                 </section>
 
-                <section id="section1-team-info" class="content-section styled-section">
-                    <h2><span class="section-highlight">1. チーム情報</span> - 私たちはこんなチーム！</h2>
-                    <div class="item-explanation">
-                        <h4>チーム名</h4>
-                        <p>チームの顔となる名前を決めましょう！作品のテーマに合っていたり、覚えやすかったりすると良いですね。</p>
-                        <p class="example-text">例: チームA、未来クリエイターズ、レジリエンス防衛隊</p>
-                    </div>
-                    <div class="item-explanation">
-                        <h4>チームメンバー (役割)</h4>
-                        <p>誰がどんな役割を担当するかを明確に記載します。役割分担については <a href="guide_main.html#step1-team-start" class="text-link-button">プロジェクトの進め方ガイド</a> を参考にしてください。</p>
-                        <p class="example-text">例: リーダー:山田太郎、建築:佐藤花子(サブ:企画)、コマンド:鈴木一郎</p>
-                    </div>
-                    <div class="item-explanation">
-                        <h4>連絡先 (代表者)</h4>
-                        <p>先生や大会運営との連絡が必要になった場合に備え、チームの代表者の連絡先（メールアドレスや学校で使っているチャットIDなど）を記載します。</p>
-                    </div>
-                </section>
-
-                <section id="section2-concept" class="content-section styled-section">
-                    <h2><span class="section-highlight">2. 作品コンセプト</span> - 私たちの「まち」の魂！</h2>
-                    <div class="item-explanation">
-                        <h4>作品タイトル (仮)</h4>
-                        <p>皆さんが作る「まち」に、ワクワクするような名前を付けましょう。後で変更してもOKです。</p>
-                        <p class="example-text">例: 水と緑の循環都市「アクアポリス」、希望の灯台「レジリエンス・ポート」</p>
-                    </div>
-                    <div class="item-explanation">
-                        <h4>キャッチフレーズ / 一言アピール</h4>
-                        <p>作品の魅力をギュッと一言で表す言葉を考えましょう。</p>
-                        <p class="example-text">例: 災害に負けない！自然と共生する未来のまち！、AIと住民の力で困難を乗り越える！</p>
-                    </div>
-                    <div class="item-explanation">
-                        <h4>ターゲットとする災害</h4>
-                        <p>自分たちの「まち」が、どのような種類の災害に立ち向かうのかを具体的に設定します。一つでも複数でも構いません。</p>
-                        <p class="example-text">例: 大規模水害とそれに伴う長期停電、首都直下型地震と火災旋風、未知の感染症パンデミック</p>
-                    </div>
-                    <div class="item-explanation">
-                        <h4>作品の主なテーマ / 伝えたいメッセージ</h4>
-                        <p>この作品を通じて、何を感じてほしいか、何を伝えたいかを明確にします。</p>
-                        <p class="example-text">例: 自然エネルギーの可能性、地域コミュニティの絆の重要性、テクノロジーによる防災の未来</p>
-                    </div>
-                    <div class="item-explanation">
-                        <h4>私たちの「レジリエントなまち」の特徴 (3～5つ)</h4>
-                        <p>作品の最も重要なオリジナリティ部分です。「レジリエンス」を実現するために、自分たちのまちが持つユニークな特徴や仕組みを3～5つ挙げ、それぞれ簡潔に説明します。</p>
-                        <p class="example-text">例: 1. 可動式防潮堤と立体避難路の融合 / 2. 各家庭に小型バイオマス発電とスマートグリッドを導入 / 3. ドローンを活用したリアルタイム被災状況把握と物資輸送システム</p>
-                    </div>
-                </section>
-
-                <section id="section3-overview" class="content-section styled-section">
-                    <h2><span class="section-highlight">3. まちの概要</span> - 「まち」の具体的な姿</h2>
-                    <div class="item-explanation">
-                        <h4>まちの舞台設定 (場所、時代など)</h4>
-                        <p>作品の背景となる設定を考えます。これがまちのデザインや機能に影響します。</p>
-                        <p class="example-text">例: 2050年の東京湾岸エリア、山に囲まれた未来の集落、砂漠化が進む地域のオアシス都市</p>
-                    </div>
-                    <div class="item-explanation">
-                        <h4>主な施設・エリアとその機能</h4>
-                        <p>まちの中にどのような主要な建物やエリアがあり、それぞれがどんな役割を果たすのかをリストアップします。Minecraftで具体的に建築するものをイメージしながら書き出しましょう。</p>
-                        <p class="example-text">・中央防災センター: 災害対策本部、情報集約、ドローン発着拠点<br>・多機能型避難シェルター: 居住区画、医療施設、備蓄倉庫、エネルギー供給<br>・垂直農場エリア: 食料自給、地域住民の協働スペース</p>
-                    </div>
-                    <div class="item-explanation">
-                        <h4>レジリエンスを実現するための具体的な仕組みや工夫</h4>
-                        <p>「2. 作品コンセプト」で挙げた「特徴」を、Minecraftの世界でどのように表現し、機能させるのかを具体的に記述します。コマンドやレッドストーン、MakeCodeなどの技術をどう使うかも考えましょう。</p>
-                        <p class="example-text">・コマンドブロックで特定の時間に洪水を発生させ、防潮堤が自動で上昇する様子を再現する。<br>・各家庭の太陽光パネル（装飾）と連動して、夜間に街灯が自動点灯するレッドストーン回路を組む。</p>
-                    </div>
-                </section>
-
-                <section id="section4-story" class="content-section styled-section">
-                    <h2><span class="section-highlight">4. ストーリー性 (任意)</span> - 「まち」に命を吹き込む</h2>
-                    <p>もし作品に物語性を持たせたい場合は、このまちで暮らす人々の様子や、実際に災害が発生した際にどのようなドラマが展開されるのか、といったシナリオを考えてみましょう。作品に深みが増し、見ている人の共感を呼びやすくなります。（この項目は任意です）</p>
-                    <p class="example-text">例: 主人公の少女が、AIドローン「パト」と共に、水害に見舞われたまちで家族を探し、仲間と協力して困難を乗り越えていく物語。</p>
-                </section>
-
-                <section id="section5-tech" class="content-section styled-section">
-                    <h2><span class="section-highlight">5. 技術的要素</span> - 私たちのチャレンジ！</h2>
-                    <div class="item-explanation">
-                        <h4>使用予定のMinecraftの機能</h4>
-                        <p>作品制作で活用しようと考えているMinecraftの具体的な機能（コマンドブロック、レッドストーン回路、MakeCode、配布ワールドの特殊ブロックなど）をリストアップします。</p>
-                        <p class="example-text">例: コマンドブロック(/fill, /clone, /tp, /effect)、感圧板とピストンを使った自動ドア、MakeCodeによるエージェントの自動建築</p>
-                    </div>
-                    <div class="item-explanation">
-                        <h4>特に挑戦したい技術や表現</h4>
-                        <p>チームとして、技術的に特に力を入れたい部分や、新しい表現に挑戦したいことがあれば記述します。</p>
-                        <p class="example-text">例: MakeCodeで複数のエージェントを連携させて大規模な復旧作業をシミュレートする、レッドストーンで複雑な情報表示システムを構築する</p>
-                    </div>
-                </section>
-
-                <section id="section6-references" class="content-section styled-section">
-                    <h2><span class="section-highlight">6. 参考資料</span> - 学びの源泉</h2>
-                    <p>作品のアイデアや技術的な実装で参考にしたウェブサイト、書籍、動画、他のMinecraft作品などがあれば、その情報源（URLやタイトルなど）を記録しておきましょう。後で見返したり、他の人に説明したりする際に役立ちます。</p>
-                </section>
-
-                <section id="section7-others" class="content-section styled-section">
-                    <h2><span class="section-highlight">7. その他</span> -自由なメモスペース</h2>
-                    <p>上記の項目に当てはまらないけれど、チーム内で共有しておきたいメモ、課題、新しいアイデア、疑問点などを自由に記述してください。</p>
-                </section>
+                {/* ----- 各項目の説明 ----- */}
+                <div id="item-team-name" class="item-explanation"><h4>チーム名</h4><p>チームの顔となる名前を決めましょう！<br><span class="example-text">例: 未来クリエイターズ、レジリエンス防衛隊</span></p></div>
+                <div id="item-team-members" class="item-explanation"><h4>チームメンバー (1～5)</h4><p>チームのメンバー名を記載します。各メンバーの主な役割も一緒に書いておくと分かりやすいです。<br><span class="example-text">例: 山田太郎 (リーダー、建築担当)、佐藤花子 (コマンド担当、企画) など</span></p></div>
+                <div id="item-work-title" class="item-explanation"><h4>作品タイトル (仮)</h4><p>皆さんが作る「まち」に、ワクワクするような名前を付けましょう。後で変更してもOKです。<br><span class="example-text">例: 水と緑の循環都市「アクアポリス」、希望の灯台「レジリエンス・ポート」</span></p></div>
+                <div id="item-catchphrase" class="item-explanation"><h4>キャッチフレーズ/一言アピール</h4><p>作品の魅力をギュッと一言で表す言葉を考えましょう。<br><span class="example-text">例: 災害に負けない！自然と共生する未来のまち！、AIと住民の力で困難を乗り越える！</span></p></div>
+                <div id="item-target-disaster" class="item-explanation"><h4>ターゲットとする災害</h4><p>自分たちの「まち」が、どのような種類の災害に立ち向かうのかを具体的に設定します。<br><span class="example-text">例: 大規模水害とそれに伴う長期停電、首都直下型地震と火災旋風</span></p></div>
+                <div id="item-main-theme" class="item-explanation"><h4>作品の主なテーマ/伝えたいメッセージ</h4><p>この作品を通じて、何を感じてほしいか、何を伝えたいかを明確にします。<br><span class="example-text">例: 自然エネルギーの可能性、地域コミュニティの絆の重要性</span></p></div>
+                <div id="item-resilient-features" class="item-explanation"><h4>私たちの「レジリエントなまち」の特徴 (3～5つ)</h4><p>作品の最も重要なオリジナリティ部分です。「レジリエンス」を実現するために、自分たちのまちが持つユニークな特徴や仕組みを3～5つ挙げ、それぞれ簡潔に説明します。<br><span class="example-text">例: 1. 可動式防潮堤と立体避難路の融合 / 2. AIによるリアルタイム災害予測・避難誘導システム</span></p></div>
+                <div id="item-setting" class="item-explanation"><h4>まちの舞台設定 (場所、時代など)</h4><p>作品の背景となる設定を考えます。これがまちのデザインや機能に影響します。<br><span class="example-text">例: 2050年の東京湾岸エリア、山に囲まれた未来の集落</span></p></div>
+                <div id="item-facilities" class="item-explanation"><h4>主な施設・エリアとその機能</h4><p>まちの中にどのような主要な建物やエリアがあり、それぞれがどんな役割を果たすのかをリストアップします。Minecraftで具体的に建築するものをイメージしながら書き出しましょう。<br><span class="example-text">・中央防災センター: 災害対策本部、情報集約<br>・多機能型避難シェルター: 居住区画、医療施設、備蓄倉庫</span></p></div>
+                <div id="item-mechanisms" class="item-explanation"><h4>レジリエンスを実現するための具体的な仕組みや工夫</h4><p>「レジリエントなまちの特徴」を、Minecraftの世界でどのように表現し、機能させるのかを具体的に記述します。コマンドやレッドストーン、MakeCodeなどの技術をどう使うかも考えましょう。<br><span class="example-text">・コマンドブロックで洪水をシミュレートし、防潮堤が自動で上昇する様子を再現する。</span></p></div>
+                <div id="item-story" class="item-explanation"><h4>このまちで暮らす人々の物語や、災害発生時のシナリオ (任意)</h4><p>もし作品に物語性を持たせたい場合は、このまちで暮らす人々の様子や、実際に災害が発生した際にどのようなドラマが展開されるのか、といったシナリオを考えてみましょう。（この項目は任意です）<br><span class="example-text">例: 主人公の少女が、AIドローンと共に、水害に見舞われたまちで家族を探し、仲間と協力して困難を乗り越えていく物語。</span></p></div>
+                {/* ----- 各項目の説明ここまで ----- */}
 
                 <section id="tips-for-filling" class="content-section styled-section">
                     <h2>コンセプトシート記入のヒント</h2>
                     <ul class="wb-list wb-list-star">
-                        <li><strong>具体的であること:</strong> 抽象的な言葉だけでなく、できるだけ具体的に記述しましょう。
-                        <li><strong>チーム全員で話し合う:</strong> 一人で考えるのではなく、チームメンバー全員で意見を出し合い、合意形成をしながら進めましょう。</li>
-                        <li><strong>図やスケッチも活用:</strong> 言葉だけでは伝えにくいアイデアは、簡単なスケッチや図を別途用意し、共有フォルダなどに保存して、このシートからリンクするのも良い方法です。</li>
-                        <li><strong>定期的に見直す:</strong> プロジェクトが進むにつれて、新しい発見や変更点が出てくるかもしれません。コンセプトシートも定期的に見直し、必要に応じて更新しましょう。</li>
-                        <li><strong>楽しんで書く！:</strong> ワクワクするような未来のまちを想像しながら、楽しみながら記入することが、良い作品作りの第一歩です！</li>
+                        <li><strong>具体的であること:</strong> できるだけ具体的に記述しましょう。</li>
+                        <li><strong>チーム全員で話し合う:</strong> みんなで意見を出し合いながら進めましょう。</li>
+                        <li><strong>図やスケッチも活用:</strong> 言葉だけでは伝えにくいアイデアは、別途スケッチなどを用意し、共有フォルダに保存するのも良い方法です。</li>
+                        <li><strong>定期的に見直す:</strong> プロジェクトが進むにつれて、コンセプトシートも更新していきましょう。</li>
+                        <li><strong>楽しんで書く！:</strong> ワクワクする未来のまちを想像しながら、楽しみながら記入しましょう！</li>
                     </ul>
                 </section>
 
