@@ -1697,3 +1697,62 @@ body.guide-page-body { /* ガイドページ専用のbodyスタイル (任意) *
     .technique-example h3 { font-size: 1.4em; }
     .technique-example h4 { font-size: 1.1em; }
 }
+
+/* style.css */
+
+/* --- (既存のスタイルは変更なしの部分は省略) --- */
+
+/* --- 7. 詳細ガイドページ共通スタイル (追記・調整) --- */
+/* (既存の .page-layout-with-sidenav, .page-sidenav, .page-main-content,
+   .content-section.styled-section, .wb-list, .tips-list.styled-list,
+   .step-list, .text-link-button などは活用・微調整) */
+
+/* --- 7.x.x techniques_commands.html 特有のスタイル --- */
+.command-example-box { /* 各コマンド例を囲むボックス */
+    background-color: #f0f2f5; /* 少し濃いめの背景 */
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    border: 1px solid #d1d8e0;
+}
+.command-example-box h4 { /* コマンド名 */
+    font-family: 'Courier New', Courier, monospace; /* コマンドなので等幅フォント */
+    font-size: 1.25em; /* 少し調整 */
+    color: #c0392b; /* コマンドっぽい赤系 */
+    margin-top: 0;
+    margin-bottom: 10px;
+    background-color: #ecf0f1; /* コマンド名の背景 */
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block; /* 背景を文字幅に合わせる */
+}
+.command-example-box p {
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+.command-example-box pre { /* コマンド記述部分 */
+    background-color: #2c3e50; /* ダークな背景 */
+    color: #ecf0f1; /* 明るい文字色 */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; /* 横に長いコマンドはスクロール */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+.command-example-box pre code {
+    font-family: inherit; /* 親のフォントを継承 */
+    color: inherit;
+}
+
+.technique-example { /* 既存の建築テクニックのスタイルを流用・調整 */
+    /* (既存の .technique-example スタイルを適用しつつ、必要なら上書き) */
+    /* 例えば、コマンドギミック用の背景色や枠線を変えるなど */
+    border-left: 5px solid #8e44ad; /* コマンドギミックは紫系のアクセント */
+    background-color: #f5f3f7;
+}
+.technique-example h3 { /* ギミック名 */
+    color: #8e44ad; /* 紫系 */
+}
+
+/* .step-list や .tips-list-item は既存のスタイルが適用される想定 */
