@@ -1,4 +1,4 @@
-/* style.css - リソースハブ 再掲・整理版 */
+/* style.css - リソースハブ 全力版 (カードレイアウト調整) */
 
 /* --- 0. 基本リセット & グローバル設定 --- */
 *,
@@ -77,11 +77,11 @@ strong, b {
 
 .container {
     width: 90%;
-    max-width: 1000px;
+    max-width: 1140px; /* ★ カード3列表示のために少し広げる */
     margin-left: auto;
     margin-right: auto;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 20px; /* ★ 左右パディングを少し調整 */
+    padding-right: 20px;
 }
 
 .sp-only {
@@ -108,7 +108,7 @@ strong, b {
     align-items: center;
 }
 
-.logo-image { /* ロゴを使用する場合のスタイル */
+.logo-image {
     height: 40px;
     margin-right: 15px;
 }
@@ -195,9 +195,25 @@ strong, b {
 
 .resource-grid-main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    /* ★ デフォルトは1列（スマホ） */
+    grid-template-columns: 1fr;
 }
+
+/* ★ タブレットサイズ以上で2列 */
+@media (min-width: 768px) {
+    .resource-grid-main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ★ PCサイズ以上で3列 */
+@media (min-width: 1024px) { /* 3列表示のブレークポイント調整 */
+    .resource-grid-main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 
 .resource-card-main {
     display: flex;
@@ -210,14 +226,15 @@ strong, b {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
     color: #343a40;
+    min-height: 280px; /* ★ カードの高さをある程度揃えるための最小値 (内容は可変なので注意) */
 }
 
 .resource-card-main:hover,
 .resource-card-main:focus-within {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 12px 30px rgba(0, 123, 255, 0.15);
-    text-decoration: none; /* text-decorationがaタグのhoverで変わらないように */
-    color: #343a40; /* colorもaタグのhoverで変わらないように */
+    text-decoration: none;
+    color: #343a40;
 }
 .resource-card-main:focus-visible {
      outline: 3px solid #007bff;
@@ -231,7 +248,7 @@ strong, b {
     color: #007bff;
 }
 
-.resource-card-main h3 { /* カード内のタイトル */
+.resource-card-main h3 {
     font-size: 1.4rem;
     color: #2c3e50;
     margin-bottom: 10px;
@@ -251,9 +268,9 @@ strong, b {
     padding: 30px 0;
     background-color: #ffffff;
     border-radius: 8px;
-    margin-top: 40px; /* 前のセクションとの間隔 */
+    margin-top: 40px;
     border: 1px solid #e0e2e5;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03); /* 少し控えめな影 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
 }
 .external-links-section h2 {
     font-size: 1.5rem;
@@ -285,8 +302,12 @@ strong, b {
     margin-bottom: 0;
 }
 
-/* --- 6. レスポンシブデザイン --- */
-@media (max-width: 768px) {
+/* --- 6. レスポンシブデザイン (重複する部分は上記に統合) --- */
+@media (max-width: 1023px) { /* ★ 3列表示をやめるブレークポイント (768pxより前) */
+    /* .resource-grid-main は2列以下になる */
+}
+
+@media (max-width: 767px) { /* ★ スマホ表示 (768px未満) */
     html { font-size: 93.75%; }
     .container { width: 92%; padding-left: 15px; padding-right: 15px;}
 
@@ -309,14 +330,13 @@ strong, b {
     }
     .sp-only { display: block; }
 
-
     .hero-banner { padding: 40px 25px; margin-bottom: 40px; }
     .hero-banner h2 { font-size: 1.8rem; }
     .hero-banner p { font-size: 1rem; }
 
     .resource-navigation > h2 { font-size: 1.6rem; margin-bottom: 30px; }
-    .resource-grid-main { grid-template-columns: 1fr; gap: 25px; }
-    .resource-card-main { padding: 25px; }
+    /* .resource-grid-main はここで1列になる */
+    .resource-card-main { padding: 25px; min-height: auto; /* スマホでは高さ自動 */ }
     .resource-card-main h3 { font-size: 1.3rem; }
 
     .external-links-section h2 { font-size: 1.3rem; }
