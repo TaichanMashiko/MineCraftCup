@@ -337,3 +337,66 @@ li {
     .site-header h1 { font-size: 1.8em; }
     .main-content section h2 { font-size: 1.4em; }
 }
+
+/* style.css (チームナビゲーション用の追記) */
+
+#team-navigation {
+    text-align: center; /* セクション内のテキストを中央に */
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* レスポンシブなグリッド */
+    gap: 20px; /* カード間の隙間 */
+    margin-top: 20px;
+}
+
+.team-link-card {
+    display: block;
+    background-color: #ffffff;
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.team-link-card:hover,
+.team-link-card:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: #007bff;
+    text-decoration: none;
+}
+
+.team-link-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #0056b3; /* チーム名のヘッダー色 */
+    font-size: 1.5em;
+}
+
+.team-link-card p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* クイックリンク集をシンプルなリスト形式に変更する場合の例 */
+.quick-link-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.quick-link-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.quick-link-list li:last-child {
+    border-bottom: none;
+}
+.quick-link-list li a::before {
+    content: "🔗 "; /* リンクを示す絵文字 */
+    margin-right: 5px;
+}
