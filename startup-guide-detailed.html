@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>スタートアップガイド (詳細版) - 第7回 Minecraftカップ プロジェクトハブ</title>
+    <title>プロジェクトスケジュール - 第7回 Minecraftカップ プロジェクトハブ</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <!-- タイムライン専用のインラインスタイルは削除し、style.cssに統合します -->
 </head>
-<body>
+<body class="guide-page-body"> {/* guide_main.html と同様のbodyクラス */}
 
     <header class="site-header">
         <div class="container">
-            <h1>🚀 スタートアップガイド (詳細版)</h1>
-            <p>～何から始めればいいかわからない君へ～</p>
+            <h1>🗓️ プロジェクトスケジュール</h1>
+            <p>～計画的に進めて、最高の作品を完成させよう！～</p>
         </div>
     </header>
 
@@ -20,139 +24,119 @@
             <h2>メインナビゲーション</h2>
             <ul>
                 <li><a href="index.html">🏠 ホーム</a></li>
-                <li><a href="project-schedule.html">🗓️ スケジュール</a></li>
-                <li><a href="task-management-guide.html">✅ タスク管理</a></li>
-                <li><a href="faq.html">❓ Q&A</a></li>
+                <li><a href="guide_main.html">🧭 テーマと進め方</a></li>
+                <li><a href="guide_techniques.html">🛠️ 制作テクニック集</a></li>
+                <li><a href="guide_submission.html">🏆 提出と応募について</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="main-content">
-        <div class="container page-layout-with-sidenav"> {/* サイドナビ用のラッパークラス追加 */}
+        <div class="container page-layout-with-sidenav">
 
-            {/* --- 左側：ページ内ナビゲーション --- */}
             <aside class="page-sidenav">
-                <h3>目次</h3>
+                <h3>スケジュール目次</h3>
                 <ul>
-                    <li><a href="#welcome">ようこそ！</a></li>
-                    <li><a href="#steps-overview">プロジェクトの進め方</a></li>
-                    <li><a href="#step1-team-roles">STEP 1: チームと役割</a></li>
-                    <li><a href="#step2-theme-direction">STEP 2: テーマと方向性</a></li>
-                    <li><a href="#step3-onwards">STEP 3 以降の進め方</a></li>
-                    <li><a href="#teamwork-tips">チームワークのコツ</a></li>
-                    <li><a href="#help">困ったときは？</a></li>
+                    <li><a href="#schedule-overview" class="sidenav-link">全体概要</a></li>
+                    <li><a href="#phase-schedule" class="sidenav-link">フェーズ別詳細</a></li>
+                    <li><a href="#important-deadlines" class="sidenav-link">重要締切</a></li>
+                    <li><a href="#schedule-tips" class="sidenav-link">管理のヒント</a></li>
                 </ul>
             </aside>
 
-            {/* --- 右側：メインコンテンツエリア --- */}
-            <article class="page-main-content"> {/* メインコンテンツを囲む要素 */}
+            <article class="page-main-content">
 
-                <section id="welcome">
-                    <h2>ようこそ！Minecraftカップ プロジェクトへ</h2>
-                    <p>みなさん、こんにちは！この詳細ガイドは、私たちが挑戦する「第7回 Minecraftカップ」のプロジェクトを、<strong>何から始めればいいかわからない人でも安心してスタートできるように</strong>、一歩ずつ具体的に説明するものです。チームで協力しながら、最高の作品を目指しましょう！</p>
-                    <p>このプロジェクトの目標は、「未曾有の災害から人類の命をまもれ！～レジリエンスを備えたまちづくり～」というテーマのもと、Minecraftで未来のまちをデザインし、創造することです。</p>
+                <section id="schedule-overview" class="content-section styled-section">
+                    <h2>全体スケジュール概要</h2>
+                    <p>このプロジェクトは、いくつかのフェーズ（期間）に分かれて進みます。各フェーズの目標と期間をしっかり確認し、計画的に作業を進めましょう。特に<strong class="deadline-highlight">締切日</strong>は厳守です！</p>
+                    <p class="important-highlight"><strong>全体の目標： 作品完成 & 応募準備完了 → 2025年7月末</strong></p>
+                    <p>（実際の大会応募締切は別途確認してください: <a href="application-process.html" class="text-link-button">応募方法と締切確認ページ</a>）</p>
                 </section>
 
-                <section id="steps-overview">
-                    <h2>🗓️ プロジェクトの進め方 (ステップ・バイ・ステップ)</h2>
-                    <p>このプロジェクトは、いくつかのステップに分かれています。各ステップで何をするのか、どんな役割の人が活躍するのかを見ていきましょう。</p>
+                <section id="phase-schedule" class="content-section styled-section">
+                    <h2>フェーズ別詳細スケジュール</h2>
+                    <div class="timeline-container"> {/* タイムライン全体を囲むコンテナ */}
+                        <div class="timeline-item">
+                            <div class="timeline-marker phase1-marker">1</div>
+                            <div class="timeline-card">
+                                <h3>フェーズ1: 準備と計画</h3>
+                                <p class="timeline-date">期間: 2025年5月上旬 ～ 5月下旬</p>
+                                <p><strong>主な目標:</strong></p>
+                                <ul class="wb-list wb-list-check">
+                                    <li>チーム編成と役割分担の確定</li>
+                                    <li>大会テーマの完全理解</li>
+                                    <li>取り組む災害テーマと「まち」の基本コンセプト決定</li>
+                                    <li>初期の情報収集と調査開始</li>
+                                </ul>
+                                <p><em>成果物 (イメージ): チーム役割表、テーマ理解メモ、コンセプトシート(仮)</em></p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker phase2-marker">2</div>
+                            <div class="timeline-card">
+                                <h3>フェーズ2: 詳細設計と技術習得</h3>
+                                <p class="timeline-date">期間: 2025年6月上旬 ～ 6月下旬</p>
+                                <p><strong>主な目標:</strong></p>
+                                <ul class="wb-list wb-list-check">
+                                    <li>「まち」の詳細設計図作成</li>
+                                    <li>実装する機能の仕様決定</li>
+                                    <li>必要なMinecraft技術の学習と試作</li>
+                                </ul>
+                                <p><em>成果物 (イメージ): 設計図、機能一覧、プロトタイプワールド</em></p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker phase3-marker">3</div>
+                            <div class="timeline-card">
+                                <h3 class="important-phase">フェーズ3: Minecraftでの本格制作</h3>
+                                <p class="timeline-date">期間: 2025年7月上旬 ～ 7月中旬 (夏休み前集中！)</p>
+                                <p><strong>主な目標:</strong></p>
+                                <ul class="wb-list wb-list-check">
+                                    <li>設計に基づいたワールドの本格建築</li>
+                                    <li>コマンド、RS、MakeCodeによる機能実装</li>
+                                    <li>チーム内での定期的な進捗共有</li>
+                                </ul>
+                                <p><em>成果物 (イメージ): ワールド主要部分完成、主要機能実装</em></p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker phase4-marker">4</div>
+                            <div class="timeline-card">
+                                <h3>フェーズ4: 最終調整と提出準備</h3>
+                                <p class="timeline-date">期間: 2025年7月下旬</p>
+                                <p><strong>主な目標:</strong></p>
+                                <ul class="wb-list wb-list-check">
+                                    <li>ワールドの細部調整、バグ修正</li>
+                                    <li>提出物（動画、資料等）の作成・完成 (<a href="submission-guide.html" class="text-link-button">提出物ガイド</a>参照)</li>
+                                </ul>
+                                <p><em>成果物 (イメージ): 完成ワールド、全提出物</em></p>
+                                <p class="deadline-highlight important-highlight"><strong>目標締切: 7月末までに全ての準備を完了！</strong></p>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
-                <section id="step1-team-roles" class="content-section"> {/* セクションにクラス追加 */}
-                    <h2>STEP 1: チームと役割を決めよう！</h2>
-                    <p>プロジェクトをスムーズに進めるには、チーム内での役割分担がとても大切です。みんなで話し合って、誰がどの役割を担当するか決めましょう。兼任もOKです！</p>
-                    <p>👉 <a href="team-roles.html" class="text-link-button">チームメンバーと役割の詳細はこちら</a> で、各役割がどんなことをするのか確認できます。</p>
-
-                    <h3>どんな役割があるの？（主な例）</h3>
-                    <ul class="role-list"> {/* リストにクラス追加 */}
-                        <li><strong>👑 リーダー:</strong> チームのまとめ役、進行管理。</li>
-                        <li><strong>✍️ 書記・記録係:</strong> 会議の記録、資料作成。</li>
-                        <li><strong>🌍 調査・企画担当:</strong> テーマ調査、アイデア出し。</li>
-                        <li><strong>🏗️ 建築・デザイン担当:</strong> Minecraft建築、デザイン。</li>
-                        <li><strong>⚙️ コマンド・RS担当:</strong> 機能実装、技術課題解決。</li>
-                        <li><strong>🗣️ 広報・発表担当:</strong> 作品紹介、発表準備。</li>
-                    </ul>
-                    <h4>役割分担の進め方:</h4>
-                    <ol class="step-list"> {/* リストにクラス追加 */}
-                        <li>上記の役割例を参考に、自分たちのチームに必要な役割を考えます。</li>
-                        <li>それぞれの役割について、話し合って決めましょう。</li>
-                        <li>一人で複数の役割を担当してもOKです。</li>
-                        <li><strong>ポイント:</strong> 得意なこと、好きなことを活かそう！</li>
-                    </ol>
+                <section id="important-deadlines" class="content-section styled-section">
+                    <h2><span class="deadline-highlight">重要締切</span></h2>
+                    <div class="deadline-card">
+                        <h4><span class="deadline-highlight">大会応募締切 (大会本部設定)</span></h4>
+                        <p class="timeline-date deadline-highlight">2025年9月4日 (木) 18:59 (予定 - 必ず公式サイトで確認)</p>
+                        <p>これはMinecraftカップ全体の応募締切です。私たちのチーム内目標は7月末ですが、最終的な応募手続きはこの日までに必ず完了させる必要があります。詳細は<a href="application-process.html" class="text-link-button">応募方法と締切確認ページ</a> および大会公式サイトで必ず確認してください。</p>
+                    </div>
+                    {/* 他にチーム内の重要な中間締切などがあれば追加 */}
                 </section>
 
-                <section id="step2-theme-direction" class="content-section">
-                    <h2>STEP 2: テーマを理解し、方向性を決めよう！</h2>
-                    <p>役割が決まったら、プロジェクトの内容に入ります。最初の数週間で以下のことを目指しましょう。</p>
-
-                    <h3>やることリスト (最初のTODO):</h3>
-                    <ul class="todo-list"> {/* リストにクラス追加 */}
-                        <li>
-                            <strong>大会テーマ「レジリエンスを備えたまちづくり」を全員で深く理解する。</strong>
-                            <ul>
-                                <li>アクション: <a href="theme-explanation.html">大会テーマ解説ページ</a> を読む。チームで話し合う。</li>
-                                <li>参考: <a href="disaster-recovery-examples.html">災害事例・復興の歴史ページ</a></li>
-                                <li>成果物 (イメージ): テーマ理解メモ（チーム共有）。</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>取り組む「災害の種類」と「まちのコンセプトの方向性」を決める。</strong>
-                            <ul>
-                                <li>アクション: <a href="brainstorming-tips.html">アイデア出しのヒント</a> を参考にアイデアを出し合う。</li>
-                                <li>成果物 (イメージ): 災害テーマとコンセプト（仮）のまとめ。(<a href="concept-sheet-guide.html">コンセプトシート</a>参照)</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>情報収集を開始する。</strong>
-                            <ul>
-                                <li>アクション: 調査・企画担当を中心に情報収集。(<a href="research-analysis-tips.html">情報収集と分析のコツ</a>参照)</li>
-                                <li>成果物 (イメージ): 参考情報リスト（チーム共有）。</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>プロジェクトのスケジュールとタスク管理方法を確認する。</strong>
-                            <ul>
-                                <li>アクション: <a href="project-schedule.html">スケジュールページ</a>確認。 <a href="task-management-guide.html">タスク管理方法</a>確認。</li>
-                                <li><strong>重要:</strong> 作品完成目標は【7月末】！</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>チームのコミュニケーションルールを決める（推奨）。</strong>
-                            <ul>
-                                <li>アクション: ミーティング頻度、連絡方法など。 (<a href="communication-rules.html">コミュニケーションルールページ</a>参照)</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </section>
-
-                <section id="step3-onwards" class="content-section">
-                    <h2>STEP 3 以降の進め方 (概要)</h2>
-                    <p>上記の最初のステップが終わったら、本格的な設計と制作に入ります。詳細は各ガイドページを参照してください。</p>
-                    <ul class="link-list"> {/* リストにクラス追加 */}
-                        <li><strong>設計:</strong> <a href="design-drawing-guide.html">設計図の描き方・考え方</a></li>
-                        <li><strong>制作 (Minecraft):</strong> <a href="minecraft-building-techniques.html">建築テクニック</a>, <a href="minecraft-commands-guide.html">コマンドガイド</a> など</li>
-                        <li><strong>テストと改善</strong></li>
-                        <li><strong>提出準備:</strong> <a href="submission-guide.html">提出物一覧と作成ガイド</a></li>
-                    </ul>
-                </section>
-
-                <section id="teamwork-tips" class="content-section">
-                    <h2>🤝 チームワークが成功の鍵！</h2>
-                    <p>このプロジェクトは一人ではできません。チームメンバーそれぞれの得意なことを活かし、お互いに助け合い、励まし合いながら進めていくことが大切です。</p>
-                    <ul class="tips-list"> {/* リストにクラス追加 */}
-                        <li>困ったらすぐに相談！</li>
-                        <li>良いアイデアは積極的に共有！</li>
-                        <li>役割に責任を持ちつつ、柔軟に協力し合う！</li>
-                        <li>そして、何よりも楽しむこと！</li>
-                    </ul>
-                </section>
-
-                <section id="help" class="content-section">
-                    <h2>❓ 困ったときは？</h2>
-                    <ul class="link-list">
-                        <li>まずはこのガイドや、各詳細ページを見てみましょう。</li>
-                        <li>チーム内で解決できないことは、遠慮なく先生に相談してください。</li>
-                        <li><a href="faq.html">Q&Aページ</a> も活用しましょう。</li>
+                <section id="schedule-tips" class="content-section styled-section">
+                    <h2>スケジュール管理のヒント</h2>
+                    <ul class="tips-list styled-list">
+                        <li><strong>定期的なミーティング:</strong> 週に1回など、チームで進捗や課題を共有しましょう。</li>
+                        <li><strong>タスクの細分化:</strong> 大きなタスクは小さく分けて管理しましょう。(<a href="task-management-guide.html" class="text-link-button">タスク管理方法</a>参照)</li>
+                        <li><strong>バッファを持つ:</strong> 計画には少し余裕を持たせると安心です。</li>
+                        <li><strong>進捗の可視化:</strong> 誰が何をしているかを見えるようにしましょう。</li>
+                        <li><strong>困ったら早めに相談:</strong> 一人で抱え込まず、チームや先生に相談しましょう。</li>
                     </ul>
                 </section>
 
@@ -160,8 +144,8 @@
                     <a href="index.html" class="button-link">🏠 プロジェクトハブのトップへ戻る</a>
                 </div>
 
-            </article> {/* page-main-content の閉じタグ */}
-        </div> {/* page-layout-with-sidenav の閉じタグ */}
+            </article>
+        </div>
     </main>
 
     <footer class="site-footer">
@@ -170,6 +154,6 @@
         </div>
     </footer>
 
-    <script src="main.js"></script> {/* スクロールに応じたサイドナビのアクティブ化などに使える */}
+    <script src="main.js"></script>
 </body>
 </html>
