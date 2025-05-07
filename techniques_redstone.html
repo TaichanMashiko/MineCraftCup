@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レッドストーン回路テクニック - Minecraftカップ プロジェクトハブ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="guide-page-body">
+
+    <header class="site-header">
+        <div class="container">
+            <h1>⚡ レッドストーン回路テクニック</h1>
+            <p>～Minecraftの世界に電気と論理の魔法をかけよう！～</p>
+        </div>
+    </header>
+
+    <nav class="main-navigation">
+        <div class="container">
+            <h2>メインナビゲーション</h2>
+            <ul>
+                <li><a href="index.html">🏠 ホーム</a></li>
+                <li><a href="guide_main.html">🧭 テーマと進め方</a></li>
+                <li><a href="guide_techniques.html">🛠️ テクニック集TOP</a></li>
+                <li><a href="guide_submission.html">🏆 提出と応募について</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container page-layout-with-sidenav">
+
+            <aside class="page-sidenav">
+                <h3>レッドストーン目次</h3>
+                <ul>
+                    <li><a href="#redstone-intro" class="sidenav-link">はじめに</a></li>
+                    <li><a href="#what-is-redstone" class="sidenav-link">レッドストーンとは？</a></li>
+                    <li><a href="#basic-components" class="sidenav-link">基本的な部品</a></li>
+                    <li><a href="#simple-circuits" class="sidenav-link">簡単な回路を作ってみよう</a></li>
+                    <li><a href="#practical-devices" class="sidenav-link">実用的な装置の例</a></li>
+                    <li><a href="#redstone-practice" class="sidenav-link">レッドストーン練習のコツ</a></li>
+                </ul>
+            </aside>
+
+            <article class="page-main-content">
+
+                <section id="redstone-intro" class="content-section styled-section">
+                    <h2>はじめに - レッドストーンで創造の可能性を広げよう！</h2>
+                    <p>レッドストーンは、Minecraftの世界で電気回路のようなものを作り、様々な装置を自動化したり、面白い仕掛けを作ったりすることができるアイテムです。最初は少し複雑に感じるかもしれませんが、基本的な仕組みを理解すれば、まるで魔法のようにワールドを動かすことができます。</p>
+                    <p>このガイドでは、レッドストーンの基礎から、簡単な回路の組み方、そして実用的な装置のアイデアまでを紹介します。論理パズルを解くような楽しさを味わいながら、レッドストーンの世界を探求してみましょう！</p>
+                </section>
+
+                <section id="what-is-redstone" class="content-section styled-section">
+                    <h2>レッドストーンとは？ - 動力と信号の基本</h2>
+                    <div class="item-explanation">
+                        <h4>4.1. レッドストーンの役割</h4>
+                        <p>レッドストーンダストは、動力源からのエネルギー（レッドストーン信号）を他のブロックに伝える電線のような役割を果たします。信号が伝わると、ランプが点灯したり、ピストンが動いたり、ドアが開いたりします。</p>
+                        <p><strong>信号の強さ:</strong> レッドストーン信号は、動力源から離れるほど弱くなり、最大15ブロックまでしか伝わりません。それ以上伝えたい場合は、「リピーター」という部品で信号を増幅する必要があります。</p>
+                        <p><strong>信号のON/OFF:</strong> レバーやボタンなどで信号をONにしたり、OFFにしたりして装置を制御します。</p>
+                    </div>
+                </section>
+
+                <section id="basic-components" class="content-section styled-section">
+                    <h2>基本的なレッドストーン部品とその役割</h2>
+                    <p>レッドストーン回路を作るためには、いくつかの重要な部品の役割を理解する必要があります。</p>
+                    <div class="component-grid"> {/* 部品説明をグリッド表示 */ }
+                        <div class="component-card">
+                            <div class="component-icon">🟥</div><h4>レッドストーンダスト</h4>
+                            <p>信号を伝える赤い粉。地面やブロックの上に設置して配線します。</p>
+                        </div>
+                        <div class="component-card">
+                            <div class="component-icon">🔦</div><h4>レッドストーントーチ</h4>
+                            <p>常にONの信号を発する動力源。ブロック側面や上面に設置。信号を受けるとOFFになる性質も持ちます（NOT回路）。</p>
+                        </div>
+                        <div class="component-card">
+                            <div class="component-icon">🕹️</div><h4>レバー / ボタン / 感圧板</h4>
+                            <p>プレイヤーが操作して信号をON/OFFする動力源。レバーは状態維持、ボタンは短時間ON、感圧板はエンティティが乗るとON。</p>
+                        </div>
+                        <div class="component-card">
+                            <div class="component-icon"> repeater </div><h4>レッドストーンリピーター</h4>
+                            <p>信号を15ブロック分増幅して再送信します。信号の遅延（1～4ティック）も設定可能。</p>
+                        </div>
+                        <div class="component-card">
+                            <div class="component-icon"> comparator </div><h4>レッドストーンコンパレーター</h4>
+                            <p>信号の強さを比較したり、特定のブロック（チェストの中身など）の状態を検知したりできます。少し高度な部品。</p>
+                        </div>
+                        <div class="component-card">
+                            <div class="component-icon"> piston </div><h4>ピストン / 粘着ピストン</h4>
+                            <p>信号を受けるとブロックを押し出します。粘着ピストンはブロックを引き戻すこともできます。</p>
+                        </div>
+                        <div class="component-card">
+                            <div class="component-icon"> dispenser </div><h4>ディスペンサー / ドロッパー</h4>
+                            <p>信号を受けると内部のアイテムを射出（ディスペンサー）またはドロップ（ドロッパー）します。</p>
+                        </div>
+                        <div class="component-card">
+                            <div class="component-icon">💡</div><h4>レッドストーンランプ</h4>
+                            <p>信号を受けると点灯する光源ブロック。</p>
+                        </div>
+                    </div>
+                    <!-- ここに各部品の画像や簡単な動作イメージを挿入するとより分かりやすい -->
+                </section>
+
+                <section id="simple-circuits" class="content-section styled-section">
+                    <h2>簡単な回路を作ってみよう！ - 論理回路の入口</h2>
+                    <p>レッドストーンの面白さは、これらの部品を組み合わせて論理的な動きを作り出せる点にあります。まずは基本的な回路に挑戦してみましょう。</p>
+
+                    <div class="technique-example redstone-example">
+                        <h3>NOT回路 (信号反転回路)</h3>
+                        <p>入力信号がONのときに出力がOFFになり、入力信号がOFFのときに出力がONになる回路です。</p>
+                        <h4>必要なもの：</h4> <ul class="wb-list wb-list-check"><li>ブロック x1</li><li>レッドストーントーチ x1</li><li>レバー x1</li><li>レッドストーンランプ x1 (動作確認用)</li><li>レッドストーンダスト 適量</li></ul>
+                        <h4>作り方：</h4>
+                        <ol class="step-list">
+                            <li><div class="step-title-container"><span class="step-number">1</span><strong>ブロック設置</strong></div><p>適当な場所にブロックを1つ置きます。</p></li>
+                            <li><div class="step-title-container"><span class="step-number">2</span><strong>トーチ設置</strong></div><p>そのブロックの側面にレッドストーントーチを取り付けます。(トーチが点灯するはずです)</p></li>
+                            <li><div class="step-title-container"><span class="step-number">3</span><strong>入力設置</strong></div><p>ブロックの上面またはトーチが付いていない別の側面にレバーを取り付け、レッドストーンダストでブロックに繋ぎます。</p></li>
+                            <li><div class="step-title-container"><span class="step-number">4</span><strong>出力設置</strong></div><p>レッドストーントーチの先にレッドストーンランプを設置します。</p></li>
+                            <li><div class="step-title-container"><span class="step-number">5</span><strong>動作確認</strong></div><p>レバーをONにするとトーチが消えランプも消灯、レバーをOFFにするとトーチが点灯しランプも点灯することを確認します。</p></li>
+                        </ol>
+                        <p class="tips-list-item">✨<strong>ポイント：</strong>レッドストーントーチは、取り付けられたブロックに動力が供給されると消灯する性質があります。これがNOT回路の基本です。</p>
+                        <!-- ここにNOT回路の画像 -->
+                    </div>
+
+                    <div class="technique-example redstone-example">
+                        <h3>AND回路 (両方ONで出力)</h3>
+                        <p>2つ（以上）の入力信号が両方ともONのときにだけ、出力信号がONになる回路です。</p>
+                        <h4>必要なもの：</h4> <ul class="wb-list wb-list-check"><li>ブロック x3</li><li>レッドストーントーチ x3</li><li>レバー x2</li><li>レッドストーンランプ x1</li><li>レッドストーンダスト 適量</li></ul>
+                        <h4>作り方 (一例)：</h4>
+                        <ol class="step-list">
+                            <li><div class="step-title-container"><span class="step-number">1</span><strong>入力トーチ設置</strong></div><p>2つのブロックを並べ、それぞれの側面にレッドストーントーチを1つずつ取り付けます。これらのブロックにそれぞれレバーからの入力を繋ぎます。</p></li>
+                            <li><div class="step-title-container"><span class="step-number">2</span><strong>出力トーチ準備</strong></div><p>手順1の2つのトーチの信号が両方ともOFFになったときにONになるように、もう1つのブロックとトーチを使ってNOT回路の形を作ります。（つまり、2つの入力トーチの信号を1本のレッドストーンダストに集め、その先にNOT回路を接続）</p></li>
+                            <li><div class="step-title-container"><span class="step-number">3</span><strong>出力設置</strong></div><p>最終的な出力トーチの先にレッドストーンランプを設置します。</p></li>
+                            <li><div class="step-title-container"><span class="step-number">4</span><strong>動作確認</strong></div><p>2つのレバーが両方ともONのときだけランプが点灯することを確認します。</p></li>
+                        </ol>
+                        <p class="tips-list-item">✨<strong>ポイント：</strong>これはトーチを使った基本的なAND回路の一例です。もっとコンパクトな作り方もあります。</p>
+                        <!-- ここにAND回路の画像 -->
+                    </div>
+                    <p style="margin-top:20px;">他にもOR回路（どちらかがONで出力）、クロック回路（信号を点滅させる）など、様々な基本回路があります。これらを組み合わせることで、より複雑な装置が作れます。</p>
+                </section>
+
+                <section id="practical-devices" class="content-section styled-section">
+                    <h2>実用的なレッドストーン装置の例</h2>
+                    <p>基本回路を応用して、作品に役立つ装置を作ってみましょう。</p>
+                    <div class="technique-example redstone-example">
+                        <h3>ピストン式隠し扉 (2x1)</h3>
+                        <p>レバー操作で壁の一部が開閉する、定番の隠し扉です。</p>
+                        <h4>必要なもの：</h4> <ul class="wb-list wb-list-check"><li>粘着ピストン x2</li><li>レバー x1</li><li>レッドストーンダスト 適量</li><li>任意のブロック (壁と扉用)</li></ul>
+                        <h4>作り方 (概要)：</h4>
+                        <ol class="step-list">
+                            <li><div class="step-title-container"><span class="step-number">1</span><strong>ピストン設置</strong></div><p>扉としたい部分の横に、粘着ピストンを2つ縦に並べて設置します。</p></li>
+                            <li><div class="step-title-container"><span class="step-number">2</span><strong>扉ブロック設置</strong></div><p>ピストンの粘着面に、壁と同じ素材のブロック（扉部分）を取り付けます。</p></li>
+                            <li><div class="step-title-container"><span class="step-number">3</span><strong>配線とレバー</strong></div><p>2つのピストンが同時に動くようにレッドストーンダストで配線し、その先にレバーを設置します。</p></li>
+                        </ol>
+                        <p class="tips-list-item">✨<strong>ポイント：</strong>配線を隠すように壁で覆うと、より自然な隠し扉になります。入力装置を感圧板や隠しスイッチにすると、さらに面白くなります。</p>
+                        <!-- ここにピストン式隠し扉の画像 -->
+                    </div>
+
+                    <div class="technique-example redstone-example">
+                        <h3>日照センサー式自動照明</h3>
+                        <p>夜になると自動で明かりが灯り、朝になると消える照明です。</p>
+                        <h4>必要なもの：</h4> <ul class="wb-list wb-list-check"><li>日照センサー x1</li><li>レッドストーンランプ (または松明) 必要数</li><li>レッドストーンダスト (またはNOT回路)</li></ul>
+                        <h4>作り方 (概要)：</h4>
+                        <ol class="step-list">
+                            <li><div class="step-title-container"><span class="step-number">1</span><strong>日照センサー設置</strong></div><p>屋外の空が見える場所に日照センサーを設置します。</p></li>
+                            <li><div class="step-title-container"><span class="step-number">2</span><strong>モード切替と配線</strong></div><p>日照センサーを右クリックして「夜モード」（暗くなるとON）に切り替えます。センサーからレッドストーンランプへダストで配線します。（もし昼に点灯させたい場合は、間にNOT回路を挟みます）</p></li>
+                        </ol>
+                        <p class="tips-list-item">✨<strong>ポイント：</strong>街灯や建物の外灯などに使うと、まちの雰囲気がぐっと良くなります。</p>
+                    </div>
+                </section>
+
+                <section id="redstone-practice" class="content-section styled-section">
+                    <h2>レッドストーン練習のコツ</h2>
+                    <ul class="wb-list wb-list-star">
+                        <li><strong>小さな回路から試す:</strong> いきなり大きな装置を作ろうとせず、NOT回路、AND回路などの基本回路を確実に作れるように練習しましょう。</li>
+                        <li><strong>動作を観察する:</strong> レッドストーンダストの信号の強さ（色の濃さ）や、部品の動きをよく観察し、信号がどう伝わっているかを理解しましょう。</li>
+                        <li><strong>試行錯誤を楽しむ:</strong> レッドストーンはトライ＆エラーが基本です。うまくいかなくても諦めずに、原因を考えて修正する過程を楽しみましょう。</li>
+                        <li><strong>平面で練習する:</strong> 最初は、回路全体が見渡せるように平らな場所で練習するのがおすすめです。</li>
+                        <li><strong>参考作品を分析する:</strong> 他の人が作ったレッドストーン装置を見て、どのように組まれているかを分析するのも勉強になります。</li>
+                        <li><strong>コンパクト化を目指す:</strong> 同じ機能でも、より少ない部品で、より小さなスペースで作れないか工夫してみましょう。</li>
+                    </ul>
+                </section>
+
+                <div style="text-align: center; margin-top: 40px; padding-bottom: 20px;">
+                    <a href="guide_techniques.html" class="button-link">🛠️ テクニック集のトップへ戻る</a>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 水戸葵陵高校 Minecraftカッププロジェクトチーム</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
