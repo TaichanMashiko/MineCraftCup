@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コマンド活用テクニック - Minecraftカップ プロジェクトハブ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="guide-page-body">
+
+    <header class="site-header">
+        <div class="container">
+            <h1>⚙️ コマンド活用テクニック</h1>
+            <p>～ワールドに魔法のような仕掛けを作ろう！～</p>
+        </div>
+    </header>
+
+    <nav class="main-navigation">
+        <div class="container">
+            <h2>メインナビゲーション</h2>
+            <ul>
+                <li><a href="index.html">🏠 ホーム</a></li>
+                <li><a href="guide_main.html">🧭 テーマと進め方</a></li>
+                <li><a href="guide_techniques.html">🛠️ テクニック集TOP</a></li>
+                <li><a href="guide_submission.html">🏆 提出と応募について</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container page-layout-with-sidenav">
+
+            <aside class="page-sidenav">
+                <h3>コマンドテクニック目次</h3>
+                <ul>
+                    <li><a href="#command-intro" class="sidenav-link">はじめに</a></li>
+                    <li><a href="#command-block-basics" class="sidenav-link">コマンドブロックの基本</a></li>
+                    <li><a href="#basic-useful-commands" class="sidenav-link">便利な基本コマンド</a></li>
+                    <li><a href="#combining-commands" class="sidenav-link">コマンドを組み合わせる</a></li>
+                    <li><a href="#simple-gimmick-examples" class="sidenav-link">簡単なギミック作成例</a></li>
+                    <li><a href="#command-practice" class="sidenav-link">コマンド練習の進め方</a></li>
+                </ul>
+            </aside>
+
+            <article class="page-main-content">
+
+                <section id="command-intro" class="content-section styled-section">
+                    <h2>はじめに - コマンドでワールドを動かそう！</h2>
+                    <p>コマンドとコマンドブロックは、Minecraftの世界に様々な動きや機能を追加できる強力なツールです。「難しそう…」と感じるかもしれませんが、基本的なものから一つずつ試していけば、きっとその面白さと便利さに気づくはずです。</p>
+                    <p>このガイドでは、コマンドブロックの基本的な使い方から、作品をよりインタラクティブにするための簡単なギミックの作り方までを解説します。実験するような気持ちで、色々なコマンドを試してみてください！</p>
+                </section>
+
+                <section id="command-block-basics" class="content-section styled-section">
+                    <h2>コマンドブロックの基本を知ろう</h2>
+                    <p>コマンドブロックは、チャット欄に入力するコマンドを自動で実行してくれる特別なブロックです。</p>
+                    <div class="item-explanation">
+                        <h4>3.1. コマンドブロックって何？</h4>
+                        <p><strong>入手方法:</strong> チャット欄を開き、<code>/give @p command_block</code> と入力してEnterキーを押すと、自分の手元にコマンドブロックが1つ与えられます。（チートの実行がオンになっている必要があります）</p>
+                        <p><strong>種類と特徴:</strong></p>
+                        <ul class="wb-list wb-list-dot">
+                            <li><strong>インパルス (橙色):</strong> レッドストーン信号を一度受け取ると、コマンドを1回だけ実行します。</li>
+                            <li><strong>リピート (紫色):</strong> レッドストーン信号を受け取っている間、コマンドを繰り返し実行し続けます（1秒間に20回）。</li>
+                            <li><strong>チェーン (緑色):</strong> 隣接するコマンドブロック（矢印の向きに注意）から信号を受け取ると、コマンドを実行します。複数のコマンドを順番に実行するのに使います。</li>
+                        </ul>
+                        <p><strong>基本的な設定:</strong> コマンドブロックを右クリックすると設定画面が開きます。</p>
+                        <ul class="wb-list wb-list-check">
+                            <li><strong>コマンド入力欄:</strong> ここに実行したいコマンドを入力します。</li>
+                            <li><strong>ブロックの種類:</strong> 上記の3種類を切り替えられます。</li>
+                            <li><strong>条件:</strong> 「無条件」または「条件付き」を選択。「条件付き」にすると、後ろにあるコマンドブロックが成功した場合のみ実行されます（チェーンコマンドブロックでよく使う）。</li>
+                            <li><strong>レッドストーン:</strong> 「レッドストーンが必要」または「常時実行」を選択。「常時実行」は主にリピートやチェーンで使います。</li>
+                        </ul>
+                        <!-- ここにコマンドブロックの種類と設定画面の画像を挿入するイメージ -->
+                    </div>
+                </section>
+
+                <section id="basic-useful-commands" class="content-section styled-section">
+                    <h2>まずは試してみよう！便利な基本コマンド</h2>
+                    <p>コマンドブロックで使えるコマンドはたくさんありますが、ここでは特に作品制作で役立つ基本的なコマンドをいくつか紹介します。<code>@p</code> は「最も近いプレイヤー」、<code>@a</code> は「全てのプレイヤー」、<code>@s</code> は「コマンド実行者自身」を指します。</p>
+                    <div class="command-example-box">
+                        <h4><code>/say [メッセージ]</code></h4>
+                        <p>チャット欄に指定したメッセージを表示します。</p>
+                        <pre><code>/say ようこそ、未来都市へ！</code></pre>
+                    </div>
+                    <div class="command-example-box">
+                        <h4><code>/tp @p X Y Z</code> または <code>/teleport @p X Y Z</code></h4>
+                        <p>最も近いプレイヤーを指定した座標 (X, Y, Z) にテレポートさせます。</p>
+                        <pre><code>/tp @p 100 64 -200</code></pre>
+                    </div>
+                    <div class="command-example-box">
+                        <h4><code>/give @p [アイテムID] [数量]</code></h4>
+                        <p>最も近いプレイヤーに指定したアイテムを与えます。</p>
+                        <pre><code>/give @p minecraft:diamond_sword 1</code></pre>
+                        <p class="tips-list-item">アイテムIDは、<a href="https://minecraft.fandom.com/ja/wiki/%E3%83%87%E3%83%BC%E3%82%BF%E5%80%A4/Java_Edition" target="_blank" rel="noopener noreferrer" class="text-link-button">Minecraft Wiki</a> などで確認できます。</p>
+                    </div>
+                    <div class="command-example-box">
+                        <h4><code>/setblock X Y Z [ブロックID]</code></h4>
+                        <p>指定した座標 (X, Y, Z) に指定したブロックを1つ設置します。</p>
+                        <pre><code>/setblock 10 5 10 minecraft:redstone_block</code></pre>
+                    </div>
+                    <div class="command-example-box">
+                        <h4><code>/fill X1 Y1 Z1 X2 Y2 Z2 [ブロックID]</code></h4>
+                        <p>指定した範囲 (X1,Y1,Z1 から X2,Y2,Z2 まで) を指定したブロックで満たします。既存のブロックを置き換えることも、空気ブロック (<code>minecraft:air</code>) で消すこともできます。</p>
+                        <pre><code>/fill 0 60 0 10 70 10 minecraft:glass</code></pre>
+                    </div>
+                    <div class="command-example-box">
+                        <h4><code>/time set [day | night | noon | midnight | 数値]</code></h4>
+                        <p>ゲーム内の時間を変更します。数値は0 (夜明け) ～ 23999 (深夜) で指定。</p>
+                        <pre><code>/time set day</code></pre>
+                    </div>
+                    <div class="command-example-box">
+                        <h4><code>/weather [clear | rain | thunder]</code></h4>
+                        <p>ゲーム内の天候を変更します。</p>
+                        <pre><code>/weather clear</code></pre>
+                    </div>
+                    <div class="command-example-box">
+                        <h4><code>/effect give @p [エフェクトID] [時間(秒)] [強さ(0-255)]</code></h4>
+                        <p>プレイヤーにステータス効果（ジャンプ力上昇、移動速度上昇など）を付与します。</p>
+                        <pre><code>/effect give @p minecraft:jump_boost 30 2</code></pre>
+                    </div>
+                     <div class="command-example-box">
+                        <h4><code>/gamerule [ルール名] [true | false]</code></h4>
+                        <p>ゲームのルールを変更します。例えば、コマンドブロックの出力をチャットに表示しないようにするには以下のようにします。</p>
+                        <pre><code>/gamerule commandBlockOutput false</code></pre>
+                    </div>
+                </section>
+
+                <section id="combining-commands" class="content-section styled-section">
+                    <h2>コマンドを組み合わせて複雑な動きを実現しよう</h2>
+                    <div class="item-explanation">
+                        <h4>3.3. チェーンコマンドブロックの活用</h4>
+                        <p>複数のコマンドを順番に実行したい場合は、チェーンコマンドブロックを使います。最初のコマンドブロック（インパルスまたはリピート）から矢印の向きに合わせてチェーンコマンドブロックを繋げていきます。チェーンコマンドブロックの設定は「常時実行」にし、必要に応じて「条件付き」を選択します。</p>
+                        <!-- ここにチェーンコマンドブロックの接続図イメージ -->
+                    </div>
+                    <div class="item-explanation">
+                        <h4>3.4. セレクターの活用 (@p, @a, @e, @s, @r)</h4>
+                        <p>コマンドの対象を指定する「セレクター」を理解すると、より高度な制御が可能になります。</p>
+                        <ul class="wb-list wb-list-dot">
+                            <li><code>@p</code>: 最も近いプレイヤー</li>
+                            <li><code>@a</code>: 全てのプレイヤー</li>
+                            <li><code>@e</code>: 全てのエンティティ（プレイヤー、モブ、アイテムなど）</li>
+                            <li><code>@s</code>: コマンド実行者自身（コマンドブロックが実行する場合はコマンドブロック自身）</li>
+                            <li><code>@r</code>: ランダムなプレイヤー</li>
+                        </ul>
+                        <p>さらに、<code>@e[type=minecraft:creeper,distance=..10]</code> のように、セレクター引数を使って対象を細かく絞り込めます（例: 10ブロック以内にいるクリーパー）。</p>
+                    </div>
+                </section>
+
+                <section id="simple-gimmick-examples" class="content-section styled-section">
+                    <h2>簡単なギミック作成例</h2>
+                    <p>ここでは、基本的なコマンドとコマンドブロックを使った簡単なギミックの作り方を紹介します。これを参考に、自分だけのオリジナルギミック作りに挑戦してみましょう！</p>
+
+                    <div class="technique-example">
+                        <h3>ワープパッド</h3>
+                        <p>特定のブロックを踏むと、指定した場所にテレポートする装置です。</p>
+                        <h4>必要なもの：</h4>
+                        <ul class="wb-list wb-list-check">
+                            <li>コマンドブロック x1</li>
+                            <li>任意のブロック (踏むとワープするパッド用、例: 金ブロック)</li>
+                        </ul>
+                        <h4>作り方：</h4>
+                        <ol class="step-list">
+                            <li><div class="step-title-container"><span class="step-number">1</span><strong>コマンドブロック設置</strong></div><p>ワープパッド用ブロックの真下にコマンドブロックを設置します。</p></li>
+                            <li><div class="step-title-container"><span class="step-number">2</span><strong>コマンド入力</strong></div><p>コマンドブロックを右クリックし、以下の設定とコマンドを入力します。<br>種類: リピート<br>条件: 無条件<br>レッドストーン: 常時実行<br>コマンド: <code>/execute if block ~ ~1 ~ minecraft:gold_block run tp @p X Y Z</code><br> (<code>~ ~1 ~</code> はコマンドブロックの1つ上のブロックを指します。<code>minecraft:gold_block</code> をパッドに使うブロックIDに、<code>X Y Z</code> をワープ先の座標に置き換えてください)</p></li>
+                             <li><div class="step-title-container"><span class="step-number">3</span><strong>パッド設置</strong></div><p>コマンドブロックの真上に、指定したパッド用ブロック（例では金ブロック）を設置します。</p></li>
+                        </ol>
+                        <p class="tips-list-item">✨<strong>ポイント：</strong><code>/execute if block ... run ...</code> コマンドは非常に便利で、「もし特定の場所に特定のブロックがあったら、〇〇のコマンドを実行する」という条件分岐が作れます。</p>
+                    </div>
+
+                    <div class="technique-example">
+                        <h3>メッセージ表示エリア</h3>
+                        <p>特定のエリアに入ると、画面にメッセージが表示される仕掛けです。</p>
+                        <h4>必要なもの：</h4>
+                        <ul class="wb-list wb-list-check">
+                            <li>コマンドブロック x1</li>
+                        </ul>
+                        <h4>作り方：</h4>
+                        <ol class="step-list">
+                            <li><div class="step-title-container"><span class="step-number">1</span><strong>コマンドブロック設置</strong></div><p>どこか目立たない場所にコマンドブロックを設置します。</p></li>
+                            <li><div class="step-title-container"><span class="step-number">2</span><strong>コマンド入力</strong></div><p>コマンドブロックを右クリックし、以下の設定とコマンドを入力します。<br>種類: リピート<br>条件: 無条件<br>レッドストーン: 常時実行<br>コマンド: <code>/execute if entity @a[x=エリアX1,y=エリアY1,z=エリアZ1,dx=幅,dy=高さ,dz=奥行き] run title @a[x=エリアX1,y=エリアY1,z=エリアZ1,dx=幅,dy=高さ,dz=奥行き] title {"text":"エリア名","color":"yellow"}</code><br>(<code>エリアX1,Y1,Z1</code> はエリアの始点座標、<code>dx,dy,dz</code> はエリアのX,Y,Z方向の大きさを指定します。メッセージ内容や色は自由に変更してください)</p></li>
+                        </ol>
+                        <p class="tips-list-item">✨<strong>ポイント：</strong><code>title</code> コマンドは画面中央に大きく文字を表示できます。<code>subtitle</code> や <code>actionbar</code> も便利です。セレクター引数 <code>dx,dy,dz</code> で範囲指定するのがコツです。</p>
+                    </div>
+                </section>
+
+                <section id="command-practice" class="content-section styled-section">
+                    <h2>コマンド練習の進め方</h2>
+                    <ul class="wb-list wb-list-star">
+                        <li><strong>まずはチャット欄で試す:</strong> コマンドブロックに入れる前に、チャット欄でコマンドが正しく動作するか試してみましょう。</li>
+                        <li><strong>簡単なものから:</strong> いきなり複雑なものを作ろうとせず、<code>/say</code> や <code>/tp</code> など、単純なコマンドから慣れていきましょう。</li>
+                        <li><strong>座標を正確に:</strong> 座標指定が重要なコマンドが多いので、F3キーで座標を確認しながら慎重に入力しましょう。相対座標 (<code>~ ~ ~</code>) も便利です。</li>
+                        <li><strong>エラーメッセージを読む:</strong> コマンドがうまく動かないときは、コマンドブロックの「前の出力」やチャット欄のエラーメッセージをよく読みましょう。ヒントが隠されています。</li>
+                        <li><strong>たくさん実験する:</strong> 「こうしたらどうなるだろう？」と色々試してみることが上達への近道です。失敗を恐れずに！</li>
+                        <li><strong>情報源を活用する:</strong> Minecraft Wiki や解説サイト、動画などを参考にしましょう。</li>
+                    </ul>
+                </section>
+
+                <div style="text-align: center; margin-top: 40px; padding-bottom: 20px;">
+                    <a href="guide_techniques.html" class="button-link">🛠️ テクニック集のトップへ戻る</a>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 水戸葵陵高校 Minecraftカッププロジェクトチーム</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
