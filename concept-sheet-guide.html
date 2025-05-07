@@ -1,48 +1,124 @@
-/* style.css */
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コンセプトシート作成ガイド - 第7回 Minecraftカップ プロジェクトハブ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <!-- このページ固有のインラインスタイルは削除し、style.cssに統合します -->
+</head>
+<body class="guide-page-body">
 
-/* --- 7. 詳細ガイドページ共通スタイル (guide_main.html など) --- */
-/* (既存の .page-layout-with-sidenav, .page-sidenav, .page-main-content, .content-section など) */
+    <header class="site-header">
+        <div class="container">
+            <h1>📝 コンセプトシート作成ガイド</h1>
+            <p>～君たちのアイデアを、カタチにする設計図～</p>
+        </div>
+    </header>
 
-/* コンセプトシートガイド専用スタイル (これが重要) */
-.sheet-link-button-container { text-align: center; margin: 35px 0 40px; }
-.sheet-link-button {
-    /* (前回のスタイル定義) */
-}
+    <nav class="main-navigation">
+        <div class="container">
+            <h2>メインナビゲーション</h2>
+            <ul>
+                <li><a href="index.html">🏠 ホーム</a></li>
+                <li><a href="guide_main.html">🧭 テーマと進め方</a></li>
+                <li><a href="project-schedule.html">🗓️ スケジュール</a></li>
+                <li><a href="guide_techniques.html">🛠️ 制作テクニック集</a></li>
+                <li><a href="guide_submission.html">🏆 提出と応募について</a></li>
+            </ul>
+        </div>
+    </nav>
 
-.item-explanation { /* 各項目の説明ブロック */
-    margin-bottom: 30px;
-    padding: 25px;
-    background-color: #fdfdff;
-    border: 1px solid #e7eaf3;
-    border-left: 6px solid #007bff;
-    border-radius: 0 10px 10px 0;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-}
-.item-explanation h4 {
-    margin-top: 0;
-    color: #0056b3;
-    font-size: 1.35em;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-}
-.item-explanation p {
-    font-size: 1em;
-    line-height: 1.7;
-    margin-bottom: 8px;
-    color: #454f5b;
-}
-.item-explanation p:last-child { margin-bottom: 0; }
-.example-text {
-    font-style: italic;
-    color: #637381;
-    font-size: 0.95em;
-    display: block;
-    margin-top: 8px;
-    padding: 8px 12px;
-    background-color: #f4f6f8;
-    border-radius: 4px;
-    border-left: 3px solid #c0c6cc;
-}
+    <main class="main-content">
+        <div class="container page-layout-with-sidenav">
 
-/* (その他の .tips-list.styled-list などのスタイル) */
+            <aside class="page-sidenav">
+                <h3>コンセプトシート項目</h3>
+                <ul>
+                    <li><a href="#introduction" class="sidenav-link">はじめに</a></li>
+                    <li><a href="#how-to-use" class="sidenav-link">シートの使い方</a></li>
+                    <li><a href="#item-team-name" class="sidenav-link">チーム名</a></li>
+                    <li><a href="#item-team-members" class="sidenav-link">チームメンバー</a></li>
+                    <li><a href="#item-work-title" class="sidenav-link">作品タイトル (仮)</a></li>
+                    <li><a href="#item-catchphrase" class="sidenav-link">キャッチフレーズ</a></li>
+                    <li><a href="#item-target-disaster" class="sidenav-link">ターゲットとする災害</a></li>
+                    <li><a href="#item-main-theme" class="sidenav-link">作品の主なテーマ</a></li>
+                    <li><a href="#item-resilient-features" class="sidenav-link">レジリエントなまちの特徴</a></li>
+                    <li><a href="#item-setting" class="sidenav-link">まちの舞台設定</a></li>
+                    <li><a href="#item-facilities" class="sidenav-link">主な施設・エリア</a></li>
+                    <li><a href="#item-mechanisms" class="sidenav-link">レジリエンスの仕組み</a></li>
+                    <li><a href="#item-story" class="sidenav-link">物語・シナリオ (任意)</a></li>
+                    <li><a href="#tips-for-filling" class="sidenav-link">記入のヒント</a></li>
+                </ul>
+            </aside>
+
+            <article class="page-main-content">
+
+                <section id="introduction" class="content-section styled-section">
+                    <h2>はじめに：コンセプトシートってなぜ必要？</h2>
+                    <p>「コンセプトシート」は、皆さんのチームが創り上げるMinecraftの「まち」の設計図であり、アイデアを具体的に整理するための大切なツールです。このシートに考えをまとめることで、チーム全員が作品の目的や方向性を共有でき、制作がスムーズに進みます。</p>
+                </section>
+
+                <section id="how-to-use" class="content-section styled-section">
+                    <h2>コンセプトシートの使い方</h2>
+                    <p>以下のリンクから、全チーム共通の「コンセプトシート」スプレッドシートにアクセスできます。<strong>自分のチーム名のタブ（シート）を選んで</strong>、各項目をチームで話し合いながら入力していってください。</p>
+                    <div class="sheet-link-button-container">
+                        <a href="https://docs.google.com/spreadsheets/d/1cvflM6XIhMrQAuvGQWzrM_wAeoyKiIgpvKaNnU3wJBs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="sheet-link-button">
+                            📝 全チーム共通コンセプトシートを開く
+                        </a>
+                    </div>
+                    <p><strong>記入ルールとお願い：</strong></p>
+                    <ul class="tips-list styled-list">
+                        <li>必ず自分のチームのタブに入力してください。</li>
+                        <li>「説明・記入例」をよく読んで、何を書くべきか理解してから記入しましょう。</li>
+                        <li>スプレッドシートの行が足りなくなったら自由に追加して構いません。</li>
+                        <li>定期的に内容を見直し、更新していきましょう。</li>
+                    </ul>
+                </section>
+
+                {/* ----- 各項目の説明 (絞り込まれた項目に合わせて修正) ----- */}
+                <div id="item-team-name" class="item-explanation"><h4>チーム名</h4><p>チームの顔となる名前を決めましょう！<br><span class="example-text">例: 未来クリエイターズ、レジリエンス防衛隊</span></p></div>
+                <div id="item-team-members" class="item-explanation"><h4>チームメンバー (1～5名とその役割)</h4><p>チームのメンバー名を記載します。各メンバーの主な役割も一緒に書いておくと分かりやすいです。<br><span class="example-text">例: 山田太郎 (リーダー、建築担当)、佐藤花子 (コマンド担当、企画) など</span></p></div>
+                <div id="item-work-title" class="item-explanation"><h4>作品タイトル (仮)</h4><p>皆さんが作る「まち」に、ワクワクするような名前を付けましょう。後で変更してもOKです。<br><span class="example-text">例: 水と緑の循環都市「アクアポリス」、希望の灯台「レジリエンス・ポート」</span></p></div>
+                <div id="item-catchphrase" class="item-explanation"><h4>キャッチフレーズ/一言アピール</h4><p>作品の魅力をギュッと一言で表す言葉を考えましょう。<br><span class="example-text">例: 災害に負けない! 自然と共生する未来のまち!、AIと住民の力で困難を乗り越える!</span></p></div>
+                <div id="item-target-disaster" class="item-explanation"><h4>ターゲットとする災害</h4><p>自分たちの「まち」が、どのような種類の災害に立ち向かうのかを具体的に設定します。<br><span class="example-text">例: 大規模水害とそれに伴う長期停電、首都直下型地震と火災旋風</span></p></div>
+                <div id="item-main-theme" class="item-explanation"><h4>作品の主なテーマ/伝えたいメッセージ</h4><p>この作品を通じて、何を感じてほしいか、何を伝えたいかを明確にします。<br><span class="example-text">例: 自然エネルギーの可能性、地域コミュニティの絆の重要性</span></p></div>
+                <div id="item-resilient-features" class="item-explanation"><h4>私たちの「レジリエントなまち」の特徴 (3～5つ)</h4><p>作品の最も重要なオリジナリティ部分です。「レジリエンス」を実現するために、自分たちのまちが持つユニークな特徴や仕組みを3～5つ挙げ、それぞれ簡潔に説明します。<br><span class="example-text">例: 1. 可動式防潮堤と立体避難路の融合 / 2. AIによるリアルタイム災害予測・避難誘導システム</span></p></div>
+                <div id="item-setting" class="item-explanation"><h4>まちの舞台設定 (場所、時代など)</h4><p>作品の背景となる設定を考えます。これがまちのデザインや機能に影響します。<br><span class="example-text">例: 2050年の東京湾岸エリア、山に囲まれた未来の集落</span></p></div>
+                <div id="item-facilities" class="item-explanation"><h4>主な施設・エリアとその機能</h4><p>まちの中にどのような主要な建物やエリアがあり、それぞれがどんな役割を果たすのかをリストアップします。Minecraftで具体的に建築するものをイメージしながら書き出しましょう。<br><span class="example-text">・中央防災センター: 災害対策本部、情報集約<br>・多機能型避難シェルター: 居住区画、医療施設、備蓄倉庫</span></p></div>
+                <div id="item-mechanisms" class="item-explanation"><h4>レジリエンスを実現するための具体的な仕組みや工夫</h4><p>「レジリエントなまちの特徴」を、Minecraftの世界でどのように表現し、機能させるのかを具体的に記述します。コマンドやレッドストーン、MakeCodeなどの技術をどう使うかも考えましょう。<br><span class="example-text">・コマンドブロックで洪水をシミュレートし、防潮堤が自動で上昇する様子を再現する。</span></p></div>
+                <div id="item-story" class="item-explanation"><h4>このまちで暮らす人々の物語や、災害発生時のシナリオ (任意)</h4><p>もし作品に物語性を持たせたい場合は、このまちで暮らす人々の様子や、実際に災害が発生した際にどのようなドラマが展開されるのか、といったシナリオを考えてみましょう。（この項目は任意です）<br><span class="example-text">例: 主人公の少女が、AIドローンと共に、水害に見舞われたまちで家族を探し、仲間と協力して困難を乗り越えていく物語。</span></p></div>
+                {/* ----- 各項目の説明ここまで ----- */}
+
+
+                <section id="tips-for-filling" class="content-section styled-section">
+                    <h2>コンセプトシート記入のヒント</h2>
+                    <ul class="wb-list wb-list-star">
+                        <li><strong>具体的であること:</strong> できるだけ具体的に記述しましょう。</li>
+                        <li><strong>チーム全員で話し合う:</strong> みんなで意見を出し合いながら進めましょう。</li>
+                        <li><strong>図やスケッチも活用:</strong> 言葉だけでは伝えにくいアイデアは、別途スケッチなどを用意し、共有フォルダに保存するのも良い方法です。</li>
+                        <li><strong>定期的に見直す:</strong> プロジェクトが進むにつれて、コンセプトシートも更新していきましょう。</li>
+                        <li><strong>楽しんで書く！:</strong> ワクワクする未来のまちを想像しながら、楽しみながら記入しましょう！</li>
+                    </ul>
+                </section>
+
+                <div style="text-align: center; margin-top: 40px; padding-bottom: 20px;">
+                    <a href="index.html" class="button-link">🏠 プロジェクトハブのトップへ戻る</a>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 水戸葵陵高校 Minecraftカッププロジェクトチーム</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
