@@ -1756,3 +1756,71 @@ body.guide-page-body { /* ガイドページ専用のbodyスタイル (任意) *
 }
 
 /* .step-list や .tips-list-item は既存のスタイルが適用される想定 */
+
+/* style.css */
+
+/* --- (既存のスタイルは変更なしの部分は省略) --- */
+
+/* --- 7. 詳細ガイドページ共通スタイル (追記・調整) --- */
+/* (既存の .page-layout-with-sidenav, .page-sidenav, .page-main-content,
+   .content-section.styled-section, .wb-list, .tips-list.styled-list,
+   .step-list, .text-link-button などは活用・微調整) */
+
+/* --- 7.x.x techniques_redstone.html 特有のスタイル --- */
+
+.component-grid { /* レッドストーン部品説明用グリッド */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.component-card { /* 各部品の説明カード */
+    background-color: #f9fafb;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e7eaf3;
+    display: flex; /* アイコンとテキストを綺麗に並べる */
+    flex-direction: column;
+}
+.component-card .component-icon { /* 部品アイコン (絵文字) */
+    font-size: 2em; /* アイコンサイズ */
+    margin-bottom: 10px;
+    line-height: 1;
+    text-align: center; /* アイコンを中央に */
+    /* 各アイコンの色はHTML内で直接指定するか、個別のクラスで指定 */
+}
+.component-card h4 { /* 部品名 */
+    font-size: 1.2em;
+    color: #34495e; /* 少し濃いめの色 */
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-align: center; /* 部品名も中央に */
+}
+.component-card p { /* 部品の説明 */
+    font-size: 0.9em;
+    color: #555e68;
+    line-height: 1.5;
+    margin-bottom: 0;
+    flex-grow: 1; /* カードの高さを揃えるため */
+}
+
+
+.technique-example.redstone-example { /* レッドストーンの作成例ブロック */
+    border-left: 5px solid #e74c3c; /* レッドストーンは赤系のアクセント */
+    background-color: #fff5f5; /* 薄い赤系の背景 */
+    margin-top: 30px; /* 前のブロックとの間隔 */
+}
+.technique-example.redstone-example h3 { /* 作成例のタイトル */
+    color: #c0392b; /* 赤系 */
+}
+.technique-example.redstone-example h4 { /* 「必要なもの」「作り方」 */
+    color: #d35400; /* オレンジ系 */
+}
+
+
+/* --- (既存のレスポンシブスタイルも確認・調整) --- */
+@media (max-width: 768px) {
+    .component-grid {
+        grid-template-columns: 1fr; /* スマホでは1列 */
+    }
+}
