@@ -8,78 +8,93 @@
 </head>
 <body>
 
-    <!-- (ヘッダー、ナビゲーション、メインコンテンツの他のセクションは変更なし) -->
-    <header>
-        <h1>🏆 第7回 Minecraftカップ プロジェクトハブ 🏆</h1>
-        <p>～水戸葵陵高校 - レジリエンスを備えたまちづくりへの挑戦～</p>
+    <header class="site-header">
+        <div class="container">
+            <h1>🏆 第7回 Minecraftカップ プロジェクトハブ 🏆</h1>
+            <p>～水戸葵陵高校 - レジリエンスを備えたまちづくりへの挑戦～</p>
+        </div>
     </header>
 
-    <nav>
-        <h2>メインナビゲーション</h2>
-        <ul>
-            <li><a href="startup-guide-detailed.html">🚀 スタートガイド</a></li>
-            <li><a href="project-schedule.html">🗓️ スケジュール</a></li>
-            <li><a href="task-management-guide.html">✅ タスク管理</a></li>
-            <li><a href="faq.html">❓ Q&A</a></li>
-        </ul>
+    <nav class="main-navigation">
+        <div class="container">
+            <ul>
+                <li><a href="startup-guide-detailed.html">🚀 全チーム共通スタートガイド</a></li>
+                <li><a href="project-schedule.html">🗓️ 全体スケジュール</a></li>
+                <li><a href="theme-explanation.html">📖 大会テーマ解説</a></li>
+                <li><a href="faq.html">❓ 全チーム共通Q&A</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <main>
-        <section id="hero">
-            <h2>🌟 まずはここから！ 🌟</h2>
-            <p>プロジェクトを初めて進める人は、まず「<strong><a href="startup-guide-detailed.html">🚀 スタートアップガイド (詳細版)</a></strong>」を読んで、全体の流れや最初のステップを確認しましょう！</p>
-            <p><strong>現在の最重要目標：作品完成【7月末】</strong>を目指して頑張りましょう！</p>
-        </section>
+    <main class="main-content">
+        <div class="container">
 
-        <section id="project-summary">
-            <h2>📝 プロジェクト概要</h2>
-            <p>このプロジェクトでは、Minecraftカップのテーマ「未曾有の災害から人類の命をまもれ！～レジリエンスを備えたまちづくり～」に基づき、災害に強く、人々が安心して暮らせる未来のまちをMinecraftで創造します。</p>
-            <p>水戸葵陵高校のチーム一丸となって、調査・企画・設計・制作・発表準備を進めていきます。このウェブサイトは、プロジェクトに必要な情報や資料を集約するハブ（中心地）です。</p>
-            <p><strong>大会公式サイト：</strong> <a href="[Minecraftカップ公式サイトのURLをここに]" target="_blank" rel="noopener noreferrer">第7回Minecraftカップ 公式サイト</a></p>
-        </section>
+            <section class="hero-section">
+                <h2>🌟 水戸葵陵高校 Minecraftカップチャレンジャーズへようこそ！ 🌟</h2>
+                <p>このサイトは、水戸葵陵高校からMinecraftカップに挑戦する全チームのための情報ハブです。</p>
+                <p>まずは「<strong><a href="startup-guide-detailed.html">🚀 全チーム共通スタートガイド</a></strong>」を読んで、プロジェクトの進め方を確認しましょう！</p>
+                <p class="deadline-reminder">共通目標：<strong>作品完成【7月末】</strong>を目指しましょう！</p>
+            </section>
 
-        <section id="quick-links">
-            <h2>🔗 クイックリンク集</h2>
-            <p>よく使うページや、重要な情報へのリンクです。</p>
-            {/* (クイックリンクの内容は省略) */}
-            <div>
-                <h3>始める前に読む</h3>
-                <ul>
-                    <li><a href="startup-guide-detailed.html">🚀 スタートアップガイド (詳細版)</a></li>
-                    <li><a href="theme-explanation.html">📖 大会テーマ解説</a></li>
-                </ul>
-            </div>
-            {/* ... 他のクイックリンクカテゴリ ... */}
-            <div>
-                <h3>その他</h3>
-                <ul>
-                    <li><a href="faq.html">❓ Q&A / よくある質問</a></li>
-                    <li><a href="leader-guide.html">👑 リーダーのためのプロジェクト管理術</a></li>
-                    <li><a href="sitemap.html">🗺️ 全てのページ一覧 (サイトマップ)</a></li>
-                </ul>
-            </div>
-        </section>
+            <section id="team-navigation">
+                <h2>各チームのページへ</h2>
+                <p>自分のチームのページを選んで、詳細情報を確認したり、進捗を記録したりしましょう。</p>
+                <div class="team-grid"> {/* チームリンクをグリッド表示するためのコンテナ */}
+                    <a href="team-a-hub.html" class="team-link-card">
+                        <h3>チームA</h3>
+                        <p>チームAの作品テーマやメンバーはこちら</p>
+                    </a>
+                    <a href="team-b-hub.html" class="team-link-card">
+                        <h3>チームB</h3>
+                        <p>チームBの作品テーマやメンバーはこちら</p>
+                    </a>
+                    <a href="team-c-hub.html" class="team-link-card">
+                        <h3>チームC</h3>
+                        <p>チームCの作品テーマやメンバーはこちら</p>
+                    </a>
+                    <a href="team-d-hub.html" class="team-link-card">
+                        <h3>チームD</h3>
+                        <p>チームDの作品テーマやメンバーはこちら</p>
+                    </a>
+                    <a href="team-e-hub.html" class="team-link-card">
+                        <h3>チームE</h3>
+                        <p>チームEの作品テーマやメンバーはこちら</p>
+                    </a>
+                </div>
+            </section>
 
-        <section id="latest-updates">
-            {/* ↓ここから変更・追加↓ */}
-            <h2>
-                <button type="button" id="toggle-updates-button" aria-expanded="true" aria-controls="updates-content-area">
-                    📢 最新情報・お知らせ (クリックで開閉)
-                </button>
-            </h2>
-            <div id="updates-content-area" class="collapsible-content">
-            {/* ↑ここまで変更・追加↑ */}
-                <ul>
-                    <li>2025/MM/DD: 最初のチームミーティングを実施しました！次のアクションは〇〇です。</li>
-                    <li>2025/MM/DD: 次回ミーティングは△月△日です。アジェンダは□□。</li>
-                    <!-- ここに新しいお知らせを追記していく -->
+            <section id="common-resources">
+                <h2>🔧 全チーム共通リソース</h2>
+                <p>全てのチームに役立つ情報やガイドはこちらからアクセスできます。</p>
+                <ul class="quick-link-list">
+                    <li><a href="minecraft-commands-guide.html">⚙️ Minecraftコマンドガイド</a></li>
+                    <li><a href="minecraft-building-techniques.html">🏗️ Minecraft建築テクニック</a></li>
+                    <li><a href="makecode-guide.html">💻 MakeCode入門・活用事例</a></li>
+                    <li><a href="redstone-circuits-guide.html">⚡ レッドストーン回路の基本とアイデア集</a></li>
+                    <li><a href="submission-guide.html">📤 提出物一覧と作成ガイド</a></li>
+                    <li><a href="presentation-tips.html">🗣️ 魅力的なプレゼンテーションのコツ</a></li>
+                    <li><a href="video-creation-guide.html">🎬 動画作成・編集のヒント</a></li>
+                    <li><a href="application-process.html">➡️ 応募方法と締切確認</a></li>
+                    <li><a href="research-analysis-tips.html">📊 効果的な情報収集と分析のコツ</a></li>
+                    <li><a href="design-drawing-guide.html">📐 設計図の描き方・考え方</a></li>
+                    {/* 他の共通リソースページへのリンク */}
                 </ul>
-            </div>
-        </section>
+            </section>
+
+            <section id="shared-space">
+                <h2>💡 アイデア共有 & 質問広場 (任意)</h2>
+                <p>チームの垣根を越えて、良いアイデアを共有したり、技術的な質問をしたりするスペースです。(例: 掲示板ツールへのリンク、GitHub Discussionsなど)</p>
+                {/* <p><a href="[共有スペースのURL]" class="button-link">共有スペースへアクセス</a></p> */}
+                <p><em>(このセクションは、運用方法が決まってから具体的にしましょう)</em></p>
+            </section>
+
+        </div>
     </main>
 
-    <footer>
-        <p>© 2025 水戸葵陵高校 Minecraftカッププロジェクトチーム</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 水戸葵陵高校 Minecraftカッププロジェクトチーム</p>
+        </div>
     </footer>
 
     <script src="main.js"></script>
