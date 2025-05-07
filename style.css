@@ -702,3 +702,237 @@ body.whiteboard-page {
     .wb-title { font-size: 1.8em; }
     .wb-section-title { font-size: 1.3em; }
 }
+/* style.css */
+
+/* --- (既存の0. ～ 6. までのスタイルは変更なし) --- */
+
+
+/* --- 7. 詳細ガイドページ共通スタイル (guide_main.html など) --- */
+body.guide-page-body { /* ガイドページ専用のbodyスタイル (任意) */
+    /* background-color: #fdfdff; /* 少し異なる背景色など */
+    font-family: 'Noto Sans JP', sans-serif; /* Noto Sans JP をメインに */
+}
+
+.page-layout-with-sidenav { display: flex; gap: 35px; /* 少し広げる */ }
+.page-sidenav {
+    flex: 0 0 250px; /* サイドナビの幅を少し広げる */
+    background-color: #ffffff; /* 背景を白に */
+    padding: 30px;
+    border-radius: 10px; /* 角丸を大きく */
+    border: 1px solid #e0e2e5; /* 枠線 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06); /* 少し濃い影 */
+    align-self: flex-start;
+    position: sticky; top: 90px;
+    max-height: calc(100vh - 120px); /* 上下の余白を考慮 */
+    overflow-y: auto;
+}
+.page-sidenav h3 {
+    font-size: 1.35em; /* 少し大きく */
+    color: #343a40; margin-top: 0; margin-bottom: 20px; /* マージン調整 */
+    padding-bottom: 12px; border-bottom: 2px solid #007bff; /* アクセント下線 */
+}
+.page-sidenav ul { list-style-type: none; padding-left: 0; }
+.page-sidenav ul li a.sidenav-link { /* HTML側でクラス名を変更 */
+    display: block; padding: 10px 15px; /* パディング調整 */
+    color: #495057; text-decoration: none;
+    border-radius: 6px; /* 角丸を少し大きく */
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    font-size: 0.98em;
+    margin-bottom: 5px; /* リンク間の余白 */
+    border-left: 3px solid transparent; /* ホバー/アクティブ時のアクセント用 */
+}
+.page-sidenav ul li a.sidenav-link:hover,
+.page-sidenav ul li a.sidenav-link:focus {
+    background-color: #e9f7fd;
+    color: #0056b3;
+    transform: translateX(3px);
+    border-left-color: #007bff;
+}
+.page-sidenav ul li a.sidenav-link.active { /* JSで付与するアクティブクラス */
+    background-color: #007bff;
+    color: white;
+    font-weight: 700;
+    border-left-color: #0056b3;
+}
+.page-main-content { flex-grow: 1; min-width: 0; }
+
+/* コンテンツセクションのスタイル (`.content-section`) */
+.content-section.styled-section { /* .styled-section を追加して区別 */
+    margin-bottom: 50px;
+    padding: 35px; /* パディングを少し増やす */
+    background-color: #ffffff;
+    border: 1px solid #d1d8e0; /* 少し濃いめの枠線 */
+    border-radius: 12px; /* 角丸を大きく */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* 少し濃い影 */
+}
+.content-section.styled-section > h2 {
+    font-size: 2.1em;
+    color: #2c3e50; /* 少し濃いめの見出し色 */
+    margin-bottom: 30px;
+    padding-bottom: 18px;
+    border-bottom: 3px solid #007bff; /* プライマリカラーの下線 */
+    display: flex; /* アイコンを隣に配置する場合の準備 */
+    align-items: center;
+}
+/* セクションタイトルの前にアイコンを置く場合 (例)
+.content-section.styled-section > h2::before {
+    content: "📄";
+    font-size: 1.2em;
+    margin-right: 10px;
+    color: #007bff;
+}
+*/
+.content-section h3 {
+    font-size: 1.65em; color: #34495e; margin-top: 30px; margin-bottom: 18px;
+    padding-bottom: 8px; border-bottom: 1px dashed #bdc3c7;
+}
+.content-section h4 {
+    font-size: 1.35em; color: #007bff; margin-top: 25px; margin-bottom: 12px;
+    font-weight: 700; /* 少し強調 */
+}
+
+/* キーワードハイライトの調整 */
+.keyword-highlight.resilience-keyword { /* .resilience-keyword を追加して区別 */
+    background-color: #ffe082; /* 黄色系 */
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-weight: 700;
+    border: 1px solid #ffca28;
+    color: #4e342e;
+}
+/* 引用ボックスの調整 */
+.quote-box.styled-quote { /* .styled-quote を追加して区別 */
+    border-left: 6px solid #007bff;
+    padding: 25px; /* パディング調整 */
+    margin: 30px 0;
+    background-color: #f0f8ff; /* 明るい青系の背景 */
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+}
+.quote-box.styled-quote p { font-style: normal; line-height: 1.8; }
+.quote-box.styled-quote p strong { color: #0056b3; }
+
+
+/* 汎用リストスタイル (wb-listをベースに調整) */
+.wb-list { list-style-type: none; padding-left: 0; margin-bottom: 20px;}
+.wb-list li {
+    font-size: 1.05em; color: #455a64; margin-bottom: 10px;
+    padding-left: 38px; /* アイコンスペース確保 */
+    position: relative; line-height: 1.6;
+}
+.wb-list li::before {
+    position: absolute; left: 0; top: 1px; /* アイコン位置微調整 */
+    font-size: 1.4em; /* アイコンサイズ */
+    line-height: 1;
+}
+.wb-list.wb-list-star li::before { content: "🌟"; color: #ffc107; } /* 星の色変更 */
+.wb-list.wb-list-check li::before { content: "✅"; color: #4caf50; }
+.wb-list.wb-list-arrow li::before { content: "➡️"; color: #2196f3; }
+.wb-list.wb-list-dot li::before { content: "●"; color: #757575; font-size: 0.9em; top: 7px; }
+
+.tips-list.styled-list li { /* .tips-list に .styled-list を追加した場合 */
+    list-style-type: "💡"; /* 電球アイコン */
+    padding-left: 8px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    padding: 10px 15px 10px 35px; /* アイコン分左にパディング */
+    border-radius: 5px;
+    position: relative;
+}
+.tips-list.styled-list li::before { /* 上書きするため再定義 */
+    content: "💡";
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 1.2em;
+    color: #ffa726;
+}
+
+
+/* ステップリスト (`.wb-step-list`) のデザイン向上 */
+.wb-step-list { list-style-type: none; padding-left: 0; counter-reset: step-counter; }
+.wb-step-list li {
+    font-size: 1em; color: #333; margin-bottom: 25px;
+    padding: 20px 20px 20px 70px; /* 左に番号スペース確保 */
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.wb-step-list li::before { /* ステップ番号 */
+    counter-increment: step-counter; content: counter(step-counter);
+    position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
+    background-color: #007bff; color: white;
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 1.1em;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+.step-title-container { margin-bottom: 10px; }
+.wb-step-list li strong { /* ステップのタイトル */
+    color: #0056b3; font-size: 1.25em; font-weight: 700;
+    display: block; /* 番号とテキストの間に改行が入るように */
+}
+.wb-step-list li p { margin-bottom: 0; line-height: 1.7; font-size: 0.95em; }
+
+/* 役割説明カード (`.role-explanation-container`, `.role-card`) - 既存スタイルを微調整 */
+.role-explanation-container {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* 少し広げる */
+    margin: 30px 0;
+}
+.role-card {
+    background-color: #fdfdff; /* 背景を明るく */
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #e7e7e7;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+    display: flex; /* 中身をFlexboxで制御 */
+    flex-direction: column;
+}
+.role-card h4 { /* 役割名 */
+    font-size: 1.5em; /* 少し大きく */
+    color: #007bff; margin-top: 0; margin-bottom: 18px;
+    display: flex; align-items: center;
+    border-bottom: 1px solid #e0e0e0; padding-bottom: 10px;
+}
+/* HTMLに直接絵文字があるため、CSSでの::beforeは不要 */
+.role-card p { font-size: 1em; margin-bottom: 12px; flex-grow: 1; /* 説明文がカードの高さを埋める */}
+.role-card p strong { display: block; margin-bottom: 6px; color: #343a40; font-size: 1.05em;}
+.role-card ul { list-style-type: "✓ "; padding-left: 5px; font-size: 0.9em; margin-bottom: 15px; }
+.role-card ul li { margin-bottom: 6px; padding-left: 8px;}
+
+.teamwork-point {
+    font-style: italic; color: #495057; background-color: #e9f7fd;
+    padding: 15px; border-radius: 6px; margin-top: 20px; border: 1px solid #bee5eb;
+}
+.meeting-agenda-list li { list-style-type: "🗓️ "; padding-left: 8px; }
+
+
+/* --- (既存の8. 共通ボタン, 9. フッター, 10. レスポンシブ は適宜調整) --- */
+/* レスポンシブ調整: サイドナビ */
+@media (max-width: 992px) {
+    .page-layout-with-sidenav { flex-direction: column; }
+    .page-sidenav {
+        flex: 0 0 auto; width: 100%; margin-bottom: 30px; position: static;
+        max-height: none; overflow-y: visible; box-shadow: none; /* スマホでは影なし */
+    }
+    .page-sidenav ul { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; } /* ボタンを中央揃え */
+    .page-sidenav ul li a.sidenav-link {
+        padding: 10px 18px; /* ボタンサイズ調整 */
+        border: 1px solid #ced4da;
+        background-color: #f8f9fa; /* 背景色を少しつける */
+    }
+    .page-sidenav ul li a.sidenav-link:hover,
+    .page-sidenav ul li a.sidenav-link:focus,
+    .page-sidenav ul li a.sidenav-link.active {
+        background-color: #007bff; color: white;
+        border-color: #007bff;
+    }
+
+    .role-explanation-container { grid-template-columns: 1fr; }
+    .wb-step-list li { padding: 15px 15px 15px 60px; }
+    .wb-step-list li::before { left: 15px; }
+
+}
