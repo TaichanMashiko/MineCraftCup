@@ -37,7 +37,6 @@
                 <p class="deadline-reminder">共通目標：<strong>作品完成【7月末】</strong>を目指しましょう！</p>
             </section>
 
-            {/* 各チームのページへのセクションは前回と同様なので省略 */}
             <section id="team-navigation">
                 <h2>各チームのページへ</h2>
                 <p>自分のチームのページを選んで、作品のコンセプトや進捗を確認・共有しましょう。</p>
@@ -45,17 +44,26 @@
                     <a href="team-a-hub.html" class="team-link-card">
                         <div class="team-icon">A</div><h3>チームA</h3><p>（チームAの簡単な紹介やテーマ）</p>
                     </a>
-                    {/* B, C, D, E も同様 */}
+                    <a href="team-b-hub.html" class="team-link-card">
+                        <div class="team-icon">B</div><h3>チームB</h3><p>（チームBの簡単な紹介やテーマ）</p>
+                    </a>
+                    <a href="team-c-hub.html" class="team-link-card">
+                        <div class="team-icon">C</div><h3>チームC</h3><p>（チームCの簡単な紹介やテーマ）</p>
+                    </a>
+                    <a href="team-d-hub.html" class="team-link-card">
+                        <div class="team-icon">D</div><h3>チームD</h3><p>（チームDの簡単な紹介やテーマ）</p>
+                    </a>
+                    <a href="team-e-hub.html" class="team-link-card">
+                        <div class="team-icon">E</div><h3>チームE</h3><p>（チームEの簡単な紹介やテーマ）</p>
+                    </a>
                 </div>
             </section>
-
 
             <section id="common-resources">
                 <h2>🔧 全チーム共通リソース</h2>
                 <p>全てのチームに役立つ情報やガイドはこちらからアクセスできます。下のカテゴリから探すか、キーワードで検索してください。(検索機能は将来的に)</p>
 
                 <div class="resource-layout">
-                    {/* 左側のカテゴリナビゲーション */}
                     <aside class="resource-categories-nav">
                         <h3>カテゴリ</h3>
                         <ul>
@@ -68,9 +76,7 @@
                         </ul>
                     </aside>
 
-                    {/* 右側のリソースカード表示エリア */}
                     <div class="resource-cards-container">
-                        {/* カテゴリ1: 始める前に・チーム運営 */}
                         <div id="category-getting-started" class="resource-category-group">
                             <h3>始める前に・チーム運営</h3>
                             <div class="resource-card-grid">
@@ -82,7 +88,6 @@
                             </div>
                         </div>
 
-                        {/* カテゴリ2: テーマ理解・企画 */}
                         <div id="category-theme-planning" class="resource-category-group">
                             <h3>テーマ理解・企画</h3>
                             <div class="resource-card-grid">
@@ -94,8 +99,6 @@
                             </div>
                         </div>
 
-                        {/* 他のカテゴリも同様に resource-category-group と resource-card-grid で構成 */}
-                        {/* カテゴリ3: 設計・デザイン */}
                         <div id="category-design" class="resource-category-group">
                              <h3>設計・デザイン</h3>
                              <div class="resource-card-grid">
@@ -104,7 +107,6 @@
                              </div>
                         </div>
 
-                        {/* カテゴリ4: Minecraft制作技術 */}
                         <div id="category-minecraft-tech" class="resource-category-group">
                             <h3>Minecraft制作技術</h3>
                             <div class="resource-card-grid">
@@ -116,7 +118,6 @@
                             </div>
                         </div>
 
-                        {/* カテゴリ5: 発表・提出 */}
                         <div id="category-presentation-submission" class="resource-category-group">
                             <h3>発表・提出</h3>
                             <div class="resource-card-grid">
@@ -127,7 +128,6 @@
                             </div>
                         </div>
 
-                        {/* カテゴリ6: その他 */}
                         <div id="category-others" class="resource-category-group">
                             <h3>その他</h3>
                             <div class="resource-card-grid">
@@ -140,15 +140,18 @@
                 </div>
             </section>
 
-            {/* お知らせセクションは前回と同様なので省略 */}
-            <section id="shared-space">
+            <section id="shared-space"> {/* IDをshared-spaceに変更 (以前はlatest-updatesだったため) */}
                  <h2>
                     <button type="button" id="toggle-updates-button" aria-expanded="true" aria-controls="updates-content-area">
                         📢 全チームへのお知らせ (クリックで開閉)
                     </button>
                 </h2>
                 <div id="updates-content-area" class="collapsible-content">
-                    {/* お知らせ内容 */}
+                    <ul>
+                        <li>2025/MM/DD: 全体ミーティングのお知らせ：△月△日 XX時よりYY教室にて。</li>
+                        <li>2025/MM/DD: 共通で使える便利なコマンド集を更新しました！ (<a href="minecraft-commands-guide.html">コマンドガイド</a>参照)</li>
+                        <li><em>ここに新しいお知らせを追加していきます。</em></li>
+                    </ul>
                 </div>
             </section>
 
