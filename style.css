@@ -1877,3 +1877,91 @@ body.guide-page-body { /* ガイドページ専用のbodyスタイル (任意) *
         grid-template-columns: 1fr; /* MakeCodeのブロック説明もスマホでは1列 */
     }
 }
+
+/* style.css */
+
+/* --- (既存のスタイルは変更なしの部分は省略) --- */
+
+/* --- 7. 詳細ガイドページ共通スタイル (追記・調整) --- */
+/* (既存の .page-layout-with-sidenav, .page-sidenav, .page-main-content,
+   .content-section.styled-section, .wb-list, .tips-list.styled-list,
+   .step-list, .text-link-button, .deadline-highlight などは活用・微調整) */
+
+/* --- 7.x.x guide_submission.html 特有のスタイル --- */
+
+/* 提出物チェックリストのスタイル */
+#submission-checklist .wb-list-check ul { /* 入れ子リストの調整 */
+    font-size: 0.9em;
+    margin-top: 5px;
+    padding-left: 15px; /* 少しインデント */
+    list-style-type: circle; /* マーカー変更 */
+}
+#submission-checklist .wb-list-check ul li::before {
+    content: none; /* 親の::beforeを消す */
+}
+
+
+/* ワールドデータ準備のitem-explanation調整 */
+#world-data-prep .item-explanation ol.step-list li {
+    /* step-listのスタイルを少し調整する場合 */
+    font-size: 0.98em;
+}
+
+/* 作品紹介動画の構成案リスト */
+#video-creation .item-explanation ol.step-list li {
+    background-color: #f9f9f9; /* 少し背景色をつける */
+    border-left-color: #6f42c1; /* 動画関連は紫系のアクセント */
+}
+#video-creation .item-explanation ol.step-list li::before {
+    background-color: #6f42c1;
+}
+#video-creation .item-explanation ol.step-list li strong {
+    color: #5a2d8d;
+}
+
+/* 発表・プレゼンのコツのリスト */
+#presentation-tips .wb-list-star li::before {
+    color: #fd7e14; /* オレンジ系 */
+}
+
+/* 大会応募手順のステップリスト */
+#application-steps ol.step-list li {
+    border-left-color: #20c997; /* 応募手順は緑系のアクセント */
+}
+#application-steps ol.step-list li::before {
+    background-color: #20c997;
+}
+#application-steps ol.step-list li strong {
+    color: #157347;
+}
+
+
+/* 重要締切カードのスタイル (project-schedule.htmlと共通化も検討) */
+.deadline-card { /* 既に定義済みであれば、それを流用・調整 */
+    background-color: #f8d7da; /* 薄い赤系の警告色 */
+    border: 1px solid #f5c6cb;
+    border-left: 5px solid #dc3545; /* 強調 */
+    padding: 25px; /* 少し大きめに */
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.deadline-card h4 {
+    color: #721c24; /* 暗めの赤 */
+    margin-top: 0;
+    font-size: 1.4em; /* 少し大きく */
+}
+.deadline-card .timeline-date.deadline-highlight { /* 日付の強調 */
+    font-size: 1.2em; /* 日付を大きく */
+    display: block;
+    margin-bottom: 10px;
+}
+
+.caution-text { /* 既存スタイルを流用 */
+    font-size: 0.95em; /* 少し大きく */
+    padding: 12px 18px;
+}
+
+
+/* --- (既存のレスポンシブスタイルも確認・調整) --- */
+/* 特に追加するレスポンシブスタイルは今のところありませんが、
+   表示が崩れる場合は適宜調整が必要です。 */
