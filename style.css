@@ -1504,3 +1504,138 @@ body.guide-page-body { /* ガイドページ専用のbodyスタイル (任意) *
         }
     }
 }
+
+/* style.css */
+
+/* --- (既存のスタイルは変更なしの部分は省略) --- */
+
+/* --- 7. 詳細ガイドページ共通スタイル (guide_main.html など) --- */
+/* (既存の .page-layout-with-sidenav, .page-sidenav, .page-main-content, .content-section.styled-section などは活用) */
+
+/* --- 7.x guide_techniques.html (目次ページ) 特有のスタイル および 共通リストスタイル調整 --- */
+.text-center-section {
+    text-align: center;
+}
+.text-center-section > h2 { /* 中央揃えセクションのタイトル */
+    position: relative;
+    padding-bottom: 15px;
+    display: inline-block; /* 下線をコンテンツ幅に合わせる */
+    margin-left: auto; /* 中央寄せのため */
+    margin-right: auto;
+}
+.text-center-section > h2::after { /* タイトルの下線装飾 */
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 70px;
+    height: 3px;
+    background-color: #007bff;
+    border-radius: 1.5px;
+}
+
+.technique-grid { /* テクニックカテゴリカード用のグリッド */
+    /* .resource-grid-main のスタイルを継承しつつ、必要ならここで上書き */
+    /* 例: PCで最大4列にしたい場合 (カードが4つのため) */
+    /* grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* カード幅を少し調整 */
+}
+@media (min-width: 1200px) { /* より広い画面で4列にする場合 */
+    .technique-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) { /* 中間の画面幅で2列にするなど調整 */
+    .technique-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* スマホでは .resource-grid-main のデフォルト (1列) が適用される */
+
+
+.tech-card { /* テクニックカードのスタイル調整 (.resource-card-main を継承) */
+    min-height: 320px; /* 目次カードの高さを少し多めに確保 */
+    text-align: center; /* カード内テキストも中央揃え */
+}
+
+.tech-card .card-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.tech-card h3 {
+    font-size: 1.5em;
+    line-height: 1.3;
+}
+
+.tech-card p {
+    font-size: 0.98em;
+}
+
+
+/* ワールド管理のヒントや外部リンクなどのリストスタイル調整 */
+.tips-list.styled-list li { /* 既存スタイルをベースに */
+    background-color: #f9fafb; /* 背景色を少し変えるなど調整 */
+    border-left: 4px solid #ffa000; /* 左のアクセントボーダー */
+    padding: 12px 15px 12px 20px; /* 左パディング調整 */
+    list-style-type: none; /* ::beforeでアイコンを出すのでデフォルトマーカーは消す */
+    position: relative;
+}
+.tips-list.styled-list li::before { /* アイコンをCSSで付与する場合 */
+    content: "💡"; /* 例: 電球アイコン */
+    position: absolute;
+    left: -25px; /* アイコンの位置を調整 (ネガティブマージンで枠線の外に出すなど) */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3em;
+    color: #ffa000;
+}
+/* 階層リスト (.nested-list) のスタイル */
+.nested-list {
+    list-style-type: disc; /* 標準の黒丸 */
+    padding-left: 25px; /* インデント */
+    margin-top: 8px;
+    font-size: 0.95em;
+}
+.nested-list li {
+    background-color: transparent; /* 親リストの背景色を継承しないように */
+    border: none;
+    padding: 3px 0;
+    box-shadow: none;
+}
+.nested-list li::before { /* 親リストの::beforeを継承しないように */
+    content: "";
+}
+
+
+.link-list li { /* 外部リンクリストのスタイル */
+    list-style-type: "🔗";
+    padding-left: 10px; /* マーカーとテキストの間隔 */
+    margin-bottom: 8px;
+}
+
+.caution-text { /* 注意書き用テキスト */
+    font-size: 0.9em;
+    color: #721c24; /* 暗めの赤 */
+    background-color: #f8d7da; /* 薄い赤系の背景 */
+    border: 1px solid #f5c6cb;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+
+/* --- (既存の8. 9. 10. 11. のスタイルは変更なし、または適宜調整) --- */
+/* レスポンシブ調整 */
+@media (max-width: 991px) {
+    .technique-grid {
+        /* タブレットでは2列表示を維持 (index.htmlのresource-grid-mainと同様の挙動) */
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    @media (min-width: 768px) { /* 768px以上991px以下で2列 */
+        .technique-grid {
+             grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+/* スマホでは1列になるのは既存の .resource-grid-main のレスポンシブ設定で対応 */
