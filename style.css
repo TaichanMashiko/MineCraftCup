@@ -1201,3 +1201,148 @@ body.guide-page-body { /* ガイドページ専用のbodyスタイル (任意) *
 }
 
 /* (その他の .tips-list.styled-list などのスタイル) */
+
+/* style.css */
+
+/* --- (既存の0. ～ 6. までのスタイルは変更なし) --- */
+/* --- (既存の7. 詳細ガイドページ共通スタイル の基本的な部分は活用) --- */
+
+/* --- 7. 詳細ガイドページ共通スタイル (追記・調整) --- */
+
+/* (既存の .page-layout-with-sidenav, .page-sidenav, .page-main-content, .content-section.styled-section などは活用) */
+
+/* スケジュールページ特有の調整 */
+.deadline-highlight { /* 重要締切のテキスト強調 */
+    color: #d9534f; /* 赤系 */
+    font-weight: 700;
+}
+
+/* タイムラインコンテナ */
+.timeline-container {
+    position: relative;
+    padding-left: 50px; /* マーカーと線のスペース */
+    margin-top: 30px;
+}
+.timeline-container::before { /* タイムラインの縦線 */
+    content: '';
+    position: absolute;
+    left: 22px; /* マーカーの中心に合わせる (マーカー幅44px / 2 - 線幅4px / 2) */
+    top: 10px; /* 少し上から開始 */
+    bottom: 10px; /* 少し下で終了 */
+    width: 4px;
+    background-color: #007bff;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px; /* 各アイテム間の余白 */
+}
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 0; /* カードの上端に合わせる */
+    width: 44px;
+    height: 44px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6em; /* 数字を大きく */
+    font-weight: bold;
+    box-shadow: 0 0 0 6px #f4f6f8, /* 背景色で縁取り */
+                0 3px 8px rgba(0,0,0,0.15); /* 軽い影 */
+    z-index: 2; /* 線より手前に */
+    border: 2px solid white; /* マーカーの内側に白い線 */
+}
+/* フェーズごとのマーカー色 (任意) */
+.phase1-marker { background-color: #6f42c1; } /* 紫系 */
+.phase2-marker { background-color: #fd7e14; } /* オレンジ系 */
+.phase3-marker { background-color: #20c997; } /* 緑系 */
+.phase4-marker { background-color: #17a2b8; } /* シアン系 */
+.timeline-marker:contains("!") { background-color: #dc3545; font-size: 2em; } /* 締切アイコン */
+
+
+.timeline-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e0e2e5;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    margin-left: 30px; /* マーカーとの間隔 */
+    position: relative; /* 吹き出し風の矢印のため */
+}
+/* 吹き出し風の矢印 (任意) */
+.timeline-card::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: -10px; /* カードの外側（マーカー側） */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #ffffff transparent transparent; /* 右向きの三角形 */
+}
+
+
+.timeline-card h3 { /* フェーズタイトル */
+    font-size: 1.5em;
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.timeline-card h3.important-phase { /* 強調したいフェーズ */
+    color: #c82333;
+}
+.timeline-date {
+    font-weight: 500;
+    color: #555e68;
+    margin-bottom: 15px;
+    display: block;
+    font-size: 0.95em;
+    border-bottom: 1px dashed #e0e2e5;
+    padding-bottom: 8px;
+}
+.timeline-card p {
+    font-size: 0.98em;
+    line-height: 1.6;
+}
+.timeline-card p:last-child { margin-bottom: 0; }
+.timeline-card ul { /* カード内のリスト */
+    font-size: 0.95em;
+    margin-top: 10px;
+}
+
+/* 重要締切カード */
+.deadline-card {
+    background-color: #fff3cd; /* 黄色系の警告色 */
+    border: 1px solid #ffeeba;
+    border-left: 5px solid #ffc107;
+    padding: 20px;
+    border-radius: 8px;
+}
+.deadline-card h4 {
+    color: #856404;
+    margin-top: 0;
+    font-size: 1.3em;
+}
+
+/* --- (既存の8. 9. 10. のスタイルは変更なし、または適宜調整) --- */
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+    .timeline-container { padding-left: 20px; } /* スマホでは左の余白を減らす */
+    .timeline-marker {
+        width: 38px; height: 38px; font-size: 1.4em;
+        left: -19px; /* 縦線の中心に来るように (線幅4px) */
+        box-shadow: 0 0 0 4px #f4f6f8, 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .timeline-container::before { left: 0; } /* スマホでは線を一番左に */
+    .timeline-card { margin-left: 35px; } /* スマホでのカードの左マージン */
+    .timeline-card::before { display: none; } /* スマホでは吹き出し矢印を非表示 */
+}
