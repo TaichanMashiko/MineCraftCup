@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakeCodeプログラミングテクニック - Minecraftカップ プロジェクトハブ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="guide-page-body">
+
+    <header class="site-header">
+        <div class="container">
+            <h1>💻 MakeCodeプログラミング</h1>
+            <p>～ブロックで簡単！Minecraftの世界をプログラムで動かそう～</p>
+        </div>
+    </header>
+
+    <nav class="main-navigation">
+        <div class="container">
+            <h2>メインナビゲーション</h2>
+            <ul>
+                <li><a href="index.html">🏠 ホーム</a></li>
+                <li><a href="guide_main.html">🧭 テーマと進め方</a></li>
+                <li><a href="guide_techniques.html">🛠️ テクニック集TOP</a></li>
+                <li><a href="guide_submission.html">🏆 提出と応募について</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container page-layout-with-sidenav">
+
+            <aside class="page-sidenav">
+                <h3>MakeCode 目次</h3>
+                <ul>
+                    <li><a href="#makecode-intro" class="sidenav-link">はじめに</a></li>
+                    <li><a href="#what-is-makecode" class="sidenav-link">MakeCodeとは？</a></li>
+                    <li><a href="#getting-started" class="sidenav-link">MakeCodeを始めよう</a></li>
+                    <li><a href="#basic-blocks" class="sidenav-link">基本的なブロックの種類</a></li>
+                    <li><a href="#simple-programs" class="sidenav-link">簡単なプログラム作成例</a></li>
+                    <li><a href="#agent-programming" class="sidenav-link">エージェントプログラミング</a></li>
+                    <li><a href="#makecode-practice" class="sidenav-link">MakeCode練習のコツ</a></li>
+                </ul>
+            </aside>
+
+            <article class="page-main-content">
+
+                <section id="makecode-intro" class="content-section styled-section">
+                    <h2>はじめに - プログラミングで創造性をブースト！</h2>
+                    <p>MakeCodeは、Minecraft Education版で利用できる、ブロックを組み合わせて視覚的にプログラムを作れるツールです。「プログラミングは難しそう…」と思っている人でも、パズル感覚で簡単に始めることができます。</p>
+                    <p>このガイドでは、MakeCodeの基本的な使い方から、エージェント（お手伝いロボット）を動かしたり、簡単な自動建築をしたりするプログラムの作り方までを紹介します。プログラミングの楽しさを体験し、作品の可能性を広げましょう！</p>
+                </section>
+
+                <section id="what-is-makecode" class="content-section styled-section">
+                    <h2>MakeCodeとは？ - ブロックでつくる魔法の呪文</h2>
+                    <div class="item-explanation">
+                        <h4>5.1. MakeCodeのすごいところ</h4>
+                        <ul class="wb-list wb-list-check">
+                            <li><strong>直感的で簡単:</strong> 色分けされたブロックをドラッグ＆ドロップで組み合わせるだけ！</li>
+                            <li><strong>すぐに結果が見える:</strong> 作ったプログラムをMinecraftの世界ですぐに実行して試せる！</li>
+                            <li><strong>エージェントを操れる:</strong> 自分専用のお手伝いロボット「エージェント」に指示を出して、建築や整地などを自動化できる！</li>
+                            <li><strong>プログラミング的思考が身につく:</strong> 問題解決の手順を論理的に考える力が自然と養われる！</li>
+                        </ul>
+                        <p>コマンドブロックよりも複雑な処理や、繰り返し作業の自動化などが得意です。</p>
+                    </div>
+                </section>
+
+                <section id="getting-started" class="content-section styled-section">
+                    <h2>MakeCodeを始めよう - 起動と基本画面</h2>
+                    <div class="item-explanation">
+                        <h4>5.2. MakeCodeの起動方法</h4>
+                        <p>Minecraft Education版のゲーム内で、以下のいずれかの方法でMakeCodeエディタを開きます。</p>
+                        <ol class="step-list">
+                            <li><div class="step-title-container"><span class="step-number">1</span>チャットコマンドで起動</div><p>チャット欄を開き（通常は `T` キーまたはEnterキー）、<code>/code</code> と入力して実行します。</p></li>
+                            <li><div class="step-title-container"><span class="step-number">2</span>キーボードショートカットで起動</div><p>デフォルトでは `C` キーを押すとCode Builder（MakeCodeエディタを含む）が開きます。</p></li>
+                        </ol>
+                        <p>Code Builderが開いたら、「Microsoft MakeCode」を選択し、「新しいプロジェクト」を作成しましょう。</p>
+                        <!-- ここにMakeCodeの起動画面やプロジェクト作成画面のスクリーンショット挿入イメージ -->
+                    </div>
+                    <div class="item-explanation">
+                        <h4>MakeCodeエディタの基本画面</h4>
+                        <ul class="wb-list wb-list-dot">
+                            <li><strong>ブロックカテゴリ:</strong> 画面左側に、「プレイヤー」「ブロック」「エージェント」など、様々な種類のブロックがカテゴリ別に並んでいます。</li>
+                            <li><strong>ワークスペース:</strong> 画面中央の広いエリア。ここにブロックをドラッグ＆ドロップしてプログラムを組み立てます。</li>
+                            <li><strong>実行ボタン (緑の三角):</strong> 作成したプログラムをMinecraftの世界で実行します。</li>
+                            <li><strong>シミュレーター (左下):</strong> 簡単な動作なら、Minecraftに戻らなくてもここで確認できます。（エージェントの動きなどは限定的）</li>
+                        </ul>
+                        <!-- ここにMakeCodeエディタの基本画面のスクリーンショット挿入イメージ -->
+                    </div>
+                </section>
+
+                <section id="basic-blocks" class="content-section styled-section">
+                    <h2>基本的なブロックの種類と役割</h2>
+                    <p>MakeCodeにはたくさんのブロックがありますが、まずはよく使う基本的なブロックを覚えましょう。</p>
+                    <div class="component-grid">
+                        <div class="component-card makecode-block">
+                            <div class="component-icon mc-event">🔁</div><h4>イベントブロック</h4>
+                            <p>「チャットコマンドを入力したとき」「プレイヤーが歩いたとき」など、プログラムが動き出す「きっかけ」を指定します。全てのプログラムは基本的にこのブロックから始まります。</p>
+                        </div>
+                        <div class="component-card makecode-block">
+                            <div class="component-icon mc-agent">🤖</div><h4>エージェントブロック</h4>
+                            <p>エージェントを「前に動かす」「向きを変える」「ブロックを置く/壊す」など、エージェントに様々な指示を出すためのブロックです。</p>
+                        </div>
+                        <div class="component-card makecode-block">
+                            <div class="component-icon mc-loops">🔄</div><h4>ループ (繰り返し) ブロック</h4>
+                            <p>「〇回繰り返す」「ずっと」など、同じ命令を何度も実行させたいときに使います。</p>
+                        </div>
+                        <div class="component-card makecode-block">
+                            <div class="component-icon mc-logic">❓</div><h4>ロジック (条件分岐) ブロック</h4>
+                            <p>「もし〇〇なら△△する、でなければ××する」というように、条件によって実行する命令を変えたいときに使います。（if文）</p>
+                        </div>
+                        <div class="component-card makecode-block">
+                            <div class="component-icon mc-variables">📦</div><h4>変数ブロック</h4>
+                            <p>数値や文字列などの情報を一時的に保存しておくための「箱」のようなものです。プログラムの中で値を変化させたり、参照したりできます。</p>
+                        </div>
+                         <div class="component-card makecode-block">
+                            <div class="component-icon mc-player">👤</div><h4>プレイヤーブロック</h4>
+                            <p>プレイヤーに対して何かをさせたり（例: メッセージを表示）、プレイヤーの位置情報を取得したりするブロックです。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="simple-programs" class="content-section styled-section">
+                    <h2>簡単なプログラム作成例 - まずは動かしてみよう！</h2>
+                    <p>実際にブロックを組み合わせて、簡単なプログラムを作ってみましょう。</p>
+
+                    <div class="technique-example makecode-example">
+                        <h3>チャットコマンドで「こんにちは！」</h3>
+                        <p>チャットで特定の言葉を入力すると、エージェント（またはプレイヤー）が挨拶してくれるプログラムです。</p>
+                        <h4>MakeCodeブロックの組み合わせ：</h4>
+                        <ol class="step-list">
+                            <li><div class="step-title-container"><span class="step-number">1</span><strong>イベント設定</strong></div><p>「プレイヤー」カテゴリから「チャットコマンド "jump" を実行したとき」ブロックをワークスペースに置きます。「jump」の部分を好きな言葉（例: "hello"）に変更します。</p></li>
+                            <li><div class="step-title-container"><span class="step-number">2</span><strong>アクション設定</strong></div><p>「プレイヤー」カテゴリから「自分に "メッセージ" と言う」ブロックを、手順1のイベントブロックの中にはめ込みます。「メッセージ」の部分を「こんにちは！」などに変更します。</p></li>
+                        </ol>
+                        <p class="tips-list-item">✨<strong>実行方法：</strong>緑の実行ボタンを押し、Minecraftのチャット欄で設定したコマンド（例: "hello"）を入力してみましょう！</p>
+                        <!-- ここに完成したブロックプログラムのスクリーンショット -->
+                    </div>
+
+                    <div class="technique-example makecode-example">
+                        <h3>エージェントを四角く歩かせる</h3>
+                        <p>チャットコマンドで、エージェントに指定した長さの正方形を描くように歩かせるプログラムです。</p>
+                        <h4>MakeCodeブロックの組み合わせ：</h4>
+                        <ol class="step-list">
+                            <li><div class="step-title-container"><span class="step-number">1</span><strong>イベント設定</strong></div><p>「プレイヤー」カテゴリから「チャットコマンド "square" と [数値] を実行したとき」ブロックを置きます。数値は後で辺の長さに使います。</p></li>
+                            <li><div class="step-title-container"><span class="step-number">2</span><strong>繰り返し設定</strong></div><p>「ループ」カテゴリから「4回繰り返す」ブロックをイベントブロックの中にはめ込みます。（正方形なので4回）</p></li>
+                            <li><div class="step-title-container"><span class="step-number">3</span><strong>エージェントの動き</strong></div><p>「4回繰り返す」ブロックの中に、以下のブロックを順番にはめ込みます。<br>・「エージェント」カテゴリから「エージェントを前に [num1] ブロック動かす」（[num1]はチャットコマンドで受け取った数値変数）<br>・「エージェント」カテゴリから「エージェントを [右] に [90] 度回す」</p></li>
+                        </ol>
+                        <p class="tips-list-item">✨<strong>実行方法：</strong>エージェントを呼び出し（チャットで `/agent create`）、プログラムを実行後、チャットで「square 5」などと入力してみましょう！</p>
+                        <!-- ここに完成したブロックプログラムのスクリーンショット -->
+                    </div>
+                </section>
+
+                <section id="agent-programming" class="content-section styled-section">
+                    <h2>エージェントプログラミングの魅力</h2>
+                    <p>MakeCodeの大きな特徴の一つが「エージェント」の存在です。エージェントはプレイヤーの指示に従って様々な作業をしてくれるロボットのようなものです。</p>
+                    <div class="item-explanation">
+                        <h4>エージェントでできること（例）</h4>
+                        <ul class="wb-list wb-list-arrow">
+                            <li>指定した場所にブロックを置いたり、壊したりする（自動建築、整地）。</li>
+                            <li>アイテムを集めたり、植えたりする。</li>
+                            <li>プレイヤーを追跡したり、特定の場所へ移動したりする。</li>
+                            <li>複雑なパターンや構造物をプログラムで自動生成する。</li>
+                        </ul>
+                        <p>エージェントをうまく使うことで、手作業では大変な建築や作業も効率的に行うことができます。ぜひ色々な命令を試してみてください。</p>
+                    </div>
+                </section>
+
+                <section id="makecode-practice" class="content-section styled-section">
+                    <h2>MakeCode練習のコツ</h2>
+                    <ul class="wb-list wb-list-star">
+                        <li><strong>チュートリアルから始める:</strong> MakeCodeエディタ内には、基本的な操作を学べるチュートリアルがたくさん用意されています。まずはこれらを試してみましょう。</li>
+                        <li><strong>ブロックの意味を理解する:</strong> 各ブロックがどんな働きをするのか、実際に動かして確認しながら覚えましょう。</li>
+                        <li><strong>少しずつ複雑にしていく:</strong> 最初は簡単なプログラムから作り始め、徐々にブロックを増やしたり、組み合わせたりして、より複雑な動きに挑戦していきましょう。</li>
+                        <li><strong>エラーを恐れない:</strong> プログラムが思った通りに動かなくても、どこが間違っているのかを考えることが上達への道です。MakeCodeはエラーも比較的わかりやすく表示してくれます。</li>
+                        <li><strong>他の人の作品を参考にする:</strong> Minecraft Educationの公式サイトやYouTubeなどで、他の人が作ったMakeCodeのプログラムを見てみるのも勉強になります。</li>
+                        <li><strong>目標を決めて作る:</strong> 「こんな動きをさせたい」「こんなものを作りたい」という具体的な目標を持つと、学習のモチベーションが上がります。</li>
+                    </ul>
+                </section>
+
+                <div style="text-align: center; margin-top: 40px; padding-bottom: 20px;">
+                    <a href="guide_techniques.html" class="button-link">🛠️ テクニック集のトップへ戻る</a>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 水戸葵陵高校 Minecraftカッププロジェクトチーム</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
