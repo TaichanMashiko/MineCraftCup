@@ -1824,3 +1824,56 @@ body.guide-page-body { /* ガイドページ専用のbodyスタイル (任意) *
         grid-template-columns: 1fr; /* スマホでは1列 */
     }
 }
+
+/* style.css */
+
+/* --- (既存のスタイルは変更なしの部分は省略) --- */
+
+/* --- 7. 詳細ガイドページ共通スタイル (追記・調整) --- */
+/* (既存の .page-layout-with-sidenav, .page-sidenav, .page-main-content,
+   .content-section.styled-section, .wb-list, .tips-list.styled-list,
+   .step-list, .text-link-button などは活用・微調整) */
+
+/* --- 7.x.x techniques_makecode.html 特有のスタイル --- */
+
+.component-card.makecode-block { /* MakeCodeのブロック説明カード */
+    border-left: 5px solid #ff9800; /* MakeCodeのオレンジ系のアクセント */
+    background-color: #fff8e1; /* 薄いオレンジ系の背景 */
+}
+.component-card.makecode-block .component-icon {
+    /* アイコンの色もテーマに合わせる (例) */
+    /* CSSでアイコンの色を直接変えるのは難しいので、HTML側の絵文字で表現するか、SVGアイコンを推奨 */
+}
+.component-card.makecode-block h4 {
+    color: #e65100; /* オレンジ系の濃い色 */
+}
+
+/* MakeCodeブロックのアイコンの色分け例 (HTML側のcomponent-icon内のテキストで色分け) */
+.mc-event { color: #4CAF50; } /* 緑 */
+.mc-agent { color: #2196F3; } /* 青 */
+.mc-loops { color: #FFC107; } /* 黄 */
+.mc-logic { color: #9C27B0; } /* 紫 */
+.mc-variables { color: #F44336; } /* 赤 */
+.mc-player { color: #00BCD4; } /* シアン */
+
+
+.technique-example.makecode-example { /* MakeCodeの作成例ブロック */
+    border-left: 5px solid #ff9800; /* オレンジ系のアクセント */
+    background-color: #fff8e1;
+    margin-top: 30px;
+}
+.technique-example.makecode-example h3 {
+    color: #e65100; /* オレンジ系 */
+}
+.technique-example.makecode-example h4 { /* 「MakeCodeブロックの組み合わせ：」など */
+    color: #f57c00; /* 少し明るいオレンジ */
+}
+
+/* .step-list や .tips-list-item は既存のスタイルが適用される想定 */
+
+/* --- (既存のレスポンシブスタイルも確認・調整) --- */
+@media (max-width: 768px) {
+    .component-grid {
+        grid-template-columns: 1fr; /* MakeCodeのブロック説明もスマホでは1列 */
+    }
+}
