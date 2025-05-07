@@ -521,3 +521,184 @@ strong, b {
     .role-explanation-container { grid-template-columns: 1fr; } /* スマホでは役割カード1列 */
 }
 /* 他のレスポンシブスタイルも必要に応じて調整 */
+
+/* style.css */
+
+/* --- (既存の0. ～ 10. までのスタイルは変更なし) --- */
+
+
+/* --- 11. brainstorming-tips.html (ホワイトボード風ページ) 専用スタイル --- */
+body.whiteboard-page {
+    background-color: #e8ebee; /* ホワイトボードの背景より少し濃いグレー */
+    display: flex; /* containerを中央寄せするために必要 */
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px; /* 上下の余白 */
+    min-height: 100vh;
+    font-family: 'Yusei Magic', 'Noto Sans JP', cursive, sans-serif; /* 手書き風フォントを優先 */
+}
+
+.whiteboard-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.whiteboard {
+    background-color: #ffffff;
+    border: 12px solid #b0bec5; /* 少し太めのフレーム */
+    border-radius: 20px;
+    padding: 35px 45px; /* 内側の余白 */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25), 0 5px 15px rgba(0,0,0,0.15); /* よりリアルな影 */
+    width: 100%;
+    max-width: 1100px; /* ホワイトボードの最大幅 */
+    animation: fadeInBoard 0.5s ease-out; /* 表示時のフェードインアニメーション */
+}
+
+@keyframes fadeInBoard {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.wb-header {
+    text-align: center;
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    border-bottom: 3px dashed #78909c; /* 手書き風の区切り線 */
+}
+
+.wb-title {
+    font-size: 2.6em; /* Yusei Magicは少し小さめなので調整 */
+    color: #1e88e5; /* 明るめの青マーカー */
+    margin-bottom: 8px;
+    font-weight: bold; /* Yusei Magicはbold非対応の場合あり */
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 0px #ffffff; /* 軽い立体感 */
+}
+.wb-subtitle {
+    font-size: 1.2em;
+    color: #546e7a; /* 少し濃いめのグレーマーカー */
+    margin-bottom: 0;
+}
+
+.wb-section {
+    margin-bottom: 35px;
+    padding: 20px 25px;
+    border-radius: 10px;
+    transition: transform 0.2s ease-out;
+}
+.wb-section:hover { /* セクションにマウスオーバーで少し浮き上がる */
+    transform: translateY(-3px);
+}
+
+/* 各セクションの枠線色 (マーカーの色をイメージ) */
+.wb-section.rules { border: 2px solid #ef5350; background-color: rgba(239, 83, 80, 0.05); } /* 赤系 */
+.wb-section.prep { border: 2px solid #66bb6a; background-color: rgba(102, 187, 106, 0.05); } /* 緑系 */
+.wb-section.steps { border: 2px solid #42a5f5; background-color: rgba(66, 165, 245, 0.05); } /* 青系 */
+.wb-section.hints { border: 2px solid #ffa726; background-color: rgba(255, 167, 38, 0.05); } /* オレンジ系 */
+.wb-section.facilitator { border: 2px solid #ab47bc; background-color: rgba(171, 71, 188, 0.05); } /* 紫系 */
+
+
+.wb-section-title {
+    font-size: 1.7em; /* Yusei Magic用調整 */
+    color: #37474f;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #cfd8dc;
+    padding-bottom: 10px;
+}
+.wb-section-title .icon {
+    font-size: 1.6em;
+    margin-right: 12px;
+    line-height: 1;
+}
+
+.wb-list { list-style-type: none; padding-left: 0; }
+.wb-list li {
+    font-size: 1.05em; /* Yusei Magic用調整 */
+    color: #455a64;
+    margin-bottom: 12px;
+    padding-left: 35px;
+    position: relative;
+    line-height: 1.6;
+}
+.wb-list li::before { /* 各リストマーカー */
+    position: absolute; left: 0; top: 2px; /* 位置調整 */
+    font-size: 1.3em;
+}
+.wb-list.wb-list-star li::before { content: "⭐"; color: #ffb300; }
+.wb-list.wb-list-check li::before { content: "✔️"; color: #4caf50; }
+.wb-list.wb-list-arrow li::before { content: "➡️"; color: #2196f3; }
+.wb-list.wb-list-dot li::before { content: "●"; color: #757575; font-size: 0.8em; top:6px;}
+
+
+.wb-step-list { list-style-type: none; padding-left: 0; counter-reset: step-counter; }
+.wb-step-list li {
+    font-size: 1.05em; color: #455a64; margin-bottom: 20px;
+    padding: 15px 15px 15px 60px; /* 左に番号スペース */
+    position: relative;
+    background-color: #f5f7f9;
+    border-radius: 6px;
+    border-left: 5px solid #42a5f5; /* ステップのアクセント */
+}
+.wb-step-list li::before { /* ステップ番号 */
+    counter-increment: step-counter; content: counter(step-counter);
+    position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+    background-color: #42a5f5; color: white;
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 1em; /* Yusei Magic用調整 */
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}
+.step-title-container { /* ステップ番号とタイトルをまとめる（HTML側で追加） */
+    margin-bottom: 8px;
+}
+.wb-step-list li strong { /* ステップのタイトル部分 */
+    color: #2c3e50; font-size: 1.25em; /* Yusei Magic用調整 */
+    font-weight: bold; /* Yusei Magicはbold非対応でも指定 */
+}
+.wb-step-list li p { /* ステップの説明文 */
+    margin-bottom: 0;
+    font-size: 1em; /* Yusei Magic用調整 */
+    line-height: 1.6;
+}
+
+
+.wb-footer-message {
+    text-align: center; font-size: 1.5em; /* Yusei Magic用調整 */
+    color: #d32f2f; /* 少し濃い赤マーカー */
+    margin: 50px 0 30px;
+    font-weight: bold;
+}
+
+.back-to-hub {
+    display: block; text-align: center;
+    margin-top: 30px; padding-bottom: 20px;
+}
+.back-to-hub .button-link { /* 共通ボタンを少し調整 */
+    font-family: 'Roboto', 'Noto Sans JP', sans-serif; /* ボタンは通常フォントに */
+    font-size: 1rem; /* ボタンのフォントサイズ */
+    padding: 12px 25px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    body.whiteboard-page { padding: 20px 10px; }
+    .whiteboard { padding: 20px 25px; border-width: 8px; }
+    .wb-title { font-size: 2em; }
+    .wb-subtitle { font-size: 1.1em; }
+    .wb-section { padding: 15px; }
+    .wb-section-title { font-size: 1.5em; }
+    .wb-section-title .icon { font-size: 1.3em; }
+    .wb-list li, .wb-step-list li { font-size: 1em; padding-left: 30px; }
+    .wb-step-list li { padding-left: 50px; } /* 番号がはみ出ないように */
+    .wb-step-list li::before { width: 28px; height: 28px; font-size: 0.8em; left: 10px; }
+    .wb-step-list li strong { font-size: 1.1em; }
+    .wb-footer-message { font-size: 1.3em; }
+}
+@media (max-width: 480px) {
+    .whiteboard { padding: 15px 20px; }
+    .wb-title { font-size: 1.8em; }
+    .wb-section-title { font-size: 1.3em; }
+}
